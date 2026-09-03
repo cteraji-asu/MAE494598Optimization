@@ -1,11 +1,13 @@
 # Optimal Scheduling
 
-## Context
+## Problem Identification and Motivation
 
 ## Decision Variables
 
-## Objective
+## Objective Function
 
 ## Constraints
 
-## Classification
+## Problem Classification
+
+## Assumptions and Simplifications
