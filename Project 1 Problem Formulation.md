@@ -100,7 +100,7 @@ $$\sum_{i=1}^{n} x_{it} \leq 1 \qquad \forall t = 1, \dots, H$$
 
 $$x_{it} = 0 \qquad \forall i, \forall t \notin [r_i, d_i]$$
 
-*Meaning:* you can't start homework that hasn't been posted yet, and working on it after the due date does not count toward the deadline.
+*Meaning:* you can't start homework that hasn't been posted yet, and working on it aftintroduces a bilinear (quadratic) term x i t x i , t + 1 , making that version a mixed-integer quadratic/multi-objective program — still linearizable with standard tricks (inter the due date does not count toward the deadline.
 
 **(e) Completion-time linking — inequality constraint (linearization).** $C_i$ must be at least as large as the slot index of any session assigned to task $i$:
 
@@ -128,7 +128,7 @@ This is a **binary (0–1) mixed-integer linear program (MILP)**, and more speci
 - The objective (with $\lambda = 0$) and all constraints (a)–(g) are **linear** in the decision variables $x_{it}, C_i, T_i$.
 - The core scheduling variable $x_{it}$ is **binary**, which makes the feasible region a union of discrete points rather than a convex set — the problem is therefore **nonconvex** despite being linear, precisely because of the integrality constraint (the same source of nonconvexity as the MILP facility-location example above).
 - Structurally, this is a variant of **single-resource scheduling with deadlines and weighted tardiness minimization** ($1 | r_i | \sum w_i T_i$ in classical scheduling notation, generalized to allow *preemption* since a task's $p_i$ slots need not be contiguous). Even the non-preemptive single-machine weighted-tardiness problem is known to be **NP-hard**, so we expect the number of feasible slot-assignments to grow combinatorially with $n$ and $H$, and exact solution time to scale poorly — motivating the use of an off-the-shelf MILP solver (e.g., CBC, Gurobi, or HiGHS via PuLP/Pyomo) rather than a custom algorithm.
-- If the bonus spacing term is included ($\lambda > 0$), the $\text{Cluster_i}$ term introduces a **bilinear (quadratic) term** $x_{it} x_{i,t+1}$, making that version a **mixed-integer quadratic/multi-objective program** — still linearizable with standard tricks (introducing $y_{it} \geq x_{it} + x_{i,t+1} - 1$), but worth noting explicitly as a different problem class than the base formulation.
+- If the bonus spacing term is included ($\lambda > 0$), the $\text{cluster}\_i$ term introduces a **bilinear (quadratic) term** $x_{it} x_{i,t+1}$, making that version a **mixed-integer quadratic/multi-objective program** — still linearizable with standard tricks (introducing $y_{it} \geq x_{it} + x_{i,t+1} - 1$), but worth noting explicitly as a different problem class than the base formulation.
 
 ---
 
