@@ -64,15 +64,17 @@ $$\min_{x,C,T} \quad \sum_{i=1}^{n} w_i  T_i$$
 
 where the completion time and tardiness are linked to the schedule $x$ through the constraints below. This is a **minimization** problem.
 
-**Optional bonus objective (spacing/anti-cramming term).** Learning science suggests distributed practice (working on the same material across several separate sessions) is more effective than massing all the work into one contiguous block ("cramming"). To reward spacing, define a penalty for consecutive-slot clustering of the same task,
+**Spacing Term** — Learning science suggests distributed practice (working on the same material across several separate sessions) is more effective than massing all the work into one contiguous block (cramming). To reward spacing, the following penalty for slot-clustering is defined:
 
 $$\text{Cluster}_i = \sum_{t=1}^{H-1} x_{it}x_{i,t+1}$$
 
-(the number of adjacent slot-pairs both assigned to task $i$), and use the combined objective
+In this definition, the number of adjacent slot-pairs both assigned to task ($i$) represents $\text{Cluster}_i$.
+
+Based on this, we then define the following minimization problem by which academic scheduling is expressed,
 
 $$\min_{x,C,T} \quad \underbrace{\sum_{i=1}^n w_i T_i}_{\text{lateness risk}} + \lambda \underbrace{\sum_{i=1}^n \text{Cluster}_i}_{\text{cramming penalty}}$$
 
-with weight $\lambda \ge 0$ trading off "avoid lateness" against "spread sessions out." Setting $\lambda = 0$ recovers the primary single-objective formulation. (This bonus term turns the problem into a genuinely **multi-objective** formulation and is a natural candidate for a Pareto-front analysis for the "solve it computationally" bonus.)
+with weight $\lambda \ge 0$ trading off "avoid lateness" against "spread sessions out." Setting $\lambda = 0$ recovers the primary single-objective formulation that focues solely on minimizing the weighted tardiness.
 
 ---
 
@@ -126,7 +128,7 @@ $$x_{it} \in [0,1] \quad C_i \in [0,H] \quad T_i \geq 0 \qquad \forall i,\forall
 This is a **binary (0–1) mixed-integer linear program (MILP)**, and more specifically a **combinatorial scheduling problem**:
 
 - The objective (with $\lambda = 0$) and all constraints (a)–(g) are **linear** in the decision variables $x_{it}, C_i, T_i$.
-- The core scheduling variable $x_{it}$ is **binary**, which makes the feasible region a union of discrete points rather than a convex set — the problem is therefore **nonconvex** despite being linear, precisely because of the integrality constraint (the same source of nonconvexity as the MILP facility-location example above).
+- The core scheduling variable $x_{it}$ is **binary**, which makes the feasible region a union of discrete points rather than a convex set — the problem is therefore **nonconvex** despite being linear, precisely because of the integrality constraint.
 - Structurally, this is a variant of **single-resource scheduling with deadlines and weighted tardiness minimization** ($1 | r_i | \sum w_i T_i$ in classical scheduling notation, generalized to allow *preemption* since a task's $p_i$ slots need not be contiguous). Even the non-preemptive single-machine weighted-tardiness problem is known to be **NP-hard**, so we expect the number of feasible slot-assignments to grow combinatorially with $n$ and $H$, and exact solution time to scale poorly — motivating the use of an off-the-shelf MILP solver (e.g., CBC, Gurobi, or HiGHS via PuLP/Pyomo) rather than a custom algorithm.
 - If the bonus spacing term is included ($\lambda > 0$), the $\text{cluster}\_i$ term introduces a **bilinear (quadratic) term** $x_{it} x_{i,t+1}$, making that version a **mixed-integer quadratic/multi-objective program** — still linearizable with standard tricks (introducing $y_{it} \geq x_{it} + x_{i,t+1} - 1$), but worth noting explicitly as a different problem class than the base formulation.
 
@@ -135,7 +137,7 @@ This is a **binary (0–1) mixed-integer linear program (MILP)**, and more speci
 ## 6. Assumptions and Simplifications
 
 - **Fixed, known availability.** We assume the student's free-time schedule $a_t$ is known and fixed in advance; in reality, unexpected events (social plans, illness, extra shifts) can shrink availability, which this static model does not capture. A rolling re-optimization would be needed in practice.
-- **Fixed, accurate effort estimates.** $p_i$ (projected time needed) is treated as a known constant, but actual effort is uncertain and often exceeds estimates — a stochastic extension (à la the Sample Problem #8 power-grid model) could model $p_i$ as a random variable.
+- **Fixed, accurate effort estimates.** $p_i$ (projected time needed) is treated as a known constant, but actual effort is uncertain and often exceeds estimates — a stochastic extension could model $p_i$ as a random variable.
 - **Uniform slot productivity.** We assume one slot of work on task $i$ contributes equally regardless of *when* it occurs; in reality, focus and productivity vary by time of day and by how fragmented the free-time block is (a 15-minute gap is less useful for deep work than a 2-hour block). This could be modeled with slot-dependent efficiency factors in a future iteration.
 - **No task interdependencies.** Tasks are treated as independent; in practice, some assignments build on others (e.g., a project draft must precede its final submission), which would require precedence constraints.
 - **Discretization error.** Continuous time is approximated by discrete slots; finer discretization improves realism but increases the number of variables ($n \times H$), impacting solvability.
