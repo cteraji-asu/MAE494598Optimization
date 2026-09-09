@@ -28,7 +28,7 @@ $$i = 1, \dots, n$$
 
 **Primary decision variable.**
 
-$$x_{it} \in \{0, 1\}, \quad \forall i = 1,\dots,n,\;\; t = 1,\dots,H$$
+$$x_{it} \in \{0, 1\} \quad \forall i = 1,\dots,n; t = 1,\dots,H$$
 
 $$x_{it} = 1 \text{ if the student works on task } i \text{ during slot } t, \text{ and } 0 \text{ otherwise.}$$
 
@@ -36,13 +36,13 @@ This is a **binary** variable (a task either occupies a given slot or it doesn't
 
 **Auxiliary decision variables** (introduced to express the objective linearly, standard in scheduling formulations):
 
-$$C_i \geq 0, \quad \forall i = 1, \dots, n$$
+$$C_i \geq 0; \quad \forall i = 1, \dots, n$$
 
-$$C_i = \text{completion slot of task } i \;\; (\text{continuous/integer, bounded } 0 \le C_i \le H)$$
+$$C_i = \text{completion slot of task } i ; (\text{continuous/integer, bounded } 0 \le C_i \le H)$$
 
 $$T_i \geq 0, \quad \forall i = 1, \dots, n$$
 
-$$T_i = \text{tardiness of task } i \;\; (\text{continuous, } T_i \ge 0)$$
+$$T_i = \text{tardiness of task } i ; (\text{continuous, } T_i \ge 0)$$
 
 **Given data (parameters, not decision variables):**
 
@@ -60,17 +60,17 @@ $$T_i = \text{tardiness of task } i \;\; (\text{continuous, } T_i \ge 0)$$
 
 **Primary objective — minimize total weighted tardiness**, so that higher-priority tasks are protected from slipping past their deadlines:
 
-$$\min_{x,\,C,\,T} \quad \sum_{i=1}^{n} w_i \, T_i$$
+$$\min_{x,C,T} \quad \sum_{i=1}^{n} w_i  T_i$$
 
 where the completion time and tardiness are linked to the schedule $x$ through the constraints below. This is a **minimization** problem.
 
 **Optional bonus objective (spacing/anti-cramming term).** Learning science suggests distributed practice (working on the same material across several separate sessions) is more effective than massing all the work into one contiguous block ("cramming"). To reward spacing, define a penalty for consecutive-slot clustering of the same task,
 
-$$\text{Cluster}_i = \sum_{t=1}^{H-1} x_{it}\,x_{i,t+1}$$
+$$\text{Cluster}_i = \sum_{t=1}^{H-1} x_{it}x_{i,t+1}$$
 
 (the number of adjacent slot-pairs both assigned to task $i$), and use the combined objective
 
-$$\min_{x,\,C,\,T} \quad \underbrace{\sum_{i=1}^n w_i T_i}_{\text{lateness risk}} \;+\; \lambda \underbrace{\sum_{i=1}^n \text{Cluster}_i}_{\text{cramming penalty}}$$
+$$\min_{x,C,T} \quad \underbrace{\sum_{i=1}^n w_i T_i}_{\text{lateness risk}} + \lambda \underbrace{\sum_{i=1}^n \text{Cluster}_i}_{\text{cramming penalty}}$$
 
 with weight $\lambda \ge 0$ trading off "avoid lateness" against "spread sessions out." Setting $\lambda = 0$ recovers the primary single-objective formulation. (This bonus term turns the problem into a genuinely **multi-objective** formulation and is a natural candidate for a Pareto-front analysis for the "solve it computationally" bonus.)
 
@@ -86,7 +86,7 @@ $$\sum_{t=1}^{H} x_{it} = p_i \qquad \forall i = 1, \dots, n$$
 
 **(b) Availability — inequality constraint.** The student can only work during slots that are actually free:
 
-$$x_{it} \leq a_t \qquad \forall i, \; \forall t$$
+$$x_{it} \leq a_t \qquad \forall i,  \forall t$$
 
 *Meaning:* the schedule cannot assign work to a slot the student is in class, asleep, or otherwise occupied.
 
@@ -98,13 +98,13 @@ $$\sum_{i=1}^{n} x_{it} \leq 1 \qquad \forall t = 1, \dots, H$$
 
 **(d) Release-time window — inequality (domain) constraint.** A task cannot be worked on before it has been assigned/released or after its deadline:
 
-$$x_{it} = 0 \qquad \forall i,\; \forall t \notin [r_i, d_i]$$
+$$x_{it} = 0 \qquad \forall i, \forall t \notin [r_i, d_i]$$
 
 *Meaning:* you can't start homework that hasn't been posted yet, and working on it after the due date does not count toward the deadline.
 
 **(e) Completion-time linking — inequality constraint (linearization).** $C_i$ must be at least as large as the slot index of any session assigned to task $i$:
 
-$$C_i \geq t \cdot x_{it} \qquad \forall i, \; \forall t$$
+$$C_i \geq t \cdot x_{it} \qquad \forall i,  \forall t$$
 
 *Meaning:* $C_i$ captures the last time task $i$ is worked on, i.e., when it is effectively "finished."
 
@@ -117,7 +117,7 @@ $$T_i \geq 0 \qquad \forall i$$
 
 **(g) Variable domains:**
 
-$$x_{it} \in \{0,1\}, \quad C_i \in [0,H], \quad T_i \geq 0 \qquad \forall i, t$$
+$$x_{it} \in [0,1] \quad C_i \in [0,H] \quad T_i \geq 0 \qquad \forall i,\forall t$$
 
 ---
 
@@ -127,8 +127,8 @@ This is a **binary (0–1) mixed-integer linear program (MILP)**, and more speci
 
 - The objective (with $\lambda = 0$) and all constraints (a)–(g) are **linear** in the decision variables $x_{it}, C_i, T_i$.
 - The core scheduling variable $x_{it}$ is **binary**, which makes the feasible region a union of discrete points rather than a convex set — the problem is therefore **nonconvex** despite being linear, precisely because of the integrality constraint (the same source of nonconvexity as the MILP facility-location example above).
-- Structurally, this is a variant of **single-resource scheduling with deadlines and weighted tardiness minimization** ($1 \,|\, r_i \,|\, \sum w_i T_i$ in classical scheduling notation, generalized to allow *preemption* since a task's $p_i$ slots need not be contiguous). Even the non-preemptive single-machine weighted-tardiness problem is known to be **NP-hard**, so we expect the number of feasible slot-assignments to grow combinatorially with $n$ and $H$, and exact solution time to scale poorly — motivating the use of an off-the-shelf MILP solver (e.g., CBC, Gurobi, or HiGHS via PuLP/Pyomo) rather than a custom algorithm.
-- If the bonus spacing term is included ($\lambda > 0$), the $\text{Cluster}_i$ term introduces a **bilinear (quadratic) term** $x_{it} x_{i,t+1}$, making that version a **mixed-integer quadratic/multi-objective program** — still linearizable with standard tricks (introducing $y_{it} \geq x_{it} + x_{i,t+1} - 1$), but worth noting explicitly as a different problem class than the base formulation.
+- Structurally, this is a variant of **single-resource scheduling with deadlines and weighted tardiness minimization** ($1 | r_i | \sum w_i T_i$ in classical scheduling notation, generalized to allow *preemption* since a task's $p_i$ slots need not be contiguous). Even the non-preemptive single-machine weighted-tardiness problem is known to be **NP-hard**, so we expect the number of feasible slot-assignments to grow combinatorially with $n$ and $H$, and exact solution time to scale poorly — motivating the use of an off-the-shelf MILP solver (e.g., CBC, Gurobi, or HiGHS via PuLP/Pyomo) rather than a custom algorithm.
+- If the bonus spacing term is included ($\lambda > 0$), the $\text{Cluster_i}$ term introduces a **bilinear (quadratic) term** $x_{it} x_{i,t+1}$, making that version a **mixed-integer quadratic/multi-objective program** — still linearizable with standard tricks (introducing $y_{it} \geq x_{it} + x_{i,t+1} - 1$), but worth noting explicitly as a different problem class than the base formulation.
 
 ---
 
