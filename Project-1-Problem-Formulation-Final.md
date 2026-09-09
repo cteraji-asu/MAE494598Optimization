@@ -20,12 +20,12 @@ Let $I=A\cup E$ be the disjoint sets of assignments $A$ and exam-preparation tas
 
 Each slot lasts $\Delta=0.5$ hours. The horizon starts Monday at 00:00. Slot $t$ covers the interval $[(t-1)\Delta,t\Delta]$ hours from the start. Thus $H=336$ for one week and $H=672$ for two weeks. Deadlines refer to slot **ends**; releases refer to slot **starts** through the eligible-slot convention below.
 
-| Parameter | Meaning | Domain / units |
+| Parameter | Meaning | Variable Classification |
 |---|---|---|
-| $a_t$ | Whether the entire slot is available | $\{0,1\}$ |
+| $a_t$ | Whether the entire slot is available | Binary, dimensionless |
 | $p_i$ | Estimated work needed for completion or the preparation target | Positive integer, slots |
-| $r_i$ | First slot whose start is at or after task release | Integer, $1\le r_i\le H$ |
-| $d_i$ | Last slot whose end is at or before the deadline | Integer, $r_i\le d_i\le H$ |
+| $r_i$ | First slot whose start is at or after task release | Integer, $1\le r_i\le H$, slots |
+| $d_i$ | Last slot whose end is at or before the deadline | Integer, $r_i\le d_i\le H$, slots |
 | $v_i$ | Value of assignment completion or full preparation | Positive, dimensionless priority points |
 
 For a real timestamp, round release upward to the next eligible slot start and deadline downward to the preceding eligible slot end. Estimate $p_i=\lceil\text{required hours}/\Delta\rceil$. These conservative conversions avoid counting a partly available or post-deadline slot. Tasks with no eligible slot cannot receive work.
