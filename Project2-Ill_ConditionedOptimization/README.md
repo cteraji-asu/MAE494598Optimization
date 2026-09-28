@@ -5,7 +5,8 @@ Clohessy–Wiltshire equations. The project compares single-shooting gradient de
 with a sparse multiple-shooting remedy and reports named condition number κ diagnostics.
 It is not flight software.
 
-The self-contained course submission is [`report.md`](report.md).
+The self-contained course submission is
+[`Project 2 Report.md`](<../Project 2 Report.md>).
 
 ## Setup
 

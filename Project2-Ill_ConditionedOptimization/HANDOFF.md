@@ -2,7 +2,7 @@
 
 ## Current state
 
-- `report.md` is the single self-contained Project 2 submission. It now includes the
+- The root-level `Project 2 Report.md` is the single self-contained Project 2 submission. It includes the
   motivation, explicit mathematical formulation, classification, Family I mechanism,
   D1 spectrum, D2 intrinsic condition number κ test, D3 baseline convergence, D4
   before/after evidence, assumptions, constrained-mission validation, and reproduction
@@ -49,7 +49,7 @@
 
 ## Remaining review items
 
-1. Review `report.md` in GitHub preview after the changes are pushed, especially display
+1. Review the root-level `Project 2 Report.md` in GitHub preview after the changes are pushed, especially display
    math and relative SVG links.
 2. Add team-member names or course-section metadata if the instructor expects them; no
    names were available in the repository, so none were invented.

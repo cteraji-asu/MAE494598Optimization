@@ -43,14 +43,7 @@ model is intentionally educational rather than flight-qualified, but it retains 
 coupled in-plane orbital dynamics and the long-horizon sensitivity that motivates
 multiple shooting and second-order/Krylov methods in practical trajectory optimization.
 
-<<<<<<< Updated upstream
-The authoritative mathematical formulation is [docs/formulation.md](Project2-Ill_ConditionedOptimization/docs/formulation.md).
-The design decision variables are the three-axis acceleration commands over a uniform
-zero-order-hold grid. The implementation supports exact rendezvous, tolerance-based
-rendezvous, acceleration magnitude bounds, and componentwise acceleration bounds.
-=======
 ## 2. Mathematical formulation
->>>>>>> Stashed changes
 
 ### 2.1 Coordinates, state, and decision variables
 
@@ -221,7 +214,7 @@ $H_r\mapsto D^{-1/2}H_rD^{-1/2}$, $D=\operatorname{diag}(H_r)$, does not collaps
 condition number to order one. It makes the largest case worse, so the intrinsic test is
 passed.
 
-![D2 intrinsic condition number test](outputs/report/d2_intrinsic_test.svg)
+![D2 intrinsic condition number test](Project2-Ill_ConditionedOptimization/outputs/report/d2_intrinsic_test.svg)
 
 As an independent small-case check, a four-interval cross-track reduction gives
 
@@ -246,7 +239,7 @@ $$
 \kappa(H_r)=\frac{\lambda_{\max}}{\lambda_{\min}}=1834.79.
 $$
 
-![D1 reduced-Hessian spectrum](outputs/report/d1_spectrum.svg)
+![D1 reduced-Hessian spectrum](Project2-Ill_ConditionedOptimization/outputs/report/d1_spectrum.svg)
 
 ### 4.2 D3 — fixed-step gradient descent
 
@@ -270,7 +263,7 @@ iterations**, with final normalized gradient norm $9.99\times10^{-9}$ and object
 2313.664617. The long nearly linear trace on the semilog plot is the computational
 effect of the elongated quadratic landscape.
 
-![D3 gradient-descent convergence](outputs/report/d3_baseline_convergence.svg)
+![D3 gradient-descent convergence](Project2-Ill_ConditionedOptimization/outputs/report/d3_baseline_convergence.svg)
 
 ## 5. D4: remedy and before/after demonstration
 
@@ -315,7 +308,7 @@ conjugate gradient, and 0.00082 s for the sparse Newton system. These timings ar
 machine-dependent, so the deterministic iteration counts and residuals are the primary
 comparison.
 
-![D4 before-and-after convergence](outputs/report/d4_before_after.svg)
+![D4 before-and-after convergence](Project2-Ill_ConditionedOptimization/outputs/report/d4_before_after.svg)
 
 ## 6. Bound-constrained mission validation
 
@@ -352,9 +345,11 @@ not flight commands.
 
 ## 8. Reproducibility
 
-The calculations are deterministic and use no random sampling. From this directory:
+The calculations are deterministic and use no random sampling. From the repository
+root:
 
 ```bash
+cd Project2-Ill_ConditionedOptimization
 python -m venv .venv
 source .venv/bin/activate
 python -m pip install -e '.[dev]'
@@ -367,19 +362,15 @@ PYTHONPATH=src python experiments/run_conditioning_study.py
 
 The final command regenerates:
 
-- `outputs/report/diagnostics.json` — complete numerical record;
-- `outputs/report/conditioning.csv` — D2 table;
-- `outputs/report/convergence.csv` — D3/D4 convergence histories; and
+- `Project2-Ill_ConditionedOptimization/outputs/report/diagnostics.json` — complete numerical record;
+- `Project2-Ill_ConditionedOptimization/outputs/report/conditioning.csv` — D2 table;
+- `Project2-Ill_ConditionedOptimization/outputs/report/convergence.csv` — D3/D4 convergence histories; and
 - the four SVG figures embedded above.
 
 The hand check, analytic derivatives, dynamics propagation, solver agreement, infeasible
 case, and D1--D4 orchestration all have automated tests.
 
-<<<<<<< Updated upstream
-![Condition number and acceleration-bound preflight](Project2-Ill_ConditionedOptimization/outputs/report/conditioning_preflight.svg)
-=======
 ## 9. Conclusion
->>>>>>> Stashed changes
 
 Long-horizon Clohessy-Wiltshire rendezvous is intrinsically ill-conditioned in condensed
 single shooting. The condition number grows rapidly with the horizon and survives
