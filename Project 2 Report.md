@@ -283,15 +283,21 @@ than $\kappa$.
 Second, multiple shooting avoids forming the dense condensed sensitivity map. The
 equality-only quadratic is solved through the sparse Newton/Karush-Kuhn-Tucker system
 
-$$
+```math
 \begin{bmatrix}
-H_{ms}&A_{eq}^T\\
-A_{eq}&0
+H_{\mathrm{ms}} & A_{\mathrm{eq}}^T \\
+A_{\mathrm{eq}} & 0
 \end{bmatrix}
-\begin{bmatrix}\mathbf z\\\boldsymbol\lambda\end{bmatrix}
-\;=\;
-\begin{bmatrix}-\mathbf g_{ms}\\\mathbf b_{eq}\end{bmatrix}.
-$$
+\begin{bmatrix}
+\mathbf{z} \\
+\boldsymbol{\lambda}
+\end{bmatrix}
+=
+\begin{bmatrix}
+-\mathbf{g}_{\mathrm{ms}} \\
+\mathbf{b}_{\mathrm{eq}}
+\end{bmatrix}.
+```
 
 Because the dynamics are linear and the objective is quadratic, one exact Newton linear
 solve reaches the optimum.

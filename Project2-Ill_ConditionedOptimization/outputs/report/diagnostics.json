@@ -447,7 +447,7 @@
     "step_size": 3.058290805288835e-09,
     "converged": true,
     "iterations": 16718,
-    "elapsed_seconds": 0.20614999998360872,
+    "elapsed_seconds": 0.4256813329993747,
     "normalized_gradient_norms": [
       1.0,
       0.8322688407705493,
@@ -17178,7 +17178,7 @@
       "method": "conjugate gradient on the reduced Hessian",
       "converged": true,
       "iterations": 88,
-      "elapsed_seconds": 0.0011936250375583768,
+      "elapsed_seconds": 0.0013082920340821147,
       "normalized_gradient_norms": [
         1.0,
         0.2930736170917967,
@@ -17275,7 +17275,7 @@
     },
     "sparse_multiple_shooting_newton": {
       "method": "one sparse Karush-Kuhn-Tucker Newton solve",
-      "elapsed_seconds": 0.0008166249608621001,
+      "elapsed_seconds": 0.0009337919764220715,
       "stationarity_residual": 6.821210263296962e-13,
       "equality_residual": 4.4739494787731506e-14,
       "objective": 2313.6646172182204,
