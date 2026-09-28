@@ -8,7 +8,7 @@ intrinsically large condition number κ that slows single-shooting gradient desc
 
 ## 2. Formulation
 
-The authoritative mathematical formulation is [docs/formulation.md](docs/formulation.md).
+The authoritative mathematical formulation is [docs/formulation.md](Project2-Ill_ConditionedOptimization/docs/formulation.md).
 The design decision variables are the three-axis acceleration commands over a uniform
 zero-order-hold grid. The implementation supports exact rendezvous, tolerance-based
 rendezvous, acceleration magnitude bounds, and componentwise acceleration bounds.
@@ -48,7 +48,7 @@ written to `outputs/report/conditioning_preflight.csv`.
 | 120 | 2400 | 1834.79 | 5280.36 | 0.01029 |
 | 240 | 4800 | 35474.58 | 189405.40 | 0.01019 |
 
-![Condition number and acceleration-bound preflight](outputs/report/conditioning_preflight.svg)
+![Condition number and acceleration-bound preflight](Project2-Ill_ConditionedOptimization/outputs/report/conditioning_preflight.svg)
 
 Following the approved failure policy, no D3 convergence curve is claimed and the
 parameters were not automatically changed.
