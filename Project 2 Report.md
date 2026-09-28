@@ -24,7 +24,7 @@ benchmark:
   multiple-shooting Newton solve satisfies its first-order conditions in one linear
   solve.
 
-The optimization problem assessed in D1--D4 is the equality-constrained exact-rendezvous
+The optimization problem assessed in D1–D4 is the equality-constrained exact-rendezvous
 problem. A practical mission extension adds the operational
 $0.01\ \mathrm{m\,s^{-2}}$ acceleration bound; a separate constrained solve verifies
 that extension without mixing active-set behavior into the Family I diagnostic.
@@ -65,7 +65,7 @@ $$
 |---|---:|---|---|
 | Relative position $(x,y,z)$ | 3 per node | m | Continuous |
 | Relative velocity $(\dot x,\dot y,\dot z)$ | 3 per node | $\mathrm{m\,s^{-1}}$ | Continuous |
-| Acceleration command $\mathbf u_k$ | 3 per interval | $\mathrm{m\,s^{-2}}$ | Continuous; unbounded in D1--D4, with $\|\mathbf u_k\|_2\le0.01$ in the mission extension |
+| Acceleration command $\mathbf u_k$ | 3 per interval | $\mathrm{m\,s^{-2}}$ | Continuous; unbounded in D1–D4, with $\|\mathbf u_k\|_2\le0.01$ in the mission extension |
 | Stacked control $\mathbf U$ | $3N$ | $\mathrm{m\,s^{-2}}$ | Primary single-shooting decision variable |
 
 The confirmed initial condition is
@@ -122,20 +122,20 @@ $$
 with
 
 $$
-Q=\operatorname{diag}
+Q=\mathrm{diag}
 \left(10^{-4},10^{-4},10^{-4},
 78.125579539,78.125579539,78.125579539\right),
 \quad Q_f=0_{6\times6},
 \quad R=10^4I_3.
 $$
 
-The selected optimization problem for D1--D4 is
+The selected optimization problem for D1–D4 is
 
 $$
 \begin{aligned}
 \underset{\mathbf x_1,\ldots,\mathbf x_N,\,\mathbf u_0,\ldots,\mathbf u_{N-1}}
-{\operatorname{minimize}}\quad &J(\mathbf x,\mathbf u)\\
-\operatorname{subject\ to}\quad
+{\mathrm{minimize}}\quad &J(\mathbf x,\mathbf u)\\
+\mathrm{subject\ to}\quad
 &\mathbf x_{k+1}=\Phi\mathbf x_k+\Gamma\mathbf u_k,
 &&k=0,\ldots,N-1,\\
 &\mathbf x_N=\mathbf0_6.
@@ -179,7 +179,7 @@ equality and the orthonormal columns of $Z$ span $\ker(G_N)$. The diagnostic pro
 the unconstrained positive-definite quadratic
 
 $$
-\underset{\mathbf w}{\operatorname{minimize}}\quad
+\underset{\mathbf w}{\mathrm{minimize}}\quad
 \frac12\mathbf w^TH_r\mathbf w+\mathbf g_r^T\mathbf w+c_r,
 \qquad H_r=Z^THZ.
 $$
@@ -210,7 +210,7 @@ The required D2 test gives:
 
 The smallest eigenvalue stays near $3.56\times10^5$ while the largest grows by more
 than three orders of magnitude. Symmetric Jacobi rescaling
-$H_r\mapsto D^{-1/2}H_rD^{-1/2}$, $D=\operatorname{diag}(H_r)$, does not collapse the
+$H_r\mapsto D^{-1/2}H_rD^{-1/2}$, $D=\mathrm{diag}(H_r)$, does not collapse the
 condition number to order one. It makes the largest case worse, so the intrinsic test is
 passed.
 
@@ -289,7 +289,7 @@ H_{ms}&A_{eq}^T\\
 A_{eq}&0
 \end{bmatrix}
 \begin{bmatrix}\mathbf z\\\boldsymbol\lambda\end{bmatrix}
-=
+\;=\;
 \begin{bmatrix}-\mathbf g_{ms}\\\mathbf b_{eq}\end{bmatrix}.
 $$
 
@@ -312,7 +312,7 @@ comparison.
 
 ## 6. Bound-constrained mission validation
 
-The graded D1--D4 problem is equality constrained; the mission extension additionally
+The graded D1–D4 problem is equality constrained; the mission extension additionally
 enforces the acceleration inequality. At $N=120$, the equality-constrained optimum reaches
 $0.01028897\ \mathrm{m\,s^{-2}}$, exceeding the mission limit by
 $2.88968\times10^{-4}\ \mathrm{m\,s^{-2}}$. This is why the bound is not silently called
@@ -368,7 +368,7 @@ The final command regenerates:
 - the four SVG figures embedded above.
 
 The hand check, analytic derivatives, dynamics propagation, solver agreement, infeasible
-case, and D1--D4 orchestration all have automated tests.
+case, and D1–D4 orchestration all have automated tests.
 
 ## 9. Conclusion
 
