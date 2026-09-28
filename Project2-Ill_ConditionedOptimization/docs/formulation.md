@@ -1,5 +1,11 @@
 # Spacecraft Rendezvous Optimization Formulation
 
+> **Scope.** This file preserves the general symbolic derivation and alternative model
+> choices developed before the numerical case was confirmed. The self-contained course
+> submission is [`../report.md`](../report.md), and the confirmed values used by the
+> software are in [`../data/canonical.yaml`](../data/canonical.yaml). Statements below
+> that a generic parameter must be supplied do not override those confirmed inputs.
+
 ## 1. State and decision variables
 
 Let the target spacecraft define a circular reference orbit and let the chaser state be expressed in the target-centered, right-handed local-vertical/local-horizontal (LVLH) frame. Define

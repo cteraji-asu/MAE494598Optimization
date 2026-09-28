@@ -13,7 +13,7 @@ from typing import Any
 import numpy as np
 import yaml
 
-from diagnostics import conditioning_preflight
+from diagnostics import full_diagnostic_study
 from dynamics import discretize_cw, mean_motion, simulate
 from models import RendezvousConfig, RendezvousResult, SolverStatus
 from solvers import solve_rendezvous
@@ -137,18 +137,20 @@ def main(argv: list[str] | None = None) -> int:
                 solve_rendezvous(config, numerics_confirmed=True),
             )
         elif args.command == "diagnose":
-            payload = conditioning_preflight(config)
+            payload = full_diagnostic_study(config, numerics_confirmed=True)
             args.output_dir.mkdir(parents=True, exist_ok=True)
-            (args.output_dir / "conditioning_preflight.json").write_text(
+            (args.output_dir / "diagnostics.json").write_text(
                 json.dumps(payload, indent=2) + "\n", encoding="utf-8"
             )
-            rows = payload["rows"]
+            d2 = payload["d2"]
+            assert isinstance(d2, dict)
+            rows = d2["rows"]
             assert isinstance(rows, list) and rows
-            with (args.output_dir / "conditioning_preflight.csv").open("w", newline="") as stream:
+            with (args.output_dir / "conditioning.csv").open("w", newline="") as stream:
                 writer = csv.DictWriter(stream, fieldnames=list(rows[0]))
                 writer.writeheader()
                 writer.writerows(rows)
-            return 5 if payload["status"] == "failed_criterion" else 0
+            return 0 if payload["status"] == "passed" else 5
         else:
             if controls_data is None:
                 raise ValueError("propagation configuration requires controls")

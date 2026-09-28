@@ -30,6 +30,19 @@ def test_reduced_gradient_descent_matches_direct_solution(config) -> None:
     assert solution.maximum_bound_violation == 0.0
 
 
+def test_reduced_gradient_descent_can_run_equality_only_diagnostic(config) -> None:
+    problem = build_single_shooting(config)
+    solution = solve_reduced_gradient_descent(
+        problem,
+        config,
+        numerics_confirmed=True,
+        enforce_acceleration_bounds=False,
+    )
+    assert solution.reduced_result.converged
+    assert solution.maximum_bound_violation > 0.0
+    assert solution.elapsed_seconds >= 0.0
+
+
 def test_clarabel_solves_and_verifies_canonical_case(config) -> None:
     canonical = replace(config, num_intervals=60, final_time=1200.0)
     result = apply_verification(

@@ -12,7 +12,7 @@ dependencies = [
   "clarabel>=0.10,<1",
   "cvxpy>=1.6,<2",
   "matplotlib>=3.9,<4",
-  "numpy>=2,<3",
+  "numpy>=2,<2.4",
   "PyYAML>=6,<7",
   "scipy>=1.13,<2",
 ]

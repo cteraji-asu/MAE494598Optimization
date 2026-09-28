@@ -1,58 +1,58 @@
 # Session Handoff
 
-## Progress
+## Current state
 
-- Implemented the confirmed rendezvous plan on `feature/rendezvous-implementation`.
-- Added validated configuration/result models, exact Clohessy-Wiltshire discretization,
-  trajectory propagation, objective assembly, terminal/null-space constraints, genuine
-  single- and multiple-shooting formulations, and independent post-solve verification.
-- Added null-space-reduced fixed-step gradient descent, a sparse multiple-shooting
-  Karush–Kuhn–Tucker solve, and the complete CVXPY/Clarabel constrained adapter.
-- Added condition number κ helpers, a dense-operation guard, a four-interval cross-track
-  hand check, and the approved long-horizon preflight without automatic retuning.
-- Added YAML examples, CLI solve/diagnose/propagate commands, reproducibility metadata,
-  CSV/JSON export, a Markdown report, dependency inventory, and macOS/Linux CI for
-  Python 3.11–3.13.
-- Added 29 deterministic tests covering model validation, dynamics, objective and
-  derivative checks, constraints, formulations, solver behavior, diagnostics, CLI
-  confirmation, serialization, and independent verification.
+- `report.md` is the single self-contained Project 2 submission. It now includes the
+  motivation, explicit mathematical formulation, classification, Family I mechanism,
+  D1 spectrum, D2 intrinsic condition number κ test, D3 baseline convergence, D4
+  before/after evidence, assumptions, constrained-mission validation, and reproduction
+  commands.
+- The old root-level `Project 2 Report.md` and failed-preflight output files were removed
+  so there is one authoritative report and one current set of report artifacts.
+- The human-approved diagnostic problem uses the same dynamics, objective, and exact
+  terminal rendezvous constraint as the mission model, without acceleration inequalities.
+  The `0.01 m/s²` acceleration bound remains enforced in the separate mission solve.
+- `full_diagnostic_study` produces all D1--D4 data. The experiment writes
+  `diagnostics.json`, `conditioning.csv`, `convergence.csv`, and SVG/PNG copies of the
+  four figures under `outputs/report/`.
+- The gradient-descent API retains bound enforcement by default. Only the explicit
+  equality-constrained diagnostic opts out, and that path has dedicated tests.
+- NumPy is capped below 2.4 so the documented Python 3.11 mypy target remains compatible
+  with installed type stubs.
 
-## Verification
+## Confirmed numerical design
 
-- `python -m ruff check src tests experiments` passes.
-- `python -m mypy src` passes.
-- `python -m pytest` passes with 29 tests. CVXPY emits two non-failing canonicalization/
-  expression-count warnings in solver tests.
-- The canonical constrained solve returns exit 0 and status `optimal`; independent
-  verification reports maximum dynamics defect `8.53e-14`, terminal position residual
-  `1.13e-14 m`, terminal velocity residual `1.93e-16 m/s`, and control-bound violation
-  `4.49e-10 m/s²` against the confirmed `1.0e-9 m/s²` allowance.
-- The deterministic infeasible case returns exit 3 and exports no state/control course.
-- The analytic propagation check passes with maximum state difference `2.16e-12`.
-- The cross-track 2-by-2 eigenvalue hand check matches the numerical eigensolver with
-  maximum relative error `1.50e-16`.
-- The long-horizon preflight intentionally returns nonzero: all approved horizons
-  activate the `0.01 m/s²` acceleration bound. It records D1/D2 data and stops without
-  retuning, so D3/D4 claims are explicitly deferred.
+- Horizon sweep: `N = 15, 30, 60, 120, 240` with fixed `Δt = 20 s`.
+- Representative D1/D3/D4 case: `N = 120`.
+- Gradient descent: step `2 / (λ_max + λ_min)`, relative gradient tolerance `1e-8`,
+  maximum 200,000 iterations.
+- Conjugate gradient: relative residual tolerance `1e-8`, maximum 354 iterations for the
+  representative reduced system.
+- No random sampling is used.
 
-## Blockers and Deferred Work
+## Verified results
 
-- D3 baseline convergence and D4 before/after curves remain deferred under the approved
-  failure policy because the inactive-bound prerequisite failed. A human must approve a
-  changed physical case or a bound-aware baseline before those diagnostics can run.
-- The branch is pushed to `origin`. Pull-request creation is still manual because the
-  GitHub command-line client is unavailable; use the URL in the next section.
-- The CI definition is stored under this project scaffold. Because the Git repository
-  root is its parent directory, GitHub will not discover that nested workflow until a
-  maintainer with parent-directory scope promotes it to the repository-root
-  `.github/workflows/` directory.
-- The repository's parent-level `.DS_Store` remains modified and is intentionally not
-  part of this implementation.
+- `python -m pytest -q`: 32 passed. Two known non-failing CVXPY canonicalization/
+  expression-count warnings remain.
+- `python -m ruff check src tests experiments`: passes.
+- `python -m mypy src`: passes with NumPy 2.3.5.
+- `PYTHONPATH=src python experiments/run_conditioning_study.py`: exits zero with status
+  `passed`.
+- At `N=120`, the reduced Hessian condition number κ is 1834.790493.
+- Gradient descent reaches the fixed tolerance in 16,718 iterations; conjugate gradient
+  reaches it in 88 iterations.
+- The sparse multiple-shooting Newton solve has stationarity residual `6.82e-13`,
+  equality residual `4.47e-14`, and relative objective difference `3.05e-14` from the
+  condensed solution.
+- The separate constrained `N=60` mission result remains optimal and independently
+  verified in `outputs/canonical/result.json`.
 
-## Next Steps
+## Remaining review items
 
-1. Review the generated artifacts in `outputs/` and the conclusions in `report.md`.
-2. If D3/D4 are required, explicitly approve either revised physical parameters or a
-   projected/constrained first-order baseline; do not silently retune the confirmed case.
-3. Open a pull request at
-   `https://github.com/leonardodayal/ASU-DesignOptimization-Project02_OrbitRendezvous/pull/new/feature/rendezvous-implementation`.
+1. Review `report.md` in GitHub preview after the changes are pushed, especially display
+   math and relative SVG links.
+2. Add team-member names or course-section metadata if the instructor expects them; no
+   names were available in the repository, so none were invented.
+3. Commit and push through the repository workflow selected by the maintainer. Stale
+   worktree, branch, pull-request, or remote-move notes are intentionally not carried
+   forward here.

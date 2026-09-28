@@ -30,6 +30,7 @@ class ReducedGradientDescentSolution:
     condition_number: float
     step_size: float
     maximum_bound_violation: float
+    elapsed_seconds: float
 
 
 @dataclass(frozen=True)
@@ -49,8 +50,14 @@ def solve_reduced_gradient_descent(
     config: RendezvousConfig,
     *,
     numerics_confirmed: bool,
+    enforce_acceleration_bounds: bool = True,
 ) -> ReducedGradientDescentSolution:
-    """Run the confirmed null-space-reduced single-shooting baseline."""
+    """Run the confirmed null-space-reduced single-shooting baseline.
+
+    The course diagnostic deliberately sets ``enforce_acceleration_bounds=False`` to
+    study the equality-constrained benchmark. The complete mission solve continues to
+    enforce the configured acceleration bound separately.
+    """
 
     if not numerics_confirmed:
         raise PermissionError("numerical parameters require explicit confirmation")
@@ -67,6 +74,7 @@ def solve_reduced_gradient_descent(
     def derivative(w: FloatArray) -> FloatArray:
         return hessian @ w + gradient_vector
 
+    start = perf_counter()
     reduced = gradient_descent(
         derivative,
         np.zeros(hessian.shape[0]),
@@ -75,6 +83,7 @@ def solve_reduced_gradient_descent(
         config.solver_options.gradient_max_iterations,
         f=objective,
     )
+    elapsed = perf_counter() - start
     stacked = problem.reduction.particular + problem.reduction.basis @ reduced.solution
     controls = stacked.reshape(config.num_intervals, 3)
     violation = maximum_control_violation(
@@ -97,9 +106,16 @@ def solve_reduced_gradient_descent(
             )
         ),
     )
-    if violation > allowed:
+    if enforce_acceleration_bounds and violation > allowed:
         raise RuntimeError("gradient-descent diagnostic activated the acceleration bound")
-    return ReducedGradientDescentSolution(controls, reduced, condition_number, step, violation)
+    return ReducedGradientDescentSolution(
+        controls,
+        reduced,
+        condition_number,
+        step,
+        violation,
+        elapsed,
+    )
 
 
 def solve_sparse_kkt(

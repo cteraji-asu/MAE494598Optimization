@@ -41,6 +41,7 @@ def test_conjugate_gradient_converges() -> None:
     rhs = np.array([1.0, 2.0])
     result = conjugate_gradient(matrix, rhs, tol=1e-12)
     assert result.converged
+    assert result.iterations <= matrix.shape[0]
     assert_allclose(result.solution, np.linalg.solve(matrix, rhs), rtol=1e-12, atol=1e-12)
 
 

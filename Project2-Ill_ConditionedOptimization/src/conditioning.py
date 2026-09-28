@@ -121,6 +121,7 @@ class ConjugateGradientResult:
     solution: FloatArray
     relative_residuals: FloatArray
     converged: bool
+    iterations: int
 
 
 def conjugate_gradient(
@@ -160,4 +161,4 @@ def conjugate_gradient(
         converged = history[-1] <= tol
         direction = residual + (new_square / residual_square) * direction
         residual_square = new_square
-    return ConjugateGradientResult(x, np.asarray(history), converged)
+    return ConjugateGradientResult(x, np.asarray(history), converged, len(history) - 1)

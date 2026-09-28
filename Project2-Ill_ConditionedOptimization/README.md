@@ -5,6 +5,8 @@ Clohessy–Wiltshire equations. The project compares single-shooting gradient de
 with a sparse multiple-shooting remedy and reports named condition number κ diagnostics.
 It is not flight software.
 
+The self-contained course submission is [`report.md`](report.md).
+
 ## Setup
 
 ```bash
@@ -35,17 +37,16 @@ orbit-rendezvous solve data/canonical.yaml \
 The deterministic infeasible case is run the same way with `data/infeasible.yaml`; it
 must return a nonzero exit status and must not export a nominal course.
 
-Run the approved long-horizon preflight with:
+Run the complete approved D1--D4 study, including all report plots and tables, with:
 
 ```bash
-orbit-rendezvous diagnose data/canonical.yaml \
-  --output-dir outputs/report \
-  --confirm-numerics
+PYTHONPATH=src python experiments/run_conditioning_study.py
 ```
 
-The confirmed canonical case activates its acceleration bound in the single-shooting
-diagnostic. In accordance with the approved failure policy, the study records this fact
-and stops without changing weights, bounds, horizons, or tolerances.
+The study uses the same dynamics, objective, and exact terminal rendezvous constraint as
+the mission problem while omitting the acceleration inequality only from D1--D4. This
+equality-constrained benchmark isolates long-horizon conditioning. The separate
+canonical mission solve retains the `0.01 m/s²` acceleration bound.
 
 The YAML/JSON configuration schema is defined in
 [`docs/software-specification.md`](docs/software-specification.md). Inputs declare the
@@ -62,17 +63,16 @@ codes are 0 for success, 2 for invalid input, 3 for infeasible/unbounded, 4 for 
 failure, 5 for failed verification or diagnostic criteria, and 6 when numerical
 confirmation is absent.
 
-The exact-propagation and full report-data experiments are also reproducible:
+The exact-propagation check is also reproducible:
 
 ```bash
 PYTHONPATH=src python experiments/run_propagation_check.py
-PYTHONPATH=src python experiments/run_conditioning_study.py
 ```
 
-The conditioning command intentionally exits nonzero for the confirmed canonical
-inputs because its inactive-acceleration-bound prerequisite fails. See
-[`report.md`](report.md) for the result and [`docs/dependencies.md`](docs/dependencies.md)
-for the dependency review.
+The D1--D4 command writes `diagnostics.json`, `conditioning.csv`, `convergence.csv`, and
+four SVG figures to `outputs/report/`. It exits zero only when the baseline, conjugate-
+gradient remedy, and sparse multiple-shooting Newton checks all pass. See
+[`docs/dependencies.md`](docs/dependencies.md) for the dependency review.
 
 ## Model boundary
 
