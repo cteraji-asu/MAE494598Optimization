@@ -1,0 +1,17 @@
+{
+  "protocol_sha256": "a8bac535c4c58bdb837dfeda38890ebd86e5413838e895096d136208032a56f9",
+  "source_sha256": "066c6d7efca287ae7e62bf3855289997e10a1e7241931f4350bc35ea71c39279",
+  "frozen_before_reference_inspection": true,
+  "split_amendment": {
+    "reason": "Original 336 new blocked geometries exceeded the 257 packing upper bound. Changed counts before fitting, no threshold or separation change.",
+    "blocked_validation": 64,
+    "blocked_holdout": 128,
+    "offblock_validation": 80,
+    "offblock_holdout": 256,
+    "geometry_only_candidate_pool": 257,
+    "minimum_new_d_separation": 2.000000099999788e-05,
+    "minimum_separation_from_prior": 2.000000099999788e-05,
+    "prior_unique": 1904,
+    "prior_blocked": 768
+  }
+}

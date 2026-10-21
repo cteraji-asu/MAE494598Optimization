@@ -1,0 +1,22 @@
+% Wolfram-verified synthetic switched-line equations. Phasor e^{+i omega t}, Z0=1.
+\gamma=\alpha+i\beta,\qquad \alpha=0.03,\quad \beta=2\pi,\quad a=pL,\quad d=(1-p)L.
+\frac{\mathrm d V}{\mathrm d x}=-\gamma I,\qquad \frac{\mathrm d I}{\mathrm d x}=-\gamma V.
+V_{\mathrm L}(0)+I_{\mathrm L}(0)=2,\qquad V_{\mathrm R}(L)=0.
+I_{\mathrm L}(a^-)=I_{\mathrm R}(a^+)=I_s,\qquad V_{\mathrm L}(a^-)-V_{\mathrm R}(a^+)=z_s I_s.
+z_{\mathrm{on}}=0.02+0.04i,\qquad z_{\mathrm{off}}=0.02-4i.
+P(\ell)=\begin{pmatrix}\cosh(\gamma\ell)&\sinh(\gamma\ell)\\\sinh(\gamma\ell)&\cosh(\gamma\ell)\end{pmatrix},\qquad S(z_s)=\begin{pmatrix}1&z_s\\0&1\end{pmatrix}.
+\begin{pmatrix}A&B\\C&D\end{pmatrix}=P(a)S(z_s)P(d),\qquad R_s=\frac{B-D}{B+D},\qquad I_T=\frac{2}{B+D}.
+R_s(a,d)=e^{-2\gamma a}r_s(d),\qquad r_s(d)=\frac{\sinh(\gamma d)+(z_s-1)\cosh(\gamma d)}{\sinh(\gamma d)+(z_s+1)\cosh(\gamma d)}.
+r_s(d)=\frac{z_s+\tanh(\gamma d)-1}{z_s+\tanh(\gamma d)+1}\quad\text{when }\cosh(\gamma d)\ne0.
+% Tilde fields are normalized to unit incident amplitude at the switch plane.
+V_{\mathrm R}(a+d\xi)=e^{-\gamma a}\widetilde V_s(\xi),\qquad I_{\mathrm R}(a+d\xi)=e^{-\gamma a}\widetilde I_s(\xi).
+\widetilde I_T=\frac{2}{\sinh(\gamma d)+(1+z_s)\cosh(\gamma d)},\qquad \widetilde V_s(\xi)=\widetilde I_T\sinh[\gamma d(1-\xi)],\quad\widetilde I_s(\xi)=\widetilde I_T\cosh[\gamma d(1-\xi)].
+\frac{\mathrm d\widetilde V_s}{\mathrm d\xi}+\gamma d\widetilde I_s=0,\qquad\frac{\mathrm d\widetilde I_s}{\mathrm d\xi}+\gamma d\widetilde V_s=0.
+\widetilde V_s(0)+(1+z_s)\widetilde I_s(0)=2,\qquad\widetilde V_s(1)=0.
+r_s=1-\widetilde I_s(0)=\widetilde V_s(0)+z_s\widetilde I_s(0)-1.
+\Delta\phi=\left|\operatorname{Arg}\!\left(R_{\mathrm{off}}\overline{R_{\mathrm{on}}}\right)\right|=\left|\operatorname{Arg}\!\left(r_{\mathrm{off}}\overline{r_{\mathrm{on}}}\right)\right|,\quad 0\le\Delta\phi\le\pi.
+|R_s|=e^{-2\alpha a}|r_s|.
+P(x)=\tfrac12\operatorname{Re}[V(x)\overline{I(x)}],\qquad\frac{\mathrm dP}{\mathrm dx}=-\frac{\alpha}{2}(|V|^2+|I|^2).
+P(a^-)-P(a^+)=\frac{\operatorname{Re}z_s}{2}|I_s|^2.
+\frac{1-|R_s|^2}{2}=\frac{\alpha}{2}\left[\int_0^a(|V|^2+|I|^2)\,\mathrm dx+\int_a^L(|V|^2+|I|^2)\,\mathrm dx\right]+\frac{\operatorname{Re}z_s}{2}|I_s|^2\ge0.
+\alpha=0,\quad\beta d=\frac\pi2\quad\Longrightarrow\quad I_s=0,\quad r_s=1,\quad R_s=e^{-2i\beta a}\quad\text{for finite }z_s.

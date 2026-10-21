@@ -1,0 +1,26 @@
+{
+  "files": [
+    {
+      "path": "code/switched_line.py",
+      "original_sha256": "4c21ab8edfe73089ec0dfbd9ef472a2c2321d93ae3dbb212062cff445cc9cdfc",
+      "published_sha256": "e28085ea65ce0bcb2e5cfb632c556d799353285665507683be8088b4c547a0f1",
+      "numeric_code_unchanged": true,
+      "reason": "Identifier removal and/or line-ending normalization in publication copy; string-stripped AST unchanged. Canonical source preserved."
+    },
+    {
+      "path": "code/summarize_hard_boundary.py",
+      "original_sha256": "fcafcdd80224549484fff759d530b48544565e6b06cc26518d7c40c8e0a92756",
+      "published_sha256": "6daee68af374b27111528f86f2d5a844b5f17c606422313a80aa3a616b986fbb",
+      "numeric_code_unchanged": true,
+      "reason": "Identifier removal and/or line-ending normalization in publication copy; string-stripped AST unchanged. Canonical source preserved."
+    },
+    {
+      "path": "outputs/switched-line/mechanism-sanity.json",
+      "original_sha256": "b79cc4cf655231fccfbf6058e269cb5c89c84231e28bc10273b817fadc700a54",
+      "published_sha256": "16a22853ee90db4934649f0c52636b020631d2cef46806915ce891a09f7595f7",
+      "numeric_code_unchanged": true,
+      "reason": "Remove identifier from nonnumeric provenance prose only."
+    }
+  ],
+  "scope": "Publication copy only; canonical source/results and original frozen protocols remain unchanged."
+}

@@ -1,0 +1,121 @@
+{
+  "status": "Historical diagnostic only. Existing test cohorts have already been inspected; no pristine holdout claim.",
+  "hypothesis": "Port and/or short residuals, amplified by the finite BVP transfer map, may account for reflection failure. Interior residual contributions and cancellation are competing explanations.",
+  "fitting": false,
+  "quadrature_orders": [
+    32,
+    64,
+    128
+  ],
+  "maximum_identity_disagreement": 1e-09,
+  "maximum_64_to_128_disagreement": 1e-08,
+  "maximum_bound_tolerance": 1e-09,
+  "contribution_statistics_error_floor": 1e-06,
+  "reporting": "Signed complex contributions, sum, magnitude shares, cancellation, gain and boundary-corrected/interior-corrected counterfactuals. Do not infer a Hessian condition number or sum component magnitudes as errors.",
+  "counterfactuals": "All are reported, not selected: remove port, short, both boundaries, interior. They are a posteriori diagnostic corrections with quadrature cost, not trained remedies.",
+  "source_hashes": {
+    "run_residual_error_budget.py": "b390247af7630720bcbb9245cdb39dfec137ac33c92c04d2ddcb4984787ab136",
+    "residual_error_budget.py": "00d272facd2acc9dd1d2ca27aa8409b19362015a67debcb25aeedcb51ffa3ec2",
+    "switched_surrogate.py": "e2da014ef68d4f309e6b7b55f5f4724448276eb2462d95cb0a61643be346e526",
+    "switched_line.py": "4c21ab8edfe73089ec0dfbd9ef472a2c2321d93ae3dbb212062cff445cc9cdfc"
+  },
+  "known_field_validation": "32 polynomial and isolated forcing cases, compared with independent wave reference, before saved-checkpoint attribution.",
+  "models": [
+    {
+      "name": "primary-pinn-0",
+      "weights": "outputs\\switched-surrogate\\pinn_seed-0_weights.json",
+      "weights_sha256": "a5e67271a7f192d34f119b0c83bffd3635ed3008792e0b2079d07cb03b0cbbaf",
+      "states": "outputs\\switched-surrogate\\pinn_seed-0_states.csv",
+      "states_sha256": "aed090ee80e8dec4285ac1abbe47080b558e0a1755eaab5c5334b194f9961713",
+      "state_cases": 768
+    },
+    {
+      "name": "primary-pinn-1",
+      "weights": "outputs\\switched-surrogate\\pinn_seed-1_weights.json",
+      "weights_sha256": "5d1c0b38bcf0ec6bae5ccfca62651648eb17f305a41738719e06246719ff3620",
+      "states": "outputs\\switched-surrogate\\pinn_seed-1_states.csv",
+      "states_sha256": "c833f87e3628a044001bb6cd70097521dc64e5202d3d2f6f742f43a44e042e00",
+      "state_cases": 768
+    },
+    {
+      "name": "primary-pinn-2",
+      "weights": "outputs\\switched-surrogate\\pinn_seed-2_weights.json",
+      "weights_sha256": "3ea62ad4ad0ff1eb62a1ab0403251f9b1bf3e499fa6cfff9897cb00075a8996e",
+      "states": "outputs\\switched-surrogate\\pinn_seed-2_states.csv",
+      "states_sha256": "5e248a4bf51c2777ccc05b627541da80298d1a5917e057d39eae16e6ee69ee58",
+      "state_cases": 768
+    },
+    {
+      "name": "primary-supervised-0",
+      "weights": "outputs\\switched-surrogate\\supervised_seed-0_weights.json",
+      "weights_sha256": "134ff8f775e791f1e3ee427e7ffbdd2adcd20c03b6a965a9e61b7c14f18fcae2",
+      "states": "outputs\\switched-surrogate\\supervised_seed-0_states.csv",
+      "states_sha256": "1f0de6ddeb46277ec8ad80a80bd89a783d12f350bcf7899f2b2864484221935e",
+      "state_cases": 768
+    },
+    {
+      "name": "primary-supervised-1",
+      "weights": "outputs\\switched-surrogate\\supervised_seed-1_weights.json",
+      "weights_sha256": "09fed8ab709abe7ff13477e452b130e26853b5203387bc26fd43178495d77e3d",
+      "states": "outputs\\switched-surrogate\\supervised_seed-1_states.csv",
+      "states_sha256": "729b103d777096017a69b20971f82fa391ee4807561aacd53230575d2bfa4083",
+      "state_cases": 768
+    },
+    {
+      "name": "primary-supervised-2",
+      "weights": "outputs\\switched-surrogate\\supervised_seed-2_weights.json",
+      "weights_sha256": "facf069af71607eec165d130a7556d8a8a901734268fd9a56d45b7839b58addc",
+      "states": "outputs\\switched-surrogate\\supervised_seed-2_states.csv",
+      "states_sha256": "90f10a2f63f197da49f8e6fee56a8410a507d629ec895e8da771f4050656a556",
+      "state_cases": 768
+    },
+    {
+      "name": "covered-pinn-0",
+      "weights": "outputs\\neural-coverage-control\\reallocated\\pinn_seed-0_weights.json",
+      "weights_sha256": "4fa77c5b9845edf7b885e8f5b193c80ea5142710d547835dd9430f3ed110e1d4",
+      "states": "outputs\\neural-coverage-control\\reallocated\\pinn_seed-0_states.csv",
+      "states_sha256": "d89c6c5944ca8479c471bf7d9fc884503911cf3724ed944a47ede8cd81e72f03",
+      "state_cases": 960
+    },
+    {
+      "name": "covered-pinn-1",
+      "weights": "outputs\\neural-coverage-control\\reallocated\\pinn_seed-1_weights.json",
+      "weights_sha256": "d29b6fafbf53f0daf7b50fa2c7a10380c6e3c9f0855f14aec065192a08ae3687",
+      "states": "outputs\\neural-coverage-control\\reallocated\\pinn_seed-1_states.csv",
+      "states_sha256": "dc4fafe35386ca40e165ba6a951e4d74603ef41599d1b75b0a4931bcf8a35de7",
+      "state_cases": 960
+    },
+    {
+      "name": "covered-pinn-2",
+      "weights": "outputs\\neural-coverage-control\\reallocated\\pinn_seed-2_weights.json",
+      "weights_sha256": "10afcf533150a08aece592069a1ae877f2c5e952354d7a7934629ccaa92f5e66",
+      "states": "outputs\\neural-coverage-control\\reallocated\\pinn_seed-2_states.csv",
+      "states_sha256": "f47167aa02cc2c25cee56006956bc0a326be169cec72ac8462c35ff7ec0a60c5",
+      "state_cases": 960
+    },
+    {
+      "name": "representability-supervised-0",
+      "weights": "outputs\\representability-control\\seed-0\\supervised_seed-0_weights.json",
+      "weights_sha256": "0929a36c89de2eeead77f51bda6eaba5d757a995c8569819bcf6a38442deb244",
+      "states": "outputs\\representability-control\\seed-0\\supervised_seed-0_states.csv",
+      "states_sha256": "09aee3facbf1320aef278fe9b0d57e97c8d45559085d6fa59060b9ffc1e84573",
+      "state_cases": 1024
+    },
+    {
+      "name": "optimizer-lbfgs-0",
+      "weights": "outputs\\optimizer-continuation-control\\seed-0\\lbfgs\\pinn_seed-0_weights.json",
+      "weights_sha256": "7a7a717e86d136ff13364917d0be4bf930245e95f3faa00217382c178b06cd5c",
+      "states": "outputs\\optimizer-continuation-control\\seed-0\\lbfgs\\pinn_seed-0_states.csv",
+      "states_sha256": "d45923fff69172a74d94ab2cca3d8189a65015eb974357cc7225aef46f21d1be",
+      "state_cases": 768
+    },
+    {
+      "name": "optimizer-adam-0",
+      "weights": "outputs\\optimizer-continuation-control\\seed-0\\adam\\pinn_seed-0_weights.json",
+      "weights_sha256": "4a29049383ef350039ed0ea4588f5dc2004b8116348ce373a5af5cdd11102d22",
+      "states": "outputs\\optimizer-continuation-control\\seed-0\\adam\\pinn_seed-0_states.csv",
+      "states_sha256": "8d1bc5c1a8aee60920384a1a410cc7339982957228333226d51e0f441855458b",
+      "state_cases": 768
+    }
+  ]
+}

@@ -1,0 +1,89 @@
+{
+  "status": "Conventional mechanism sanity check only; no neural model trained",
+  "provenance": "All dimensionless circuit parameters are synthetic, not the researcher data",
+  "config": {
+    "alpha": 0.03,
+    "beta": 6.283185307179586,
+    "z_on": [
+      0.02,
+      0.04
+    ],
+    "z_off": [
+      0.02,
+      -4.0
+    ],
+    "common_termination": "V(L)=0 in both switch states",
+    "length_range": [
+      0.3,
+      0.42
+    ],
+    "switch_fraction_range": [
+      0.15,
+      0.9
+    ]
+  },
+  "sweep_designs": 4025,
+  "examples": {
+    "strong": {
+      "length": 0.36,
+      "switch_fraction": 0.42112499999999997,
+      "right_segment_length": 0.208395,
+      "on_real": 0.17774033905764297,
+      "on_imag": -0.9599988713006586,
+      "off_real": -0.1501229860030308,
+      "off_imag": 0.7867283437513932,
+      "on_switch_current": 0.5057674891388984,
+      "off_switch_current": 1.7395688471527364,
+      "min_magnitude": 0.8009234656246979,
+      "separation_degrees": 179.68605915605633,
+      "target_error_degrees": 0.3139408439436693,
+      "phase_valid": true
+    },
+    "near_current_node": {
+      "length": 0.36,
+      "switch_fraction": 0.3055555555555556,
+      "right_segment_length": 0.24999999999999997,
+      "on_real": 0.18338201488911496,
+      "on_imag": -0.9612986920459933,
+      "off_real": 0.1829480637413592,
+      "off_imag": -0.9613948031813775,
+      "on_switch_current": 0.014836801204462916,
+      "off_switch_current": 0.01483023090471915,
+      "min_magnitude": 0.9786338123701475,
+      "separation_degrees": 0.02601043644679361,
+      "target_error_degrees": 179.9739895635532,
+      "phase_valid": true
+    },
+    "lossless_current_node_limit": {
+      "length": 0.36,
+      "switch_fraction": 0.3055555555555556,
+      "right_segment_length": 0.24999999999999997,
+      "on_real": 0.1873813145857254,
+      "on_imag": -0.9822872507286885,
+      "off_real": 0.18738131458572524,
+      "off_imag": -0.9822872507286885,
+      "on_switch_current": 6.473657049138938e-16,
+      "off_switch_current": 4.965068306494546e-16,
+      "min_magnitude": 0.9999999999999999,
+      "separation_degrees": 9.541664044390552e-15,
+      "target_error_degrees": 180.0,
+      "phase_valid": true
+    }
+  },
+  "max_independent_wave_reference_disagreement": 6.0044490637300816e-15,
+  "independent_wave_checks": 8056,
+  "max_reflected_magnitude_over_sweep": 0.9929643683112718,
+  "max_power_balance_error": 4.737044090319387e-13,
+  "median_seconds_per_two_state_query": 3.993118012624775e-06,
+  "timing_range_seconds_per_two_state_query": [
+    3.9403229808689365e-06,
+    4.0603229799163265e-06
+  ],
+  "phase_mask_floor": 0.05,
+  "illustrative_thresholds_not_researcher_requirements": {
+    "phase_target_degrees": 180,
+    "tolerance_degrees": 15,
+    "min_magnitude": 0.8
+  },
+  "illustrative_feasible_designs": 378
+}

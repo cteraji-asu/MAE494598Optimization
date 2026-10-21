@@ -1,0 +1,107 @@
+{
+  "status": "Previously inspected primary blocked cohort, diagnostic only. Not the new final holdout.",
+  "models": [
+    {
+      "arm": "soft",
+      "seed": 0,
+      "historical_blocked_decisions": {
+        "tp": 0,
+        "fn": 10,
+        "tn": 150,
+        "fp": 0,
+        "phase_masked_predictions": 0,
+        "actual_feasible": 10,
+        "actual_infeasible": 150,
+        "sensitivity": 0.0,
+        "specificity": 1.0,
+        "false_feasible_rate": 0.0,
+        "false_infeasible_rate": 1.0
+      }
+    },
+    {
+      "arm": "hard",
+      "seed": 0,
+      "historical_blocked_decisions": {
+        "tp": 0,
+        "fn": 10,
+        "tn": 150,
+        "fp": 0,
+        "phase_masked_predictions": 0,
+        "actual_feasible": 10,
+        "actual_infeasible": 150,
+        "sensitivity": 0.0,
+        "specificity": 1.0,
+        "false_feasible_rate": 0.0,
+        "false_infeasible_rate": 1.0
+      }
+    },
+    {
+      "arm": "soft",
+      "seed": 1,
+      "historical_blocked_decisions": {
+        "tp": 0,
+        "fn": 10,
+        "tn": 150,
+        "fp": 0,
+        "phase_masked_predictions": 0,
+        "actual_feasible": 10,
+        "actual_infeasible": 150,
+        "sensitivity": 0.0,
+        "specificity": 1.0,
+        "false_feasible_rate": 0.0,
+        "false_infeasible_rate": 1.0
+      }
+    },
+    {
+      "arm": "hard",
+      "seed": 1,
+      "historical_blocked_decisions": {
+        "tp": 0,
+        "fn": 10,
+        "tn": 150,
+        "fp": 0,
+        "phase_masked_predictions": 0,
+        "actual_feasible": 10,
+        "actual_infeasible": 150,
+        "sensitivity": 0.0,
+        "specificity": 1.0,
+        "false_feasible_rate": 0.0,
+        "false_infeasible_rate": 1.0
+      }
+    },
+    {
+      "arm": "soft",
+      "seed": 2,
+      "historical_blocked_decisions": {
+        "tp": 0,
+        "fn": 10,
+        "tn": 150,
+        "fp": 0,
+        "phase_masked_predictions": 0,
+        "actual_feasible": 10,
+        "actual_infeasible": 150,
+        "sensitivity": 0.0,
+        "specificity": 1.0,
+        "false_feasible_rate": 0.0,
+        "false_infeasible_rate": 1.0
+      }
+    },
+    {
+      "arm": "hard",
+      "seed": 2,
+      "historical_blocked_decisions": {
+        "tp": 0,
+        "fn": 10,
+        "tn": 150,
+        "fp": 0,
+        "phase_masked_predictions": 0,
+        "actual_feasible": 10,
+        "actual_infeasible": 150,
+        "sensitivity": 0.0,
+        "specificity": 1.0,
+        "false_feasible_rate": 0.0,
+        "false_infeasible_rate": 1.0
+      }
+    }
+  ]
+}

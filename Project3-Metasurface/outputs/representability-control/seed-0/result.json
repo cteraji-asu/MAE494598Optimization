@@ -1,0 +1,125 @@
+{
+  "seed": 0,
+  "selected_validation": {
+    "R_rms": 0.013269759492962684,
+    "R_p95": 0.03303148331465565,
+    "blocked_R_p95": 0.034938513133722315,
+    "median_field_relative_L2": 0.0033451473458113792,
+    "blocked_median_field_relative_L2": 0.0034975418426114835,
+    "clear_designs": 148,
+    "ambiguous_designs": 12,
+    "clear_decisions": {
+      "tp": 11,
+      "fn": 0,
+      "tn": 137,
+      "fp": 0,
+      "phase_masked_predictions": 0,
+      "actual_feasible": 11,
+      "actual_infeasible": 137,
+      "sensitivity": 1.0,
+      "specificity": 1.0,
+      "false_feasible_rate": 0.0,
+      "false_infeasible_rate": 0.0
+    },
+    "numerical_success": false
+  },
+  "decisions": [
+    {
+      "split": "validation",
+      "total": 160,
+      "ambiguous": 12,
+      "all_decisions": {
+        "tp": 13,
+        "fn": 2,
+        "tn": 144,
+        "fp": 1,
+        "phase_masked_predictions": 0,
+        "actual_feasible": 15,
+        "actual_infeasible": 145,
+        "sensitivity": 0.8666666666666667,
+        "specificity": 0.993103448275862,
+        "false_feasible_rate": 0.006896551724137931,
+        "false_infeasible_rate": 0.13333333333333333
+      },
+      "clear_decisions": {
+        "tp": 11,
+        "fn": 0,
+        "tn": 137,
+        "fp": 0,
+        "phase_masked_predictions": 0,
+        "actual_feasible": 11,
+        "actual_infeasible": 137,
+        "sensitivity": 1.0,
+        "specificity": 1.0,
+        "false_feasible_rate": 0.0,
+        "false_infeasible_rate": 0.0
+      }
+    },
+    {
+      "split": "test_offgrid",
+      "total": 256,
+      "ambiguous": 3,
+      "all_decisions": {
+        "tp": 17,
+        "fn": 1,
+        "tn": 238,
+        "fp": 0,
+        "phase_masked_predictions": 0,
+        "actual_feasible": 18,
+        "actual_infeasible": 238,
+        "sensitivity": 0.9444444444444444,
+        "specificity": 1.0,
+        "false_feasible_rate": 0.0,
+        "false_infeasible_rate": 0.05555555555555555
+      },
+      "clear_decisions": {
+        "tp": 17,
+        "fn": 0,
+        "tn": 236,
+        "fp": 0,
+        "phase_masked_predictions": 0,
+        "actual_feasible": 17,
+        "actual_infeasible": 236,
+        "sensitivity": 1.0,
+        "specificity": 1.0,
+        "false_feasible_rate": 0.0,
+        "false_infeasible_rate": 0.0
+      }
+    },
+    {
+      "split": "test_blocked",
+      "total": 256,
+      "ambiguous": 37,
+      "all_decisions": {
+        "tp": 12,
+        "fn": 5,
+        "tn": 231,
+        "fp": 8,
+        "phase_masked_predictions": 0,
+        "actual_feasible": 17,
+        "actual_infeasible": 239,
+        "sensitivity": 0.7058823529411765,
+        "specificity": 0.9665271966527197,
+        "false_feasible_rate": 0.03347280334728033,
+        "false_infeasible_rate": 0.29411764705882354
+      },
+      "clear_decisions": {
+        "tp": 6,
+        "fn": 0,
+        "tn": 211,
+        "fp": 2,
+        "phase_masked_predictions": 0,
+        "actual_feasible": 6,
+        "actual_infeasible": 213,
+        "sensitivity": 1.0,
+        "specificity": 0.9906103286384976,
+        "false_feasible_rate": 0.009389671361502348,
+        "false_infeasible_rate": 0.0
+      }
+    }
+  ],
+  "additional_evaluations": 1200,
+  "additional_seconds": 18.54288809999707,
+  "selected_checkpoint_evaluations": 1195,
+  "strict_gate_not_met": "blocked validation R95 .0349385 exceeds frozen .03; no repeats"
+}

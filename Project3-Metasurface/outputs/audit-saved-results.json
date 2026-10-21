@@ -1,0 +1,135 @@
+{
+  "status": "pass",
+  "models": [
+    {
+      "weights": "outputs/gap-objective-diagnosis/gap-0.0000/physics/weights.json",
+      "states_checked": 768,
+      "maximum_R_disagreement": 1.1551655833636655e-14
+    },
+    {
+      "weights": "outputs/gap-objective-diagnosis/gap-0.0000/supervised/weights.json",
+      "states_checked": 768,
+      "maximum_R_disagreement": 1.218122824830914e-14
+    },
+    {
+      "weights": "outputs/gap-objective-diagnosis/gap-0.0135/physics/weights.json",
+      "states_checked": 768,
+      "maximum_R_disagreement": 1.1551655833636655e-14
+    },
+    {
+      "weights": "outputs/gap-objective-diagnosis/gap-0.0135/supervised/weights.json",
+      "states_checked": 768,
+      "maximum_R_disagreement": 1.3739009929736312e-14
+    },
+    {
+      "weights": "outputs/gap-objective-diagnosis/gap-0.0270/physics/weights.json",
+      "states_checked": 768,
+      "maximum_R_disagreement": 1.1551655833636655e-14
+    },
+    {
+      "weights": "outputs/gap-objective-diagnosis/gap-0.0270/supervised/weights.json",
+      "states_checked": 768,
+      "maximum_R_disagreement": 1.1551655833636655e-14
+    },
+    {
+      "weights": "outputs/hard-boundary-control/hard/pinn_seed-0_weights.json",
+      "states_checked": 792,
+      "maximum_R_disagreement": 1.4335667481275344e-14
+    },
+    {
+      "weights": "outputs/hard-boundary-control/hard/pinn_seed-1_weights.json",
+      "states_checked": 792,
+      "maximum_R_disagreement": 1.4335667481275344e-14
+    },
+    {
+      "weights": "outputs/hard-boundary-control/hard/pinn_seed-2_weights.json",
+      "states_checked": 792,
+      "maximum_R_disagreement": 1.4335667481275344e-14
+    },
+    {
+      "weights": "outputs/hard-boundary-control/soft/pinn_seed-0_weights.json",
+      "states_checked": 792,
+      "maximum_R_disagreement": 1.4335667481275344e-14
+    },
+    {
+      "weights": "outputs/hard-boundary-control/soft/pinn_seed-1_weights.json",
+      "states_checked": 792,
+      "maximum_R_disagreement": 1.4335667481275344e-14
+    },
+    {
+      "weights": "outputs/hard-boundary-control/soft/pinn_seed-2_weights.json",
+      "states_checked": 792,
+      "maximum_R_disagreement": 1.4335667481275344e-14
+    },
+    {
+      "weights": "outputs/neural-coverage-control/reallocated/pinn_seed-0_weights.json",
+      "states_checked": 960,
+      "maximum_R_disagreement": 1.539971784261214e-14
+    },
+    {
+      "weights": "outputs/neural-coverage-control/reallocated/pinn_seed-1_weights.json",
+      "states_checked": 960,
+      "maximum_R_disagreement": 1.539971784261214e-14
+    },
+    {
+      "weights": "outputs/neural-coverage-control/reallocated/pinn_seed-2_weights.json",
+      "states_checked": 960,
+      "maximum_R_disagreement": 1.539971784261214e-14
+    },
+    {
+      "weights": "outputs/optimizer-continuation-control/seed-0/adam/pinn_seed-0_weights.json",
+      "states_checked": 1056,
+      "maximum_R_disagreement": 1.251613362554516e-14
+    },
+    {
+      "weights": "outputs/optimizer-continuation-control/seed-0/lbfgs/pinn_seed-0_weights.json",
+      "states_checked": 1056,
+      "maximum_R_disagreement": 1.251613362554516e-14
+    },
+    {
+      "weights": "outputs/representability-control/seed-0/pinn_seed-0_weights.json",
+      "states_checked": 1344,
+      "maximum_R_disagreement": 1.4571545028198074e-14
+    },
+    {
+      "weights": "outputs/representability-control/seed-0/supervised_seed-0_weights.json",
+      "states_checked": 1344,
+      "maximum_R_disagreement": 1.5817208653956527e-14
+    },
+    {
+      "weights": "outputs/switched-surrogate/pinn_seed-0_weights.json",
+      "states_checked": 960,
+      "maximum_R_disagreement": 1.2211388735074252e-14
+    },
+    {
+      "weights": "outputs/switched-surrogate/pinn_seed-1_weights.json",
+      "states_checked": 960,
+      "maximum_R_disagreement": 1.2211388735074252e-14
+    },
+    {
+      "weights": "outputs/switched-surrogate/pinn_seed-2_weights.json",
+      "states_checked": 960,
+      "maximum_R_disagreement": 1.2211388735074252e-14
+    },
+    {
+      "weights": "outputs/switched-surrogate/supervised_seed-0_weights.json",
+      "states_checked": 960,
+      "maximum_R_disagreement": 1.2211388735074252e-14
+    },
+    {
+      "weights": "outputs/switched-surrogate/supervised_seed-1_weights.json",
+      "states_checked": 960,
+      "maximum_R_disagreement": 1.2211388735074252e-14
+    },
+    {
+      "weights": "outputs/switched-surrogate/supervised_seed-2_weights.json",
+      "states_checked": 960,
+      "maximum_R_disagreement": 1.2211388735074252e-14
+    }
+  ],
+  "state_cases": 22800,
+  "maximum_independent_R_or_error_disagreement": 1.5817208653956527e-14,
+  "new_joint_field_cases": 4608,
+  "maximum_independent_joint_field_disagreement": 3.469446951953614e-15,
+  "training": false
+}

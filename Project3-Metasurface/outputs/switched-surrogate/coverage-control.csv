@@ -1,0 +1,5 @@
+control,split,nodes,state_response_labels,reference_generation_seconds,tp,fn,tn,fp,phase_masked_predictions,actual_feasible,actual_infeasible,sensitivity,specificity,false_feasible_rate,false_infeasible_rate
+original_gap,test_offgrid,256,512,6.250001024454832e-05,21,0,203,0,0,21,203,1.0,1.0,0.0,0.0
+original_gap,test_blocked,256,512,6.250001024454832e-05,0,10,150,0,0,10,150,0.0,1.0,0.0,1.0
+redistributed_coverage,test_offgrid,256,512,2.3600005079060793e-05,21,0,203,0,0,21,203,1.0,1.0,0.0,0.0
+redistributed_coverage,test_blocked,256,512,2.3600005079060793e-05,8,2,150,0,0,10,150,0.8,1.0,0.0,0.2

@@ -1,0 +1,20 @@
+[
+  {
+    "width": 0.0,
+    "training_count": 256,
+    "minimum_train_evaluation_d_separation": 6.755428126725693e-06,
+    "exact_overlap": 0
+  },
+  {
+    "width": 0.0135,
+    "training_count": 248,
+    "minimum_train_evaluation_d_separation": 6.755428126725693e-06,
+    "exact_overlap": 0
+  },
+  {
+    "width": 0.027,
+    "training_count": 240,
+    "minimum_train_evaluation_d_separation": 2.032181805944333e-05,
+    "exact_overlap": 0
+  }
+]

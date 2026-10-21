@@ -1,0 +1,6 @@
+{
+  "original_source_sha256": "b390247af7630720bcbb9245cdb39dfec137ac33c92c04d2ddcb4984787ab136",
+  "revised_source_sha256": "32ac32ead1d538915a6280d1158ab020b2351fd69afb082426a10bc4c8cda87b",
+  "reason": "Cast a NumPy integer count to a Python integer for JSON output. No equations, inputs, thresholds or numerical calculations changed. The original scientific protocol and source remain preserved.",
+  "first_attempt": "First checkpoint CSV written; summary serialization failed. No training was performed."
+}

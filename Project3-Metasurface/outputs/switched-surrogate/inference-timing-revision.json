@@ -1,0 +1,8 @@
+{
+  "change": "Post-review R-only inference path omits unused spatial derivatives; no fitting or accuracy change",
+  "query_states_checked": 5760,
+  "value_outputs_bit_identical": true,
+  "frozen_training_source_sha256": "3e031577665f27d0f435c127cc745e75cc28ed332fb8dfda3b5a56fcefcae8e2",
+  "current_source_sha256": "e2da014ef68d4f309e6b7b55f5f4724448276eb2462d95cb0a61643be346e526",
+  "timings": "costs.csv uses corrected value-only R inference; break-even remains nonpositive against fastest conventional by mode"
+}

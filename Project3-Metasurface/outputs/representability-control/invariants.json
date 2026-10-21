@@ -1,0 +1,23 @@
+{
+  "same_covered_training_geometries": true,
+  "same_architecture_weight_shapes": true,
+  "same_normalization": "xi,d,state normalization in unchanged FieldNet",
+  "heldout_designs": 512,
+  "covered_validation_designs": 160,
+  "training_designs": 256,
+  "states_paired_per_geometry": true,
+  "spatial_label_grid_points": 17,
+  "label_vectors": 8704,
+  "validation_test_training_separation_d": 2e-05,
+  "budget": 1200,
+  "selected_evaluation": 1195,
+  "frozen_gate_failed": true,
+  "repeat_seeds_run": false,
+  "median_voltage_comparison": "Same 256 blocked geometries and both states; relative complex voltage L2 integrated over both physical segments; median over 512 state cases",
+  "protocol_sha256": "08c99fa6b686a05b1b2f0b8948476a7d42374ff188afd70de8fade6aafc09750",
+  "paired_state_cases_checked": 1344,
+  "exact_same_evaluation_state_keys": true,
+  "initializer_weights_sha256": "134ff8f775e791f1e3ee427e7ffbdd2adcd20c03b6a965a9e61b7c14f18fcae2",
+  "covered_pinn_weights_sha256": "4fa77c5b9845edf7b885e8f5b193c80ea5142710d547835dd9430f3ed110e1d4",
+  "selected_supervised_weights_sha256": "0929a36c89de2eeead77f51bda6eaba5d757a995c8569819bcf6a38442deb244"
+}

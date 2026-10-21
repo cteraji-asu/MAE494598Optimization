@@ -1,0 +1,8 @@
+{
+  "state_response_metrics_checked": 5760,
+  "selected_field_reference_rows_checked": 6192,
+  "max_numpy_vs_torch_predicted_R_disagreement": 2.3551386880256627e-15,
+  "max_independent_complex_R_error_metric_disagreement": 5.773159728050814e-15,
+  "max_independent_wave_field_reference_disagreement": 2.1390168887322673e-14,
+  "passed": true
+}

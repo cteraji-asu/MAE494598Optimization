@@ -1,0 +1,6 @@
+{
+  "training_seconds": "Fit wall time including validation_seconds, which is a subset. Do not add validation again.",
+  "reference_generation_seconds": "Outside the fit timer. Add once for timed fit-plus-reference cost.",
+  "historical_setup": "Full coding, setup and historical experimentation time is unmeasured. One-fit cost curves are lower bounds.",
+  "scope": "Signed residual identity explains output error transport and cancellation, not the training-failure mechanism."
+}

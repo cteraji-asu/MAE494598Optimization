@@ -1,0 +1,6 @@
+{
+  "protocol_sha256": "f8c14d206ec03329c374898ee049529e55e89773dbf93203111bcfcb1503b144",
+  "source_sha256": "9af56c04c6cb7e3b825071cb62e3c796b71751c450ae5e7e8de726051ba7f8a0",
+  "before_new_training_or_reference_generation": true,
+  "retained_evaluation_cohorts": "Historical, already inspected"
+}

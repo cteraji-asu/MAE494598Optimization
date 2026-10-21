@@ -1,0 +1,98 @@
+[
+  {
+    "split": "validation",
+    "all_decisions": {
+      "tp": 8,
+      "fn": 7,
+      "tn": 145,
+      "fp": 0,
+      "phase_masked_predictions": 0,
+      "actual_feasible": 15,
+      "actual_infeasible": 145,
+      "sensitivity": 0.5333333333333333,
+      "specificity": 1.0,
+      "false_feasible_rate": 0.0,
+      "false_infeasible_rate": 0.4666666666666667
+    },
+    "clear_decisions": {
+      "tp": 8,
+      "fn": 3,
+      "tn": 137,
+      "fp": 0,
+      "phase_masked_predictions": 0,
+      "actual_feasible": 11,
+      "actual_infeasible": 137,
+      "sensitivity": 0.7272727272727273,
+      "specificity": 1.0,
+      "false_feasible_rate": 0.0,
+      "false_infeasible_rate": 0.2727272727272727
+    },
+    "ambiguous": 12,
+    "median_voltage_relative_L2": 0.03508867557207648,
+    "R_error_p95": 1.630849499145079
+  },
+  {
+    "split": "test_offgrid",
+    "all_decisions": {
+      "tp": 16,
+      "fn": 2,
+      "tn": 238,
+      "fp": 0,
+      "phase_masked_predictions": 0,
+      "actual_feasible": 18,
+      "actual_infeasible": 238,
+      "sensitivity": 0.8888888888888888,
+      "specificity": 1.0,
+      "false_feasible_rate": 0.0,
+      "false_infeasible_rate": 0.1111111111111111
+    },
+    "clear_decisions": {
+      "tp": 16,
+      "fn": 1,
+      "tn": 236,
+      "fp": 0,
+      "phase_masked_predictions": 0,
+      "actual_feasible": 17,
+      "actual_infeasible": 236,
+      "sensitivity": 0.9411764705882353,
+      "specificity": 1.0,
+      "false_feasible_rate": 0.0,
+      "false_infeasible_rate": 0.058823529411764705
+    },
+    "ambiguous": 3,
+    "median_voltage_relative_L2": 0.034844591724377635,
+    "R_error_p95": 0.6001476981328631
+  },
+  {
+    "split": "test_blocked",
+    "all_decisions": {
+      "tp": 0,
+      "fn": 17,
+      "tn": 239,
+      "fp": 0,
+      "phase_masked_predictions": 0,
+      "actual_feasible": 17,
+      "actual_infeasible": 239,
+      "sensitivity": 0.0,
+      "specificity": 1.0,
+      "false_feasible_rate": 0.0,
+      "false_infeasible_rate": 1.0
+    },
+    "clear_decisions": {
+      "tp": 0,
+      "fn": 6,
+      "tn": 213,
+      "fp": 0,
+      "phase_masked_predictions": 0,
+      "actual_feasible": 6,
+      "actual_infeasible": 213,
+      "sensitivity": 0.0,
+      "specificity": 1.0,
+      "false_feasible_rate": 0.0,
+      "false_infeasible_rate": 1.0
+    },
+    "ambiguous": 37,
+    "median_voltage_relative_L2": 0.4459219771425025,
+    "R_error_p95": 1.6321558882197043
+  }
+]

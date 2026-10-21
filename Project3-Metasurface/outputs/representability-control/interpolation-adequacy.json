@@ -1,0 +1,17 @@
+{
+  "blocked_R_p95": 0.010550385082232732,
+  "clear_decisions": {
+    "tp": 11,
+    "fn": 0,
+    "tn": 137,
+    "fp": 0,
+    "phase_masked_predictions": 0,
+    "actual_feasible": 11,
+    "actual_infeasible": 137,
+    "sensitivity": 1.0,
+    "specificity": 1.0,
+    "false_feasible_rate": 0.0,
+    "false_infeasible_rate": 0.0
+  },
+  "adequate": true
+}

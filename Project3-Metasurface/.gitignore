@@ -1,0 +1,10 @@
+__pycache__/
+*.py[cod]
+.venv*/
+node_modules/
+.env*
+*.m4a
+*.mp4
+*.gif
+*.pptx
+*.zip

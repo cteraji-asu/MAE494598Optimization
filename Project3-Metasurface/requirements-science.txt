@@ -1,0 +1,5 @@
+# Existing CPU scientific environment. Installation is an explicit user action.
+--extra-index-url https://download.pytorch.org/whl/cpu
+torch==2.14.1+cpu
+numpy==2.5.4
+Pillow==12.3.0

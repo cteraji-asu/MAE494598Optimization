@@ -1,0 +1,2 @@
+# Core scientific project. Audio transcription is an optional separate workflow.
+-r requirements-science.txt

@@ -1,0 +1,48 @@
+{
+  "protocol_sha256": "f72c20160f80341bb93cc8f849450798c49a39b22ff059e224c6aca37320e877",
+  "final_holdout_reference_accessed": false,
+  "selected": [
+    {
+      "arm": "soft",
+      "seed": 0,
+      "path": "soft/pinn_seed-0_weights.json",
+      "sha256": "7bc5bd264a69977b5a68968422b59545cfb73ef549b9a49507a1376d5b1da67c",
+      "selected_step": 4000
+    },
+    {
+      "arm": "hard",
+      "seed": 0,
+      "path": "hard/pinn_seed-0_weights.json",
+      "sha256": "e55b05feb9175d6d05075b1364a33908c982c348c84610f15758c3c7aa659606",
+      "selected_step": 4000
+    },
+    {
+      "arm": "soft",
+      "seed": 1,
+      "path": "soft/pinn_seed-1_weights.json",
+      "sha256": "8bf95f1dfcb6f5b850139f0b469f0797520850f2795dc2f0904457fa60768197",
+      "selected_step": 4000
+    },
+    {
+      "arm": "hard",
+      "seed": 1,
+      "path": "hard/pinn_seed-1_weights.json",
+      "sha256": "1de9899cdccdf7cce9d4cb57cde98630c7affeed8bd01f6af730bab553895dcd",
+      "selected_step": 4000
+    },
+    {
+      "arm": "soft",
+      "seed": 2,
+      "path": "soft/pinn_seed-2_weights.json",
+      "sha256": "feee5b2ed40624956eab36a30b6d5e90f7b3df31fc8df538312a3e6113d06c0e",
+      "selected_step": 4000
+    },
+    {
+      "arm": "hard",
+      "seed": 2,
+      "path": "hard/pinn_seed-2_weights.json",
+      "sha256": "bc4dd1bb4b90729d5fc9b28d4454057aa17ad82fa34b27765d30fe8fcea91fd7",
+      "selected_step": 4000
+    }
+  ]
+}
