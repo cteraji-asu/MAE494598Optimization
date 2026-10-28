@@ -1,20 +1,20 @@
-# Core completion checklist, 21 October 2026
+# Project 3 completion checklist, audited 28 October 2026
 
-- [x] Single Markdown technical report with the six required sections.
-- [x] Complete synthetic finite-switch formulation, baseline checks and cost.
-- [x] P1-P5 plots/results retained beneath outputs/, without a presentation dependency.
-- [x] Increasing controlled sampling-support knob, matched objective experiment and explicit bounded Path B diagnosis.
-- [x] All six blocked-cohort failures and three supervised off-grid passes stated separately.
-- [x] Worked conventional reference and component-by-component PINN error arithmetic.
-- [x] Frozen-protocol errata without changes to frozen hashes.
-- [x] Core dependencies, read-only verification and isolated reproduction preparation.
-- [x] Fresh41-test suite:40pass/1optional skip; separate Pillow test passes.
-- [x] Curated public-safe local proposal; no media/cache/secret/raw-interview upload.
-- [ ] Team outreach/reservation/identity evidence incorporated where permitted.
-- [ ] Researcher fact-check reply received, or pending status explicitly retained.
-- [ ] Public interview naming/quotation/unpublished-content permission confirmed before adding that material.
-- [ ] Memo content/recipient approved and memo actually sent; response included only if received.
-- [ ] Exact GitHub draft approved, remote rechecked, then authorized branch/PR publication.
-- [ ] Team submits repository URL on Canvas. October28 is reported; exact deadline time remains unverified.
+- [x] Single six-section Markdown report with runnable code.
+- [x] Exact approved brief/audio copies, attribution, original source paths and explicit authorized public links.
+- [x] Researcher approval recorded as user/team-confirmed on October 28, with no fabricated written reply or results endorsement.
+- [x] Full synthetic formulation, conventional checks, explicit worked reference and PINN-error arithmetic.
+- [x] P1–P5 evidence, controlled sampling-support knob, matched objective and optimizer contrasts.
+- [x] All blocked failures, supervised off-grid passes, false promotions and metric/cohort differences retained.
+- [x] 45-test suite: 44 pass/1 optional skip; optional Pillow case passes separately.
+- [x] Independent audit covers 22,800 output/error cases and all 4,608 new joint-field cases.
+- [x] Five isolated freeze-only reproduction commands pass without training; frozen originals unchanged.
+- [x] Project Git attributes preserve exact source/protocol bytes across Windows checkout.
+- [x] Addressed researcher memo synchronized with report, still marked unsent.
+- [x] Updated light rehearsal source, 40-beat exports, 80-video decode, 40-page PDF match and full browser/native playback checks finalized; see PRESENTATION.md.
+- [ ] Team verifies contact route, participation-sheet reservation, interview preparation and actual contributions.
+- [ ] Team approves memo delivery to a verified recipient and records sending/any response.
+- [ ] Team confirms Friday October 30 rehearsal time and practices its spoken defense.
+- [ ] Team submits repository URL on Canvas when appropriate. No Canvas submission is performed here.
 
-Synthetic/HFSS transfer is a claim limitation, not an invented course completion gate. The current numerical evidence supports a bounded negative Path B diagnosis. It does not guarantee100% or a successful Path C remedy. Detailed evidence is in rubric-crosswalk.md and requirement-audit-2026-10-21.md. Slides remain deferred and unchanged.
+The core package was published at 5720474. This audit prepares a scoped follow-up, preserving unrelated teammate files. Path B is supported with bounded causal contrasts; a unique finer training mechanism and successful Path C remedy are not claimed. Hardware validation limits hardware claims rather than disqualifying the permitted synthetic case. See rubric-crosswalk.md and rubric-audit-2026-10-28.md.

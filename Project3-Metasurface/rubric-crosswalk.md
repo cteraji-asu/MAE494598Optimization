@@ -1,18 +1,17 @@
-# Official requirements and current evidence
+# Official rubric and current evidence
 
-Core report: report.md. Paths below are project-relative. The assignment permits a synthetic case and a careful negative Path B result. Slides are deferred.
+The [official assignment](https://designinformaticslab.github.io/DesignOptimization2025/project3.html) has eight weighted categories. This crosswalk covers the whole repository, including the explicitly authorized interview evidence. [Detailed audit](rubric-audit-2026-10-28.md). Current technical findings are in the single [report](report.md); [presentation status](PRESENTATION.md) identifies the recommended rehearsal edition.
 
-| Criterion | Points | Concrete evidence | Status and remaining limit |
+| Criterion | Points | Evidence | Qualification |
 |---|---:|---|---|
-| Outreach/interview | 10 | Report outreach section; original briefing and local timestamped evidence | Interview exists; contact/reservation/identity/permission records await incorporation from the team. |
-| Researcher problem brief | 15 | Privately retained brief and evidence table; sources/Post_Interview_Briefing.md is excluded from the public proposal | Team confidence is provisional. Researcher has not replied; no fact-check approval is claimed. |
-| Minimal case | 15 | code/switched_line.py; full domain/equations/interface/short in report | Finite-switch synthetic mechanism retained. Hardware validation limits hardware claims, not coursework eligibility. |
-| P1-P5 | 20 | outputs/figures-switch; primary timings; new gap and loss traces; frozen results | Controlled support-width knob and relative L2 plot now explicit; time axis is inapplicable to harmonic fields. No positive break-even. |
-| Path B findings | 25 | Matched one-seed optimizer control; six matched gap/objective continuations; residual and exact-boundary controls | Conditional optimizer/objective/support effects demonstrated. All six new blocked gates fail; three supervised off-grid gates pass. Unique finer original mechanism remains unresolved. |
-| Recommendation memo | 5 | researcher-memo.md, embedded in report | Actionable one-page-length draft; not sent. Sending requires approval and verified recipient. |
-| Reproducibility | 5 | requirements-science.txt; prepare_reproduction.py; audit_saved_results.py; source/selection hashes and ERRATUM.md notes | Fresh 41-test suite:40pass/1optional Pillow skip; Pillow separately passes. Saved results independently checked. |
-| Clarity / GitHub math | 5 | Single Markdown report, explicit formulas and worked arithmetic; core figures beneath outputs | Local syntax/TeX checks and public-safe draft review; actual hosted rendering is not claimed before publication. |
-| Optional Path C | +10 | All failed validation and blocked gate records | No successful remedy or bonus claim. |
-| Publication/submission | — | Exact curated draft and file manifest outside original checkout | Public repo confirmed; no push, PR or Canvas submission. Approval and public consent remain separate. |
+| Outreach/interview | 10 | [Brief/audio provenance](sources/interview/README.md), report section 1 | Team must verify its real contact/reservation/preparation record. Credited brief authors are not invented interview attendees. |
+| Researcher problem brief | 15 | [Approved team brief](sources/interview/Post_Interview_Briefing.md), report section 2 | Researcher approval is user/team-confirmed October 28. It does not endorse our model or results. |
+| Minimal case | 15 | Complete line/interface/short formulation, justified synthetic reduction, worked reference | Restricted one-frequency analogue; hardware transfer is not validated. |
+| P1–P5 | 20 | Baseline convergence/time, separate losses, gap-width L2, spatial error/DFT, train/inference/hardware/cost | Controlled support width is the P3 knob; gain G is non-monotone and separate. No positive break-even. |
+| Path B findings | 25 | One matched optimizer pair and six matched gap/objective continuations; retained negative controls | Conditional optimizer/objective/support effects. All 6 blocked gates fail; 3 supervised off-grid gates pass. No unique finer mechanism or successful remedy. |
+| Recommendation memo | 5 | [Addressed memo](researcher-memo.md), synchronized in report | Unsent. Delivery and any actual response require the team's real communication record. |
+| Reproducibility | 5 | 45 tests, saved-weight/wave audit, five isolated freeze-only checks, exact-byte Git attributes | 44 passed/1 optional Pillow skip; Pillow separately passed. No fit rerun or altered frozen results. |
+| Presentation and clarity | 5 | Current light rehearsal source/export, math checks and source-linked report | Teacher rehearsal/live Q&A remain human tasks; old 37-beat deck is superseded. |
+| Optional Path C | +10 | All failed gates retained | No bonus claim. |
 
-Total rubric weight100, optional bonus10, maximum110. No 100% guarantee or unsupported numeric grade estimate. See report.md and the frozen protocols for evidence; human records remain pending. Original protocols remain unchanged; ERRATUM.md corrects inherited prose.
+The base weights total 100; maximum with the optional bonus is 110. No guaranteed grade is stated. Public report, memo and presentation distinguish measured synthetic results from interview/team reports and unresolved hardware transfer.

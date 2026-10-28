@@ -1,0 +1,298 @@
+{
+  "status": "pass",
+  "framework": "Official Manim Slides 5.7 RevealJS export",
+  "cold_open": "file URL",
+  "external_requests": [],
+  "script_errors": [],
+  "segments": [
+    {
+      "segment": 0,
+      "hold_ms": 15000,
+      "frame_sha256": "825378ba5f4cbe1954eeb257784b1443d22dd89512dffff797fbe5baf5aa9b21",
+      "controls": false,
+      "ended": true
+    },
+    {
+      "segment": 1,
+      "hold_ms": 1200,
+      "frame_sha256": "d3c92c5413710a8126b1d3d27282be63b09537160b89db8677be8d424f7b51e8",
+      "controls": false,
+      "ended": true
+    },
+    {
+      "segment": 2,
+      "hold_ms": 1200,
+      "frame_sha256": "a83ff704fabba6f302d7db9b1b0ab214973c93956f9fd36406c74ab013dab63f",
+      "controls": false,
+      "ended": true
+    },
+    {
+      "segment": 3,
+      "hold_ms": 1200,
+      "frame_sha256": "3a6003c06c77fcf9589955823bbef441bfa947d39c16c85d5a057dfe9d52941b",
+      "controls": false,
+      "ended": true
+    },
+    {
+      "segment": 4,
+      "hold_ms": 1200,
+      "frame_sha256": "03f4da52a733cf9493576569b47e6976fe1ecb2cf6036da828a8e16d922b5394",
+      "controls": false,
+      "ended": true
+    },
+    {
+      "segment": 5,
+      "hold_ms": 1200,
+      "frame_sha256": "66588192ade680c7badc149644666618f1d25a07a821fa09c7a46e405f95be08",
+      "controls": false,
+      "ended": true
+    },
+    {
+      "segment": 6,
+      "hold_ms": 1200,
+      "frame_sha256": "0e754bf109b04dfec15eec1b3154ab5c13a63745a25dfd28604d252a49dc35c5",
+      "controls": false,
+      "ended": true
+    },
+    {
+      "segment": 7,
+      "hold_ms": 1200,
+      "frame_sha256": "3efc9239bffa43c9670ff0dcb9f4400704ec888b5c7a37c913c35d1d71e4e611",
+      "controls": false,
+      "ended": true
+    },
+    {
+      "segment": 8,
+      "hold_ms": 1200,
+      "frame_sha256": "a32b3fe3714450e5951078f6de4548f8bcdcedfa8f411fbdbe2fb51c350eecbb",
+      "controls": false,
+      "ended": true
+    },
+    {
+      "segment": 9,
+      "hold_ms": 1200,
+      "frame_sha256": "69fb73cd51befc856dba1d6320ba421c0d12e7c0ba1a96991a9b502b102b041f",
+      "controls": false,
+      "ended": true
+    },
+    {
+      "segment": 10,
+      "hold_ms": 1200,
+      "frame_sha256": "5e9fbf7e397e18b635792dd31b04176828cfa9bb30115ee886eead637cfbcd79",
+      "controls": false,
+      "ended": true
+    },
+    {
+      "segment": 11,
+      "hold_ms": 1200,
+      "frame_sha256": "05ae8b74b92fca5c99a158de58ca885e8d12b3f406c94670f141385431f95569",
+      "controls": false,
+      "ended": true
+    },
+    {
+      "segment": 12,
+      "hold_ms": 1200,
+      "frame_sha256": "d7c5d9c1f45855dbbda52b3b9b8e608394a2aa6836390473d55eaff9818202fc",
+      "controls": false,
+      "ended": true
+    },
+    {
+      "segment": 13,
+      "hold_ms": 1200,
+      "frame_sha256": "b18e72392a921e8ebd1f0850fc6466f3e97f53bd54097de970e52aaef8211a88",
+      "controls": false,
+      "ended": true
+    },
+    {
+      "segment": 14,
+      "hold_ms": 1200,
+      "frame_sha256": "ec6922891dac296ae5a01b755d2b78683fc72d56926e173db36ef4c9be80254e",
+      "controls": false,
+      "ended": true
+    },
+    {
+      "segment": 15,
+      "hold_ms": 1200,
+      "frame_sha256": "f6f21919cc97f4cc24c9d4b00b2c33311bf7ecf0714e04897232de876a6adac3",
+      "controls": false,
+      "ended": true
+    },
+    {
+      "segment": 16,
+      "hold_ms": 1200,
+      "frame_sha256": "5cdb5415e1ea7f6bde3f4146358642f2b9bd64bd1fbfda5908a1d9640a0e3c68",
+      "controls": false,
+      "ended": true
+    },
+    {
+      "segment": 17,
+      "hold_ms": 1200,
+      "frame_sha256": "026d61d8c51901b87f772cf13dce7e25f1f0ac24d76348995471b90a2fb85a2b",
+      "controls": false,
+      "ended": true
+    },
+    {
+      "segment": 18,
+      "hold_ms": 1200,
+      "frame_sha256": "fe9c43f976abd567d38c9caa10143463bd9bd4f89391fc14a94fc0e160e630b4",
+      "controls": false,
+      "ended": true
+    },
+    {
+      "segment": 19,
+      "hold_ms": 1200,
+      "frame_sha256": "1b8a5d6551902506de36c876db607cb9b81d34cbb683c73cc427e3c378b50e65",
+      "controls": false,
+      "ended": true
+    },
+    {
+      "segment": 20,
+      "hold_ms": 1200,
+      "frame_sha256": "b47c6c0641fb3b0180cabf342c9787c47337ba9e11646aafe8a3ac5991a35592",
+      "controls": false,
+      "ended": true
+    },
+    {
+      "segment": 21,
+      "hold_ms": 1200,
+      "frame_sha256": "34f5d3d44bb22c78729c8d0530aa22cee7b9e2391ac37b93a24e7a97883a9056",
+      "controls": false,
+      "ended": true
+    },
+    {
+      "segment": 22,
+      "hold_ms": 1200,
+      "frame_sha256": "a8bac3ad23d4e22278f1755d3cc198e832fb0298e454abc5b986b505f006bcb9",
+      "controls": false,
+      "ended": true
+    },
+    {
+      "segment": 23,
+      "hold_ms": 1200,
+      "frame_sha256": "01529fba24ff495d1fe165384c4d319c65677f94fc6c362103acc248e1521171",
+      "controls": false,
+      "ended": true
+    },
+    {
+      "segment": 24,
+      "hold_ms": 1200,
+      "frame_sha256": "8b10215cac6abc7be5843c5af92d33e0048bee3af56bad010f343f12f1f9582b",
+      "controls": false,
+      "ended": true
+    },
+    {
+      "segment": 25,
+      "hold_ms": 1200,
+      "frame_sha256": "abc9e795f43e207ac09afaee96d971b05f724f90f34724b410a2867f3ecbc16e",
+      "controls": false,
+      "ended": true
+    },
+    {
+      "segment": 26,
+      "hold_ms": 1200,
+      "frame_sha256": "de35b64c87fca51d8b4721bf19f6ebbcd19e501ac4321fd4120ddbd8a453019f",
+      "controls": false,
+      "ended": true
+    },
+    {
+      "segment": 27,
+      "hold_ms": 1200,
+      "frame_sha256": "6060952f5f4d56f9a25f6144ca8b734dd75d3495707c6ff25f6209929b8e291a",
+      "controls": false,
+      "ended": true
+    },
+    {
+      "segment": 28,
+      "hold_ms": 1200,
+      "frame_sha256": "88b2e4954d475bfc61333f819a0db9cf81dd21a5550b037945100e5a5537b0e1",
+      "controls": false,
+      "ended": true
+    },
+    {
+      "segment": 29,
+      "hold_ms": 1200,
+      "frame_sha256": "e8e23686956eab89332325b6d80acac831d4c4c222c1b0c01d18aac07e54e501",
+      "controls": false,
+      "ended": true
+    },
+    {
+      "segment": 30,
+      "hold_ms": 1200,
+      "frame_sha256": "1b7dd0f447e3c6952377921052a0404402a7188a53233b48569d289849634c7f",
+      "controls": false,
+      "ended": true
+    },
+    {
+      "segment": 31,
+      "hold_ms": 1200,
+      "frame_sha256": "597e55fac146f013bbe11edd1278a6eaeae4997b6fe3f265e5b3491975296ffa",
+      "controls": false,
+      "ended": true
+    },
+    {
+      "segment": 32,
+      "hold_ms": 1200,
+      "frame_sha256": "7086a95a02c39e74011d33f48c5ca38358c2a2c7a75b8278db2b2c1b8ab54c0d",
+      "controls": false,
+      "ended": true
+    },
+    {
+      "segment": 33,
+      "hold_ms": 1200,
+      "frame_sha256": "92b7db425d4a28ff228834aca957e958adba557dfa57afb0f5c93d6409b4076f",
+      "controls": false,
+      "ended": true
+    },
+    {
+      "segment": 34,
+      "hold_ms": 1200,
+      "frame_sha256": "88f8ca96918db2d3f624c2b652025264b6b0a41f9eea93faf4196736af3d9a49",
+      "controls": false,
+      "ended": true
+    },
+    {
+      "segment": 35,
+      "hold_ms": 1200,
+      "frame_sha256": "93d5ef4abeaa283d8a6515a50c6c74054627299d55d7d17b43b7e5e27fd784f8",
+      "controls": false,
+      "ended": true
+    },
+    {
+      "segment": 36,
+      "hold_ms": 1200,
+      "frame_sha256": "55c27cde7194a16755736953cd84ed86469428da99cd1ef4d2298e9dcb1f3db7",
+      "controls": false,
+      "ended": true
+    },
+    {
+      "segment": 37,
+      "hold_ms": 1200,
+      "frame_sha256": "639763b2f85f97ef7c77a6f05fb67f25b12cb5a27b197b016eba029677e163d1",
+      "controls": false,
+      "ended": true
+    },
+    {
+      "segment": 38,
+      "hold_ms": 1200,
+      "frame_sha256": "f72eefa9fbc66b77d334b3bbe16b0387d4ae4c19a0feb1e15e50023cf962d076",
+      "controls": false,
+      "ended": true
+    },
+    {
+      "segment": 39,
+      "hold_ms": 15000,
+      "frame_sha256": "9307e9b3e389c30b7b36bca6937d94fdaff9c794c98a89866d90ee71632b0d7d",
+      "controls": false,
+      "ended": true
+    }
+  ],
+  "previous": true,
+  "rapid_next": true,
+  "replay": true,
+  "pause_resume": true,
+  "chrome": {
+    "controlArrows": "none",
+    "videoControls": false
+  },
+  "scope": "Actual Chromium playback. R uses the documented Reveal key-binding API. Native reverse is separately verified."
+}

@@ -1,0 +1,12 @@
+{
+  "status": "pass",
+  "scope": "Visual inspection of all40 final keyframes, representative transition contact sheets including all new beats, and full-size new-study frames. Automated checks decode every forward/reverse frame; this is not a claim of human inspection of every frame.",
+  "new_beats": [
+    32,
+    33,
+    34
+  ],
+  "light_background": "#FAFAF7",
+  "issues_found": 0,
+  "legacy_37_beat_timing_preserved": true
+}

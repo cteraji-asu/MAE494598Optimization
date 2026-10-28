@@ -1,0 +1,9 @@
+{
+  "html": "presentation\\rehearsal-2026-10-30-light\\MAE494-Project3-Light-Mode.html",
+  "bytes": 9804035,
+  "sha256": "b082c2f60ebf6b26a3c84bc0ac9a2e9fbe1f954146931390030602f1711ef0c5",
+  "segments": 40,
+  "native_media_paths": "relative to native working directory",
+  "framework": "Official Manim Slides 5.7.0 converter and player",
+  "replay_extension": "Reveal.addKeyBinding only"
+}

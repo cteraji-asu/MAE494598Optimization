@@ -1,0 +1,364 @@
+{
+  "status": "pass",
+  "source_asset_relocation": "scene-data input moved to identical packaged bytes; no rendered content changes",
+  "files": [
+    {
+      "path": "presentation/rehearsal-2026-10-30-light/beat-manifest.json",
+      "bytes": 35504,
+      "sha256": "e9585dd3b4245cf6db424def56cab91d18c610214d741739cd97ae53fe00181d"
+    },
+    {
+      "path": "presentation/rehearsal-2026-10-30-light/browser-review/browser-runtime-validation.json",
+      "bytes": 8135,
+      "sha256": "c32ab8a7ef902f2bb8a6ded7edfc634aa5bfd296a795cc4c0e9945c8bff7d36d"
+    },
+    {
+      "path": "presentation/rehearsal-2026-10-30-light/controlled-diagnosis-data.json",
+      "bytes": 825,
+      "sha256": "6b9a7aebfb012e865be423074c8b6996d825e0e146aa18b84e335485153eccd7"
+    },
+    {
+      "path": "presentation/rehearsal-2026-10-30-light/export-manifest.json",
+      "bytes": 397,
+      "sha256": "c2df5834e4c80826a40678f77abd19429a25f15549128803952b9a975447c118"
+    },
+    {
+      "path": "presentation/rehearsal-2026-10-30-light/framework-assets/assets.json",
+      "bytes": 1480,
+      "sha256": "232eac762e372292ce80561851336c8c81efdba64279354d9e2b94607368c92d"
+    },
+    {
+      "path": "presentation/rehearsal-2026-10-30-light/framework-assets/black.css",
+      "bytes": 575282,
+      "sha256": "c29c9689e8f3b277aa66edc01ed2ef97981a6768b05ad750582eac068d9705c3"
+    },
+    {
+      "path": "presentation/rehearsal-2026-10-30-light/framework-assets/notes.js",
+      "bytes": 67832,
+      "sha256": "946159680c70354c665dbf4f3c9023a737d8b14b48c6c9af452553717a046729"
+    },
+    {
+      "path": "presentation/rehearsal-2026-10-30-light/framework-assets/reveal.css",
+      "bytes": 53748,
+      "sha256": "64e6203ee2048665c9f49c368f345fb3d7f936c404934162c70369a7682f388f"
+    },
+    {
+      "path": "presentation/rehearsal-2026-10-30-light/framework-assets/reveal.js",
+      "bytes": 117343,
+      "sha256": "3fb84c30d2e610dd598843d75a123ef2c4dbc588847cda86cd8c7a61e18ddb6b"
+    },
+    {
+      "path": "presentation/rehearsal-2026-10-30-light/framework-assets/zenburn.css",
+      "bytes": 946,
+      "sha256": "e298a0f1c2de9dea4ace202ce7e60cbc3143ebf7eab42efe891a8885f392444c"
+    },
+    {
+      "path": "presentation/rehearsal-2026-10-30-light/keyframes/beat-00.png",
+      "bytes": 107477,
+      "sha256": "ca85af0c141578bc89ebc56e9ac8496c2412d9ba2362115f6776c1a5fa807ed5"
+    },
+    {
+      "path": "presentation/rehearsal-2026-10-30-light/keyframes/beat-01.png",
+      "bytes": 129009,
+      "sha256": "c37ecdfa7c2ea68cbd8ff1091a916fe8fd442ba83f711e4a01f85d8640b01562"
+    },
+    {
+      "path": "presentation/rehearsal-2026-10-30-light/keyframes/beat-02.png",
+      "bytes": 92408,
+      "sha256": "1dec6075188d70fbdb6a3cdb6d188829e0b07d5e0e4239284c90f52d1a2aed68"
+    },
+    {
+      "path": "presentation/rehearsal-2026-10-30-light/keyframes/beat-03.png",
+      "bytes": 91622,
+      "sha256": "45d9e64b9feff5d8aecb3a73497c105fd4be751a36f45561d12f875f63b3d08d"
+    },
+    {
+      "path": "presentation/rehearsal-2026-10-30-light/keyframes/beat-04.png",
+      "bytes": 103528,
+      "sha256": "e54d77bf394f5c1b85e7c571a54366b4ea4bb10402bd84fef47d91c22990cf2e"
+    },
+    {
+      "path": "presentation/rehearsal-2026-10-30-light/keyframes/beat-05.png",
+      "bytes": 117275,
+      "sha256": "2f717de239a39eed6a1a8d3f504b3c3cc7a400436e15b0b9f72e116b7ac4e902"
+    },
+    {
+      "path": "presentation/rehearsal-2026-10-30-light/keyframes/beat-06.png",
+      "bytes": 138281,
+      "sha256": "4d89bbdd2d3894f0890ddcb0400a473b150fe703330ef63784ffedcddd1ecf53"
+    },
+    {
+      "path": "presentation/rehearsal-2026-10-30-light/keyframes/beat-07.png",
+      "bytes": 119492,
+      "sha256": "bd7015d4aa754415b6bb1df9707618357ec158db92df7c5da2f0051ac3fc826d"
+    },
+    {
+      "path": "presentation/rehearsal-2026-10-30-light/keyframes/beat-08.png",
+      "bytes": 122070,
+      "sha256": "527354c668b4c936270b77901f59d1a25e7b538312114c97e678754c99178f1d"
+    },
+    {
+      "path": "presentation/rehearsal-2026-10-30-light/keyframes/beat-09.png",
+      "bytes": 139771,
+      "sha256": "075586119616ec8cb51897f684a465c5e4515cf75db3b017ecde3169390a5dfc"
+    },
+    {
+      "path": "presentation/rehearsal-2026-10-30-light/keyframes/beat-10.png",
+      "bytes": 106423,
+      "sha256": "7ec1ae8edf8870ccef6630dc17b092f9318af6a6bd7458c13ed61dd1a9fd3b88"
+    },
+    {
+      "path": "presentation/rehearsal-2026-10-30-light/keyframes/beat-11.png",
+      "bytes": 129492,
+      "sha256": "499c7ac4675e2e34a2290d81908d362b3076f5f11904b6663708fe395d1640cd"
+    },
+    {
+      "path": "presentation/rehearsal-2026-10-30-light/keyframes/beat-12.png",
+      "bytes": 115100,
+      "sha256": "511a0f70205a24668522561804b0ea66bf046835041a90ac52455c58516dd63a"
+    },
+    {
+      "path": "presentation/rehearsal-2026-10-30-light/keyframes/beat-13.png",
+      "bytes": 116936,
+      "sha256": "4b2cd725dc396cb497febfbe04fb3a85b15b51abe6f1363e9d4979ca4e6e01b4"
+    },
+    {
+      "path": "presentation/rehearsal-2026-10-30-light/keyframes/beat-14.png",
+      "bytes": 116486,
+      "sha256": "08774b3da973e5efc81e33ac8f52c4ea48e8aebed742a6ce4bf0fbd7617348d1"
+    },
+    {
+      "path": "presentation/rehearsal-2026-10-30-light/keyframes/beat-15.png",
+      "bytes": 129655,
+      "sha256": "759dc602cf9b081e5af12aec421b2f0f5708428fe5476228478d53b224695038"
+    },
+    {
+      "path": "presentation/rehearsal-2026-10-30-light/keyframes/beat-16.png",
+      "bytes": 73916,
+      "sha256": "1076a745a6465a37a4541fb26e2ef49f87415306a856e5f9e2c43b297a0508f9"
+    },
+    {
+      "path": "presentation/rehearsal-2026-10-30-light/keyframes/beat-17.png",
+      "bytes": 86314,
+      "sha256": "31c59923fb493658f49f507a9e37c59c3792b6ca4121eead3c237570481f7af5"
+    },
+    {
+      "path": "presentation/rehearsal-2026-10-30-light/keyframes/beat-18.png",
+      "bytes": 103799,
+      "sha256": "46e0b9ddb1397d7bcf10c1ddca6aaa93b28d89feb03b8e2d7dac4be27be23339"
+    },
+    {
+      "path": "presentation/rehearsal-2026-10-30-light/keyframes/beat-19.png",
+      "bytes": 108452,
+      "sha256": "3ae610307f42ab750a9907772235688e55a4194825d3c3daa2cac85e454264a7"
+    },
+    {
+      "path": "presentation/rehearsal-2026-10-30-light/keyframes/beat-20.png",
+      "bytes": 110184,
+      "sha256": "acdd69ba9fa3500015d15d02d7c7012d9a7234dfe0b32737ae9eefe29e5f6178"
+    },
+    {
+      "path": "presentation/rehearsal-2026-10-30-light/keyframes/beat-21.png",
+      "bytes": 108968,
+      "sha256": "7e0d3b53b778f3d639ea56c139b41ec6e142ac16bd530f281b5b46016669101c"
+    },
+    {
+      "path": "presentation/rehearsal-2026-10-30-light/keyframes/beat-22.png",
+      "bytes": 130411,
+      "sha256": "49b59cbe24f2a4fb3524f1909aa9fa5daf2c3d2b1e093646568409ad7c5f5ce1"
+    },
+    {
+      "path": "presentation/rehearsal-2026-10-30-light/keyframes/beat-23.png",
+      "bytes": 99751,
+      "sha256": "addef16573f2ac4f4e488134623d9e26d57cde00f98b68d227cf0215c4d623f3"
+    },
+    {
+      "path": "presentation/rehearsal-2026-10-30-light/keyframes/beat-24.png",
+      "bytes": 100167,
+      "sha256": "555ae60f75cac998c1e0e27a902a353dee332d36ca1999cce88f6072ead31a2d"
+    },
+    {
+      "path": "presentation/rehearsal-2026-10-30-light/keyframes/beat-25.png",
+      "bytes": 101090,
+      "sha256": "81c0ba1b184b0c5b1b33ff9e60e8e8f7ffba08086dec0626f337f420b5c7fd7d"
+    },
+    {
+      "path": "presentation/rehearsal-2026-10-30-light/keyframes/beat-26.png",
+      "bytes": 121985,
+      "sha256": "6e3ce600b18a71b590b3831ed5683a855a65627f30489acb78a96ef4149eedb5"
+    },
+    {
+      "path": "presentation/rehearsal-2026-10-30-light/keyframes/beat-27.png",
+      "bytes": 99644,
+      "sha256": "7b4d4a12229323e895242dac78ac87bf4d2ac9ec6eb97ac585469c8ad8a4c424"
+    },
+    {
+      "path": "presentation/rehearsal-2026-10-30-light/keyframes/beat-28.png",
+      "bytes": 100589,
+      "sha256": "abe87d2892d223862672d08b3f2193310a78522930891ad1d04b6af51d3db36a"
+    },
+    {
+      "path": "presentation/rehearsal-2026-10-30-light/keyframes/beat-29.png",
+      "bytes": 106955,
+      "sha256": "acfae70fdf9bada4e4359d7e58bad7b77c20ccf81adbd7fe827b6e85b4aa76fa"
+    },
+    {
+      "path": "presentation/rehearsal-2026-10-30-light/keyframes/beat-30.png",
+      "bytes": 136052,
+      "sha256": "6ba4461fd831664ddeec46a853eb8f084c82bb28e8c15776ccfc3c38d6cfe328"
+    },
+    {
+      "path": "presentation/rehearsal-2026-10-30-light/keyframes/beat-31.png",
+      "bytes": 130702,
+      "sha256": "8213337eddb05f40d91fd6210c2d1200d6db5609309501e99eb2e100b08a9800"
+    },
+    {
+      "path": "presentation/rehearsal-2026-10-30-light/keyframes/beat-32.png",
+      "bytes": 147976,
+      "sha256": "96cc526363346ac8cba0de6c9cea533b252b908aa54e93527245a82441afbfc7"
+    },
+    {
+      "path": "presentation/rehearsal-2026-10-30-light/keyframes/beat-33.png",
+      "bytes": 160639,
+      "sha256": "f34256f741ee9dd083581bcbb83ad2f838ab06eb246c1d0b16cb25c934f415d0"
+    },
+    {
+      "path": "presentation/rehearsal-2026-10-30-light/keyframes/beat-34.png",
+      "bytes": 110419,
+      "sha256": "676fda377d5d58cabbbf6e3c45bf8665f56f9d5427352f0e1aa77685a4151bab"
+    },
+    {
+      "path": "presentation/rehearsal-2026-10-30-light/keyframes/beat-35.png",
+      "bytes": 117353,
+      "sha256": "f67edbfb848bd9cdab7ba291cca4d00a8a11eb9512f5a3f1315f4775a8e42f09"
+    },
+    {
+      "path": "presentation/rehearsal-2026-10-30-light/keyframes/beat-36.png",
+      "bytes": 157494,
+      "sha256": "23a5560fd1986671e8f3af4ae18e34f8d0a227553404971fe05bbe40f666db06"
+    },
+    {
+      "path": "presentation/rehearsal-2026-10-30-light/keyframes/beat-37.png",
+      "bytes": 141609,
+      "sha256": "777a75861d88bad4d3d61c7eabd59e97f3bdc04cdf975437041c0587c55d3402"
+    },
+    {
+      "path": "presentation/rehearsal-2026-10-30-light/keyframes/beat-38.png",
+      "bytes": 156099,
+      "sha256": "f50be0fdf8b3247dc23cc700ace9e8e619af43d3b86fb30fea977a20ca507758"
+    },
+    {
+      "path": "presentation/rehearsal-2026-10-30-light/keyframes/beat-39.png",
+      "bytes": 150741,
+      "sha256": "b263f927df9c8787dc8b02bf7b0dcac456bca5fce929799572325c663db22748"
+    },
+    {
+      "path": "presentation/rehearsal-2026-10-30-light/MAE494-Project3-Light-Mode-backup.pdf",
+      "bytes": 3720383,
+      "sha256": "2d39d497b26e93426a64b6afe6518b4bfa1bfbc67a0fabc3713bd9ebb62650d4"
+    },
+    {
+      "path": "presentation/rehearsal-2026-10-30-light/MAE494-Project3-Light-Mode.html",
+      "bytes": 9804035,
+      "sha256": "b082c2f60ebf6b26a3c84bc0ac9a2e9fbe1f954146931390030602f1711ef0c5"
+    },
+    {
+      "path": "presentation/rehearsal-2026-10-30-light/math/boundaries.png",
+      "bytes": 14998,
+      "sha256": "1183554f8254f3810b37a5a6ed1e123cdcf6fb9ea4f2872f98c43d27928f3b50"
+    },
+    {
+      "path": "presentation/rehearsal-2026-10-30-light/math/cost.png",
+      "bytes": 14933,
+      "sha256": "0602c0c6496470cf1cb73e9e83bcd2f900b047673585c3c8599c575c805cfa25"
+    },
+    {
+      "path": "presentation/rehearsal-2026-10-30-light/math/denominator.png",
+      "bytes": 23899,
+      "sha256": "009590a6290d82c0241b1d00f2067ea9ab6728d1024f9ec671cb4e7d2cea767f"
+    },
+    {
+      "path": "presentation/rehearsal-2026-10-30-light/math/equations.json",
+      "bytes": 1184,
+      "sha256": "0aa81701142d57b45393d85e7f5b5dfca23efbd3ab96d2e042ff4abbf1adb575"
+    },
+    {
+      "path": "presentation/rehearsal-2026-10-30-light/math/factor.png",
+      "bytes": 39036,
+      "sha256": "14d0fa9922fdb51b6c8706dd6eb676d50f3eb2c148e2010aa1730d7d775ed16b"
+    },
+    {
+      "path": "presentation/rehearsal-2026-10-30-light/math/identity.png",
+      "bytes": 30915,
+      "sha256": "a71a9e2adc5a3e146bba512937bbee334ee61a44bbd334bf5ec47b8a35f326e7"
+    },
+    {
+      "path": "presentation/rehearsal-2026-10-30-light/math/loss.png",
+      "bytes": 17537,
+      "sha256": "557881ff5200c13e097ec30658292a5b510b9309f3aac9c0147a6c17e4dc1536"
+    },
+    {
+      "path": "presentation/rehearsal-2026-10-30-light/math/normalized.png",
+      "bytes": 18111,
+      "sha256": "e426ee420492f88147f5ac21fe0e79af230e10d1f205a8dc0fc06eb0b08cbdc7"
+    },
+    {
+      "path": "presentation/rehearsal-2026-10-30-light/math/phase.png",
+      "bytes": 12858,
+      "sha256": "72a5ffa5f09758f99f3135f19bbdcd5d9e65e439644bc2ed539e3fc14f5ab65e"
+    },
+    {
+      "path": "presentation/rehearsal-2026-10-30-light/math/physical.png",
+      "bytes": 13567,
+      "sha256": "41c3f17ef6439772bb02190e782dd017e1c6c9b8427616c73cb4239e9d1df0c9"
+    },
+    {
+      "path": "presentation/rehearsal-2026-10-30-light/math/transform.png",
+      "bytes": 20474,
+      "sha256": "f74cfe61c919d8684ad366d72ff4f76306fff32cb455c388e676a50dcd43747b"
+    },
+    {
+      "path": "presentation/rehearsal-2026-10-30-light/media-validation.json",
+      "bytes": 21409,
+      "sha256": "8c4ea0a2f02e329b7ca479c94384f631b592b25b0e57fb1f93e8013d0b436b6e"
+    },
+    {
+      "path": "presentation/rehearsal-2026-10-30-light/native-review/native-runtime-validation.json",
+      "bytes": 8758,
+      "sha256": "d8609d25b5377e2dc73493d7c361f064ce3ae20796f26c297338e31ee4fe3556"
+    },
+    {
+      "path": "presentation/rehearsal-2026-10-30-light/operation-data.json",
+      "bytes": 156886,
+      "sha256": "4abbf4d2849b0ccb2201063514b291a8aa9233e2f9b0f209cbb4307a6430190b"
+    },
+    {
+      "path": "presentation/rehearsal-2026-10-30-light/pdf-validation.json",
+      "bytes": 4875,
+      "sha256": "7425e6e2d6b28f28e256a514748fd2a20adb5b54cf8954b1838e43ec06c7c767"
+    },
+    {
+      "path": "presentation/rehearsal-2026-10-30-light/prior-timing.json",
+      "bytes": 4412,
+      "sha256": "e9f2a90c30120fdcd0fde7a63c65439e85be963e4b0b7997459a40a4c45622d3"
+    },
+    {
+      "path": "presentation/rehearsal-2026-10-30-light/scene-data.json",
+      "bytes": 191829,
+      "sha256": "7af2d7513a5f2562197841f37ca590bc0d5a1c548969d1e1d9b104b195ffab71"
+    },
+    {
+      "path": "presentation/rehearsal-2026-10-30-light/visual-review.json",
+      "bytes": 440,
+      "sha256": "3558db083e9ec17d2f4dbb23a11b5d1f9050b019cbaf4a8ef5f956370045edd9"
+    }
+  ],
+  "source_files": [
+    "rehearsal_optimization_presentation.py",
+    "rehearsal_presentation_theme.py",
+    "manim_slides_ce22.py",
+    "convert_rehearsal_offline.py",
+    "finalize_rehearsal_export.py",
+    "build_rehearsal_backup.mjs"
+  ]
+}

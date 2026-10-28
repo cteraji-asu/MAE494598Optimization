@@ -1,0 +1,12 @@
+{
+  "physical": "\\frac{\\mathrm dV}{\\mathrm dx}=-\\gamma I,\\qquad\\frac{\\mathrm dI}{\\mathrm dx}=-\\gamma V",
+  "normalized": "\\xi=\\frac{x-a}{d},\\quad \\widetilde V_\\xi+\\gamma d\\widetilde I=0,\\quad\\widetilde I_\\xi+\\gamma d\\widetilde V=0",
+  "boundaries": "\\widetilde V(0)+(1+z_s)\\widetilde I(0)=2,\\qquad\\widetilde V(1)=0",
+  "factor": "R_s=e^{-2\\gamma a}\\frac{\\sinh(\\gamma d)+(z_s-1)\\cosh(\\gamma d)}{\\sinh(\\gamma d)+(z_s+1)\\cosh(\\gamma d)}",
+  "loss": "\\mathcal L=\\langle|f_V|^2\\rangle+\\langle|f_I|^2\\rangle+\\frac14\\langle|b_0|^2\\rangle+\\langle|b_1|^2\\rangle",
+  "identity": "\\Delta R=\\underbrace{\\frac{-e^{-2\\gamma a}c\\,b_0}{D}}_{\\text{drive}}+\\underbrace{\\frac{-e^{-2\\gamma a}q}{D}}_{\\text{interior}}+\\underbrace{\\frac{e^{-2\\gamma a}b_1}{D}}_{\\text{short}}",
+  "denominator": "D=(1+z_s)\\cosh(\\gamma d)+\\sinh(\\gamma d),\\quad |\\Delta R|\\leq G\\eta",
+  "transform": "I=i,\\qquad V=v-\\xi v(1)-(1-\\xi)\\left[v(0)+(1+z_s)i(0)-2\\right]",
+  "cost": "T_{\\rm total}(N)=T_{\\rm setup}+T_{\\rm train}+N T_{\\rm inf}",
+  "phase": "\\Delta\\phi=\\left|\\operatorname{Arg}\\left(R_{\\rm off}\\overline{R_{\\rm on}}\\right)\\right|"
+}

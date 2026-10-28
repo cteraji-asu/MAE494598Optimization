@@ -1,0 +1,22 @@
+{
+  "base_commit": "572047485c2d0c37fd35533a9d392af5091876ed",
+  "copies": [
+    {
+      "original_path": "Project 3 Files/Post_Interview_Briefing.md",
+      "copy_path": "sources/interview/Post_Interview_Briefing.md",
+      "bytes": 3072,
+      "sha256": "54b2f436de5b407ed7de7b61137561114272481e087864d0d1f6a76dcfa3b341",
+      "git_blob_sha1": "aca68025d64fd1fc7938f040f9a1e662f8cc4b16"
+    },
+    {
+      "original_path": "Project 3 Files/Project 3 Interview Audio.m4a",
+      "copy_path": "sources/interview/Project 3 Interview Audio.m4a",
+      "bytes": 15328561,
+      "sha256": "c43bf673e74cff6fbbff5e5cef51a7028d38faddb12550d6d64eee0d5fc75911",
+      "git_blob_sha1": "119e8c93be8d1f1e55b6ada43032f41d0e1ad394"
+    }
+  ],
+  "permission": "User explicitly authorized public report/README links and copying these existing public-repository files on 28 October 2026.",
+  "approval": "User/team confirmation on 28 October 2026 reports researcher approval of the brief. The approval date and a direct written response are not asserted; model/results approval is not inferred.",
+  "content": "Exact original bytes and attribution retained; source originals untouched."
+}

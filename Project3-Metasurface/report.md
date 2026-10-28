@@ -1,16 +1,26 @@
 # Finite switch coupling and reliable design screening
 
-MAE494/598 Project 3. Public-safe technical draft, 21 October 2026. **Not published or submitted.**
+Current rehearsal: [40-beat Light Mode presentation, PDF and editable Manim source](PRESENTATION.md).
+
+MAE494/598 Project 3. Audited 28 October 2026 for the 30 October group rehearsal. The core report was published on 21 October at commit `5720474`; coursework submission is a separate team action.
 
 Path B is selected. A synthetic finite-switch line shows a screening failure and bounded causal effects of optimizer, training objective and controlled sampling support. All six new blocked-cohort deployment gates fail; all three new supervised off-grid gates pass. This report does not claim Path A viability, Path C success, a unique finer optimization mechanism or hardware validation. A permitted synthetic minimal case is sufficient for the coursework's technical scope.
 
 ## 1. Outreach log
 
-The team conducted an interview, but identity, contact/reservation and outreach records are withheld from this publication copy pending confirmed public permission and team approval. The full local working packet retains the source evidence. Existing repository inputs are not treated as consent for new publications. This section is an explicit pending human-evidence requirement, not a fabricated completed log.
+The team interviewed Nathan about computational design of electronically controlled metasurfaces and wireless power transfer. The dated [team briefing](sources/interview/Post_Interview_Briefing.md) and [interview recording](<sources/interview/Project 3 Interview Audio.m4a>) document that interview. The briefing credits Dylan Brandt, Leo Dayal and Tyler Bay; these are document authorship credits, not an invented attendance or contribution record. The original files remain in the repository's `Project 3 Files` folder; [source provenance](sources/interview/README.md) identifies them and verifies the exact copies.
+
+The date on the briefing is 19 October 2026. The exact interview date, contact route, participation-sheet reservation and preparatory-question record are not established by that date alone. The team should supply those administrative details from its actual records. No additional outreach or researcher message was sent by this audit.
 
 ## 2. Researcher problem brief
 
-The team is provisionally using its current brief. The interviewee has not replied, so researcher fact-check approval remains pending. Interview-specific claims, quotation, transcript and unpublished details are excluded from this public-safe draft until permitted. This technical draft therefore does not yet satisfy the full researcher-checked-brief criterion. The independent synthetic case below uses public mathematics and wholly synthetic parameters.
+The current [approved team brief](sources/interview/Post_Interview_Briefing.md) describes a metasurface that redirects or distributes electromagnetic power electronically, with wireless charging and communication applications. Maxwell's equations govern the electromagnetic model. The reported workflow uses Ansys Electronics Desktop, including HFSS and Nexxim, with engineering intuition and geometry/copper-topology changes before or between solves. A solve is reported to take hours, and roughly 50–100 iterations can extend over months. Those are interview/team estimates, not timings we independently measured.
+
+The useful engineering question is whether a surrogate or automated search can reduce repeated design effort while retaining useful two-state reflection behavior. The brief also reports poorly understood failures and faster neural-assisted workflows elsewhere in the lab. It does not provide a measured, like-for-like PINN/PINO accuracy or speed comparison. The audio does not establish that every neural/automation method discussed is specifically a PINN or PINO. We therefore do not treat the brief's “orders of magnitude” wording as a verified PINN speedup. Solver computation, storage overhead and workflow automation are distinct possible costs.
+
+On 28 October 2026, the user/team confirmed that Nathan approved the brief. This records team-reported researcher review; it does not invent a written reply, a date of Nathan's approval, or approval of our derived equations and results. The user also explicitly authorized the public links and exact source copies. Private correspondence and raw ASR remain excluded.
+
+Our minimal case retains finite switch loading, geometry-dependent current participation and paired complex reflection. It replaces the full electromagnetic device with a synthetic one-dimensional line at one frequency. The 180-degree phase target and the 165-degree/0.8 screening thresholds used below must be distinguished: the latter are illustrative team criteria, not confirmed lab acceptance tolerances. The experiment can diagnose numerical behavior in this analogue; it cannot certify a real device or an HFSS speedup.
 
 ## 3. Minimal case formulation
 
@@ -506,16 +516,16 @@ Use the faster conventional implementation for each query mode in N*=T_train/(T_
 ## 5. Recommendation memo
 
 
-To the research collaborator, identity withheld pending permission
-From Team 6, MAE494/598 design optimization
-21 October 2026
-Draft for team review. Unsent.
+To: Nathan  
+From: Team 6, MAE494/598 design optimization  
+Date: 28 October 2026  
+Status: Draft for team review. Unsent.
 
 Our finite-switch transmission-line analogue tests one proposed current-participation mechanism while keeping the geometry and circuit synthetic. It is not a calibrated model of your unit cell. A finite switch has little influence near a current node and a strong influence elsewhere; independent conventional calculations support this within the analogue.
 
 The primary neural models retain 21/21 feasible off-grid designs but miss all 10 feasible designs in a withheld interval, across three seeds. Our 165-degree phase cutoff and 0.8 magnitude floor are illustrative, not your confirmed tolerances.
 
-Controlled follow-ups identify bounded causes of attained numerical error. With identical starting weights, inputs, physics objective and 1,200 gradient calls, L-BFGS reduces median blocked physical-voltage error from 43.39% to 7.57% relative to Adam, yet both still miss every feasible blocked design. A separate matched-objective study finds that increasing a nested missing-training interval increases field error for both physics and direct-reference training. At full coverage, reference training fits much better fields with the same network and optimizer. These results show optimizer, objective and coverage dependence. They do not uniquely explain the entire original failure.
+Controlled follow-ups identify bounded causes of attained numerical error. With identical starting weights, inputs, physics objective and 1,200 gradient calls, L-BFGS reduces median blocked physical-voltage error from 43.39% to 7.57% relative to Adam, yet both still miss every feasible blocked design. A separate matched-objective study finds that increasing a nested missing-training interval increases field error for both physics and direct-reference training. At full coverage, reference training fits much better fields with the same network and optimizer. The full-coverage objective contrast is 27.63x in median joint-field error; increasing the nested support gap raises the reference-trained median 4.63x. These results show optimizer, objective and coverage dependence. They do not uniquely explain the entire original failure.
 
 All six exact-boundary validation gates and all six new gap/objective blocked-cohort gates fail. All three new supervised off-grid arms pass their off-grid gates. Exact endpoints do not ensure accurate interiors or useful decisions. The fresh boundary-control blocked set contains no feasible cases, so sensitivity there is undefined. Negative results and false feasible decisions remain visible.
 
@@ -543,4 +553,4 @@ The synthetic distortionless line, common short, fixed frequency, normalized fin
 
 ### Reproducibility and review status
 
-See [README.md](README.md), [worked-verification.md](worked-verification.md) and the unchanged frozen protocols with their ERRATUM.md notes. All core figures are under outputs/figures-switch; no presentation assets are required. No new outreach, memo sending, public publication or coursework submission has occurred. Approval and the pending human evidence remain separate from the completed local technical work.
+See [README.md](README.md), [worked-verification.md](worked-verification.md) and the unchanged frozen protocols with their ERRATUM.md notes. All core figures are under outputs/figures-switch; no presentation assets are required. The core report/code/results are published. The 28 October audit verifies their numerical evidence, reproducibility and alignment with the updated light rehearsal presentation. The researcher-approved brief and original recording are now discoverable through the authorized source copies. Memo delivery, administrative outreach details, team rehearsal and Canvas submission remain separate human actions. No new researcher message or coursework submission was made by this audit.

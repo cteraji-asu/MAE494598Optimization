@@ -1,0 +1,35 @@
+{
+  "status": "Existing approved pilot assets reused by official converter without download",
+  "assets": [
+    {
+      "url": "https://cdn.jsdelivr.net/npm/reveal.js@6.0.1/dist/reveal.css",
+      "name": "reveal.css",
+      "sha256": "64e6203ee2048665c9f49c368f345fb3d7f936c404934162c70369a7682f388f",
+      "source": "Existing official five-beat offline pilot"
+    },
+    {
+      "url": "https://cdn.jsdelivr.net/npm/reveal.js@6.0.1/dist/theme/black.css",
+      "name": "black.css",
+      "sha256": "c29c9689e8f3b277aa66edc01ed2ef97981a6768b05ad750582eac068d9705c3",
+      "source": "Existing official five-beat offline pilot"
+    },
+    {
+      "url": "https://cdn.jsdelivr.net/npm/reveal.js@6.0.1/dist/plugin/highlight/zenburn.css",
+      "name": "zenburn.css",
+      "sha256": "e298a0f1c2de9dea4ace202ce7e60cbc3143ebf7eab42efe891a8885f392444c",
+      "source": "Existing official five-beat offline pilot"
+    },
+    {
+      "url": "https://cdn.jsdelivr.net/npm/reveal.js@6.0.1/dist/reveal.js",
+      "name": "reveal.js",
+      "sha256": "3fb84c30d2e610dd598843d75a123ef2c4dbc588847cda86cd8c7a61e18ddb6b",
+      "source": "Existing official five-beat offline pilot"
+    },
+    {
+      "url": "https://cdn.jsdelivr.net/npm/reveal.js@6.0.1/dist/plugin/notes.js",
+      "name": "notes.js",
+      "sha256": "946159680c70354c665dbf4f3c9023a737d8b14b48c6c9af452553717a046729",
+      "source": "Existing official five-beat offline pilot"
+    }
+  ]
+}

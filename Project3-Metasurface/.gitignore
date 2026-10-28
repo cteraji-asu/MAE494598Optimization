@@ -8,3 +8,6 @@ node_modules/
 *.gif
 *.pptx
 *.zip
+
+# Explicitly authorized, exact copy of the existing repository interview source.
+!/sources/interview/Project 3 Interview Audio.m4a

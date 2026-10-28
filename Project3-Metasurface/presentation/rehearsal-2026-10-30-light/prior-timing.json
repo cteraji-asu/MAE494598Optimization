@@ -1,0 +1,231 @@
+{
+  "unchanged_beats": [
+    {
+      "old_index": 0,
+      "new_index": 0,
+      "frames": 6,
+      "duration": 0.25
+    },
+    {
+      "old_index": 1,
+      "new_index": 1,
+      "frames": 114,
+      "duration": 4.75
+    },
+    {
+      "old_index": 2,
+      "new_index": 2,
+      "frames": 23,
+      "duration": 0.9583333333333334
+    },
+    {
+      "old_index": 3,
+      "new_index": 3,
+      "frames": 50,
+      "duration": 2.0830078125
+    },
+    {
+      "old_index": 4,
+      "new_index": 4,
+      "frames": 29,
+      "duration": 1.2083333333333333
+    },
+    {
+      "old_index": 5,
+      "new_index": 5,
+      "frames": 23,
+      "duration": 0.9583333333333334
+    },
+    {
+      "old_index": 6,
+      "new_index": 6,
+      "frames": 114,
+      "duration": 4.75
+    },
+    {
+      "old_index": 7,
+      "new_index": 7,
+      "frames": 95,
+      "duration": 3.9583333333333335
+    },
+    {
+      "old_index": 8,
+      "new_index": 8,
+      "frames": 138,
+      "duration": 5.75
+    },
+    {
+      "old_index": 9,
+      "new_index": 9,
+      "frames": 62,
+      "duration": 2.5833333333333335
+    },
+    {
+      "old_index": 10,
+      "new_index": 10,
+      "frames": 23,
+      "duration": 0.9583333333333334
+    },
+    {
+      "old_index": 11,
+      "new_index": 11,
+      "frames": 98,
+      "duration": 4.083333333333333
+    },
+    {
+      "old_index": 12,
+      "new_index": 12,
+      "frames": 23,
+      "duration": 0.9583333333333334
+    },
+    {
+      "old_index": 13,
+      "new_index": 13,
+      "frames": 102,
+      "duration": 4.25
+    },
+    {
+      "old_index": 14,
+      "new_index": 14,
+      "frames": 77,
+      "duration": 3.2083333333333335
+    },
+    {
+      "old_index": 15,
+      "new_index": 15,
+      "frames": 101,
+      "duration": 4.208333333333333
+    },
+    {
+      "old_index": 16,
+      "new_index": 16,
+      "frames": 23,
+      "duration": 0.9583333333333334
+    },
+    {
+      "old_index": 17,
+      "new_index": 17,
+      "frames": 88,
+      "duration": 3.6666666666666665
+    },
+    {
+      "old_index": 18,
+      "new_index": 18,
+      "frames": 90,
+      "duration": 3.75
+    },
+    {
+      "old_index": 19,
+      "new_index": 19,
+      "frames": 26,
+      "duration": 1.0830078125
+    },
+    {
+      "old_index": 20,
+      "new_index": 20,
+      "frames": 102,
+      "duration": 4.25
+    },
+    {
+      "old_index": 21,
+      "new_index": 21,
+      "frames": 146,
+      "duration": 6.083333333333333
+    },
+    {
+      "old_index": 22,
+      "new_index": 22,
+      "frames": 113,
+      "duration": 4.708333333333333
+    },
+    {
+      "old_index": 23,
+      "new_index": 23,
+      "frames": 23,
+      "duration": 0.9583333333333334
+    },
+    {
+      "old_index": 24,
+      "new_index": 24,
+      "frames": 102,
+      "duration": 4.25
+    },
+    {
+      "old_index": 25,
+      "new_index": 25,
+      "frames": 69,
+      "duration": 2.875
+    },
+    {
+      "old_index": 26,
+      "new_index": 26,
+      "frames": 89,
+      "duration": 3.7080078125
+    },
+    {
+      "old_index": 27,
+      "new_index": 27,
+      "frames": 23,
+      "duration": 0.9583333333333334
+    },
+    {
+      "old_index": 28,
+      "new_index": 28,
+      "frames": 74,
+      "duration": 3.0833333333333335
+    },
+    {
+      "old_index": 29,
+      "new_index": 29,
+      "frames": 74,
+      "duration": 3.0833333333333335
+    },
+    {
+      "old_index": 30,
+      "new_index": 30,
+      "frames": 18,
+      "duration": 0.75
+    },
+    {
+      "old_index": 31,
+      "new_index": 34,
+      "frames": 59,
+      "duration": 2.4583333333333335
+    },
+    {
+      "old_index": 32,
+      "new_index": 35,
+      "frames": 102,
+      "duration": 4.25
+    },
+    {
+      "old_index": 33,
+      "new_index": 36,
+      "frames": 17,
+      "duration": 0.7083333333333334
+    },
+    {
+      "old_index": 34,
+      "new_index": 37,
+      "frames": 125,
+      "duration": 5.208333333333333
+    },
+    {
+      "old_index": 35,
+      "new_index": 38,
+      "frames": 35,
+      "duration": 1.4583333333333333
+    },
+    {
+      "old_index": 36,
+      "new_index": 39,
+      "frames": 23,
+      "duration": 0.9583333333333334
+    }
+  ],
+  "added_beats": [
+    31,
+    32,
+    33
+  ]
+}

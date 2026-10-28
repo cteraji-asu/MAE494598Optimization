@@ -1,0 +1,299 @@
+{
+  "status": "pass",
+  "platform": "offscreen",
+  "framework": "Manim Slides official Qt Player",
+  "segments": [
+    {
+      "segment": 0,
+      "hold_seconds": 15,
+      "frame_sha256": "3b3da9f115edc169b901023f2c9f7a3460872b65b0be54639b467adb16dd380a",
+      "position_ms": 250,
+      "held": true
+    },
+    {
+      "segment": 1,
+      "hold_seconds": 1.2,
+      "frame_sha256": "19c4560feaa6b52382416700ced5baad3d0f0c32ad441fffd5a0097bd2b85861",
+      "position_ms": 4750,
+      "held": true
+    },
+    {
+      "segment": 2,
+      "hold_seconds": 1.2,
+      "frame_sha256": "adb5bd0a6ff0a9f128a41c812b1047492b21d2b452fbdcf1cbbaedc5bd6dfd5a",
+      "position_ms": 958,
+      "held": true
+    },
+    {
+      "segment": 3,
+      "hold_seconds": 1.2,
+      "frame_sha256": "2f92f0545856e202a63d903bade8df5d5d430421df4410c2f5a926b7bf8498e3",
+      "position_ms": 2083,
+      "held": true
+    },
+    {
+      "segment": 4,
+      "hold_seconds": 1.2,
+      "frame_sha256": "2d2af5035c72296d9ea01bad8ce1b2709e9780485c1cf117f85881853baaccc8",
+      "position_ms": 1208,
+      "held": true
+    },
+    {
+      "segment": 5,
+      "hold_seconds": 1.2,
+      "frame_sha256": "ab190b65f4bbabeda3066577e83b11aefb6176b1d44eb573cec2365b8b0a49ce",
+      "position_ms": 958,
+      "held": true
+    },
+    {
+      "segment": 6,
+      "hold_seconds": 1.2,
+      "frame_sha256": "59e4942815c8e4576f629d2103c5c5973dada3c648d50fbc681aad0e5ec4867d",
+      "position_ms": 4750,
+      "held": true
+    },
+    {
+      "segment": 7,
+      "hold_seconds": 1.2,
+      "frame_sha256": "f0d7244c6fabc034110c4671d8824642d2e7098dde26b808dc556695ed372995",
+      "position_ms": 3958,
+      "held": true
+    },
+    {
+      "segment": 8,
+      "hold_seconds": 1.2,
+      "frame_sha256": "9250f914b6cf812867127bdab2615e253c8ed77807631d1c9ef2e2e7db71feae",
+      "position_ms": 5750,
+      "held": true
+    },
+    {
+      "segment": 9,
+      "hold_seconds": 1.2,
+      "frame_sha256": "43161f5dc114bac80b763019401b74a57183f0158f9a9437c5c11862bc10b80e",
+      "position_ms": 2583,
+      "held": true
+    },
+    {
+      "segment": 10,
+      "hold_seconds": 1.2,
+      "frame_sha256": "8bd6ba2100e643b1f1061d1e312445d5f0410cd8f2c859143a29ab31ca3d819f",
+      "position_ms": 958,
+      "held": true
+    },
+    {
+      "segment": 11,
+      "hold_seconds": 1.2,
+      "frame_sha256": "434b57fddcfe939ddb76935468d72c7fba40b2a6fb7d18fda5bc86e9da84a8fa",
+      "position_ms": 4083,
+      "held": true
+    },
+    {
+      "segment": 12,
+      "hold_seconds": 1.2,
+      "frame_sha256": "b1b3044e4a51b55c67454160c3587cb27be43e62912574a48c7e730f7c45d9b6",
+      "position_ms": 958,
+      "held": true
+    },
+    {
+      "segment": 13,
+      "hold_seconds": 1.2,
+      "frame_sha256": "c424f1faa61b241b3ab6eb230b0252dac1f5fae79322f54559209c4322c33870",
+      "position_ms": 4250,
+      "held": true
+    },
+    {
+      "segment": 14,
+      "hold_seconds": 1.2,
+      "frame_sha256": "1beed8e68a37340214e758d0d347b73b259f9ffd0a78cc2c912508f2734e9c72",
+      "position_ms": 3208,
+      "held": true
+    },
+    {
+      "segment": 15,
+      "hold_seconds": 1.2,
+      "frame_sha256": "3de2777eb157d72f3735c37a57beec752b49f7454538a3a489f45ffeea02dd26",
+      "position_ms": 4208,
+      "held": true
+    },
+    {
+      "segment": 16,
+      "hold_seconds": 1.2,
+      "frame_sha256": "768b42ac425f3acf2323ec6466415c08317976b5faa9241438fcaf8c59aafdba",
+      "position_ms": 958,
+      "held": true
+    },
+    {
+      "segment": 17,
+      "hold_seconds": 1.2,
+      "frame_sha256": "579c8b6c3d1e1ab65d34a7ea99a32ca3a823c8b931c696a785a51ae52fa4b937",
+      "position_ms": 3666,
+      "held": true
+    },
+    {
+      "segment": 18,
+      "hold_seconds": 1.2,
+      "frame_sha256": "5798c9f38faf49c9b9b820574e62f140aa77e9e52451119e32fec96ca793b11a",
+      "position_ms": 3750,
+      "held": true
+    },
+    {
+      "segment": 19,
+      "hold_seconds": 1.2,
+      "frame_sha256": "94ec825f7214edb6e91f028f55330d4ebc8240f054407bc31458097fcb4fd097",
+      "position_ms": 1083,
+      "held": true
+    },
+    {
+      "segment": 20,
+      "hold_seconds": 1.2,
+      "frame_sha256": "96e2b9500ed8d067f46f9e91149c0fd9104c85e843b47541a79fd960c6a25cc6",
+      "position_ms": 4250,
+      "held": true
+    },
+    {
+      "segment": 21,
+      "hold_seconds": 1.2,
+      "frame_sha256": "696c99aa20e658c2bfc85aaf430a16a88178bb2ee181512f94b7d0cbd5aa7d80",
+      "position_ms": 6083,
+      "held": true
+    },
+    {
+      "segment": 22,
+      "hold_seconds": 1.2,
+      "frame_sha256": "b0067d20631840f99161f24514b37c2ee57e0aa4540fa3171528a59e392d0dc8",
+      "position_ms": 4708,
+      "held": true
+    },
+    {
+      "segment": 23,
+      "hold_seconds": 1.2,
+      "frame_sha256": "e3b143ff3e642357e2f87129555e2038940698805af73d683472fcebd8608514",
+      "position_ms": 958,
+      "held": true
+    },
+    {
+      "segment": 24,
+      "hold_seconds": 1.2,
+      "frame_sha256": "5fa028dd7d75b7a7c6c8d6097206db146932d19f7a6992f777191dbcbf71af3d",
+      "position_ms": 4250,
+      "held": true
+    },
+    {
+      "segment": 25,
+      "hold_seconds": 1.2,
+      "frame_sha256": "4b57fa608d9ce8aa0feb4981dc78c0b40c18f53b43b5da7af6bd91f4f96317d4",
+      "position_ms": 2875,
+      "held": true
+    },
+    {
+      "segment": 26,
+      "hold_seconds": 1.2,
+      "frame_sha256": "0ddb96a7a1bc3243b6c1f9e66227c3bfd7d19bd84b62e10eb0990535bbe744af",
+      "position_ms": 3708,
+      "held": true
+    },
+    {
+      "segment": 27,
+      "hold_seconds": 1.2,
+      "frame_sha256": "59d60d9a972a1d5b61aad74992e1700d43d7239921f6f8b84d86f87b77fad13a",
+      "position_ms": 958,
+      "held": true
+    },
+    {
+      "segment": 28,
+      "hold_seconds": 1.2,
+      "frame_sha256": "d125b99cc73cea2081a78cb77feb807cd8ca89649458ba87afbdb590dc705343",
+      "position_ms": 3083,
+      "held": true
+    },
+    {
+      "segment": 29,
+      "hold_seconds": 1.2,
+      "frame_sha256": "2e044d4e16dac11fbbeda0d98f1edcc88c48c54fb6995f6ba29c02901e31afc5",
+      "position_ms": 3083,
+      "held": true
+    },
+    {
+      "segment": 30,
+      "hold_seconds": 1.2,
+      "frame_sha256": "4309a65184d03e3c1a96747293aeb5cd3f6069f1e85c2d02685fa172436b2ae6",
+      "position_ms": 750,
+      "held": true
+    },
+    {
+      "segment": 31,
+      "hold_seconds": 1.2,
+      "frame_sha256": "e25e94566433a63fb123140a86de600895a82448713c41e172b7aef8c561b7ed",
+      "position_ms": 3208,
+      "held": true
+    },
+    {
+      "segment": 32,
+      "hold_seconds": 1.2,
+      "frame_sha256": "735d1ef050bc3de0717df238364b20b8a69df1d1c1ed17ca69508444929aa860",
+      "position_ms": 1208,
+      "held": true
+    },
+    {
+      "segment": 33,
+      "hold_seconds": 1.2,
+      "frame_sha256": "bb3fc263057a5783f3cf64b65f277af3af727d22a03c322a3fc83e158290e9f3",
+      "position_ms": 3208,
+      "held": true
+    },
+    {
+      "segment": 34,
+      "hold_seconds": 1.2,
+      "frame_sha256": "888232ba9e5643d052537749ac72cf49790ccf48c14f90e0298218ab9e3ee0ab",
+      "position_ms": 2458,
+      "held": true
+    },
+    {
+      "segment": 35,
+      "hold_seconds": 1.2,
+      "frame_sha256": "2bf4735d9b2eb9dacd47a037b99003d13d0d660cbbb40cc3f57159fbbee48303",
+      "position_ms": 4250,
+      "held": true
+    },
+    {
+      "segment": 36,
+      "hold_seconds": 1.2,
+      "frame_sha256": "543378e62faef5e1d9154980a16edb75e1f97a31756c8828bd4b96e49e31ead4",
+      "position_ms": 708,
+      "held": true
+    },
+    {
+      "segment": 37,
+      "hold_seconds": 1.2,
+      "frame_sha256": "000c2f936421aefec53c14f5169b2a7b871b6b460f56618ed9eff1a02327f31f",
+      "position_ms": 5208,
+      "held": true
+    },
+    {
+      "segment": 38,
+      "hold_seconds": 1.2,
+      "frame_sha256": "7d04267705001f6d4c5c895dd3a5c51b7f4b367af20fbf993b0170c2d57385e7",
+      "position_ms": 1458,
+      "held": true
+    },
+    {
+      "segment": 39,
+      "hold_seconds": 15,
+      "frame_sha256": "57a04d5296feb5c22de96349e355bae6c63c62df7058475c98dd502552b6eb01",
+      "position_ms": 958,
+      "held": true
+    }
+  ],
+  "valid_frame_events": 3229,
+  "invalid_frame_events_handled": 49,
+  "next": true,
+  "rapid_next": true,
+  "previous": true,
+  "reverse": true,
+  "replay": true,
+  "pause_resume": true,
+  "no_visible_player_controls": true,
+  "fullscreen_requested": true,
+  "scope": "Actual Qt media/player state and keyboard dispatch with offscreen rendering. On-monitor visual acceptance is separate.",
+  "configuration_sha256": "2b78f52cbcac13324c70bd8cd825127c4b0969aab7932d46f4b8fec9df255c37"
+}

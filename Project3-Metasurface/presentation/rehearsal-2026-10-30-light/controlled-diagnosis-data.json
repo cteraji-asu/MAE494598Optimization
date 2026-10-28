@@ -1,0 +1,33 @@
+{
+  "levels": [
+    {
+      "width": 0.0,
+      "count": 256,
+      "physics": 0.09790208705319345,
+      "supervised": 0.0035431617942712794
+    },
+    {
+      "width": 0.0135,
+      "count": 248,
+      "physics": 0.14281447357815033,
+      "supervised": 0.005786931738068253
+    },
+    {
+      "width": 0.027,
+      "count": 240,
+      "physics": 0.20275884677010922,
+      "supervised": 0.016388527672700222
+    }
+  ],
+  "objective_ratio": 27.631277581364,
+  "sampling_ratio": 4.6253963618590115,
+  "optimizer": {
+    "adam": 0.43393175154389585,
+    "lbfgs": 0.07574693882391974,
+    "improved": 204,
+    "states": 256
+  },
+  "all_blocked_gates_failed": true,
+  "supervised_offgrid_passes": 3,
+  "source_results_sha256": "16868a245fdf418b04a1a695fbf3ab48008616562dbfc3086d8d06895d169b43"
+}

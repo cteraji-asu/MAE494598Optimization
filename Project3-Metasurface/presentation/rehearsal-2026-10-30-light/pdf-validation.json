@@ -1,0 +1,248 @@
+{
+  "status": "pass",
+  "pages": 40,
+  "all_pages_decoded": true,
+  "comparison": "Each actual PDF page rasterized at 1280x720 and compared to its source Manim keyframe.",
+  "pages_checked": [
+    {
+      "page": 1,
+      "mean_pixel_difference": 0.0,
+      "width": 960.0,
+      "height": 540.0
+    },
+    {
+      "page": 2,
+      "mean_pixel_difference": 0.0,
+      "width": 960.0,
+      "height": 540.0
+    },
+    {
+      "page": 3,
+      "mean_pixel_difference": 0.0,
+      "width": 960.0,
+      "height": 540.0
+    },
+    {
+      "page": 4,
+      "mean_pixel_difference": 0.0,
+      "width": 960.0,
+      "height": 540.0
+    },
+    {
+      "page": 5,
+      "mean_pixel_difference": 0.0,
+      "width": 960.0,
+      "height": 540.0
+    },
+    {
+      "page": 6,
+      "mean_pixel_difference": 0.0,
+      "width": 960.0,
+      "height": 540.0
+    },
+    {
+      "page": 7,
+      "mean_pixel_difference": 0.0,
+      "width": 960.0,
+      "height": 540.0
+    },
+    {
+      "page": 8,
+      "mean_pixel_difference": 0.0,
+      "width": 960.0,
+      "height": 540.0
+    },
+    {
+      "page": 9,
+      "mean_pixel_difference": 0.0,
+      "width": 960.0,
+      "height": 540.0
+    },
+    {
+      "page": 10,
+      "mean_pixel_difference": 0.0,
+      "width": 960.0,
+      "height": 540.0
+    },
+    {
+      "page": 11,
+      "mean_pixel_difference": 0.0,
+      "width": 960.0,
+      "height": 540.0
+    },
+    {
+      "page": 12,
+      "mean_pixel_difference": 0.0,
+      "width": 960.0,
+      "height": 540.0
+    },
+    {
+      "page": 13,
+      "mean_pixel_difference": 0.0,
+      "width": 960.0,
+      "height": 540.0
+    },
+    {
+      "page": 14,
+      "mean_pixel_difference": 0.0,
+      "width": 960.0,
+      "height": 540.0
+    },
+    {
+      "page": 15,
+      "mean_pixel_difference": 0.0,
+      "width": 960.0,
+      "height": 540.0
+    },
+    {
+      "page": 16,
+      "mean_pixel_difference": 0.0,
+      "width": 960.0,
+      "height": 540.0
+    },
+    {
+      "page": 17,
+      "mean_pixel_difference": 0.0,
+      "width": 960.0,
+      "height": 540.0
+    },
+    {
+      "page": 18,
+      "mean_pixel_difference": 0.0,
+      "width": 960.0,
+      "height": 540.0
+    },
+    {
+      "page": 19,
+      "mean_pixel_difference": 0.0,
+      "width": 960.0,
+      "height": 540.0
+    },
+    {
+      "page": 20,
+      "mean_pixel_difference": 0.0,
+      "width": 960.0,
+      "height": 540.0
+    },
+    {
+      "page": 21,
+      "mean_pixel_difference": 0.0,
+      "width": 960.0,
+      "height": 540.0
+    },
+    {
+      "page": 22,
+      "mean_pixel_difference": 0.0,
+      "width": 960.0,
+      "height": 540.0
+    },
+    {
+      "page": 23,
+      "mean_pixel_difference": 0.0,
+      "width": 960.0,
+      "height": 540.0
+    },
+    {
+      "page": 24,
+      "mean_pixel_difference": 0.0,
+      "width": 960.0,
+      "height": 540.0
+    },
+    {
+      "page": 25,
+      "mean_pixel_difference": 0.0,
+      "width": 960.0,
+      "height": 540.0
+    },
+    {
+      "page": 26,
+      "mean_pixel_difference": 0.0,
+      "width": 960.0,
+      "height": 540.0
+    },
+    {
+      "page": 27,
+      "mean_pixel_difference": 0.0,
+      "width": 960.0,
+      "height": 540.0
+    },
+    {
+      "page": 28,
+      "mean_pixel_difference": 0.0,
+      "width": 960.0,
+      "height": 540.0
+    },
+    {
+      "page": 29,
+      "mean_pixel_difference": 0.0,
+      "width": 960.0,
+      "height": 540.0
+    },
+    {
+      "page": 30,
+      "mean_pixel_difference": 0.0,
+      "width": 960.0,
+      "height": 540.0
+    },
+    {
+      "page": 31,
+      "mean_pixel_difference": 0.0,
+      "width": 960.0,
+      "height": 540.0
+    },
+    {
+      "page": 32,
+      "mean_pixel_difference": 0.0,
+      "width": 960.0,
+      "height": 540.0
+    },
+    {
+      "page": 33,
+      "mean_pixel_difference": 0.0,
+      "width": 960.0,
+      "height": 540.0
+    },
+    {
+      "page": 34,
+      "mean_pixel_difference": 0.0,
+      "width": 960.0,
+      "height": 540.0
+    },
+    {
+      "page": 35,
+      "mean_pixel_difference": 0.0,
+      "width": 960.0,
+      "height": 540.0
+    },
+    {
+      "page": 36,
+      "mean_pixel_difference": 0.0,
+      "width": 960.0,
+      "height": 540.0
+    },
+    {
+      "page": 37,
+      "mean_pixel_difference": 0.0,
+      "width": 960.0,
+      "height": 540.0
+    },
+    {
+      "page": 38,
+      "mean_pixel_difference": 0.0,
+      "width": 960.0,
+      "height": 540.0
+    },
+    {
+      "page": 39,
+      "mean_pixel_difference": 0.0,
+      "width": 960.0,
+      "height": 540.0
+    },
+    {
+      "page": 40,
+      "mean_pixel_difference": 0.0,
+      "width": 960.0,
+      "height": 540.0
+    }
+  ]
+}
