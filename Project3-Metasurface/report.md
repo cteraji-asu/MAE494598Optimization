@@ -518,8 +518,7 @@ Use the faster conventional implementation for each query mode in N*=T_train/(T_
 
 To: Nathan  
 From: Team 6, MAE494/598 design optimization  
-Date: 28 October 2026  
-Status: Draft for team review. Unsent.
+Date: 28 October 2026
 
 Our finite-switch transmission-line analogue tests one proposed current-participation mechanism while keeping the geometry and circuit synthetic. It is not a calibrated model of your unit cell. A finite switch has little influence near a current node and a strong influence elsewhere; independent conventional calculations support this within the analogue.
 
