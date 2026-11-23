@@ -46,6 +46,6 @@ layout: null
 <main class="report" id="report">
 {% include_relative site/report-body.html %}
 </main>
-<footer class="footer">MAE 494 · Project 4 · <a href="assets/results.json">results.json</a> · <a href="code/run_design.py">design script</a> · <a href="https://github.com/cteraji-asu/MAE494598Optimization/tree/project4-domain-decomposed-design/Project4-Metasurface">source on GitHub</a><br>Synthetic reduced model; no rendered height is a fabricated dimension.</footer>
+<footer class="footer">MAE 494 · Project 4 · <a href="assets/results.json">results.json</a> · <a href="code/run_design.py">design script</a> · <a href="https://github.com/cteraji-asu/MAE494598Optimization">repository</a><br>Synthetic reduced model; no rendered height is a fabricated dimension.</footer>
 </div><script>(function(){var b=document.getElementById("theme-toggle"),r=document.documentElement;function sync(){var d=r.dataset.theme!=="light";b.setAttribute("aria-pressed",String(d));b.textContent=d?"◐ Dark":"◑ Light";}sync();b.addEventListener("click",function(){r.dataset.theme=r.dataset.theme==="light"?"dark":"light";try{localStorage.setItem("p4-theme",r.dataset.theme);}catch(e){}sync();document.dispatchEvent(new Event("themechange"));});})();</script>
 <script src="site/viewer.js" data-results="assets/results.json" defer></script></body></html>

@@ -3,7 +3,7 @@
 
 **Design question.** A radio-frequency wave travels down a transmission line, passes a two-state switch and reflects from a short circuit. Can the loading along the line be chosen so that the two switch states reflect waves about 180° apart, while each state still reflects at least 80% of the incident amplitude and the line's voltage exposure stays bounded?
 
-**Answer for this model.** The optimizer reduces the objective from **3.84135 to 0.661346** (82.8% lower), raises the ON/OFF phase separation from **7.1° to 130.5°**, and moves the design from infeasible (mean-square voltage 2.192 and 1.661 against a limit of 1.6) to **feasible on all four response constraints and all 40 loading bounds**. The optimum puts light loading on the six cells before the switch and heavy loading on the fourteen after it: every cell sits at one of its two bounds (20 of the 40 bounds active). The best design found reaches 130.5°, short of 180°; five starts per model found no better local optimum within these loading bounds.
+**Answer for this model.** The optimizer reduces the objective from **3.84135 to 0.661346** (82.8% lower), raises the ON/OFF phase separation from **7.1° to 130.5°**, and moves the design from infeasible (mean-square voltage 2.192 and 1.661 against a limit of 1.6) to **feasible on all four response constraints and all 40 loading bounds**. The optimum puts light loading on the six cells before the switch and heavy loading on the fourteen after it: every cell sits at one of its two bounds (20 of the 40 bounds active). The best design found reaches 130.5°, short of 180°. Of five starts per model, one (low-high) begins at this design, and two (linear) or three (nonlinear) of the other four reach it; none found a better local optimum within these loading bounds.
 
 **What is new compared with Project 3.** The design reference is now a verified finite-element solver with adjoint gradients, not a neural field model. Neural surrogates of Project 3's restricted problem (new networks trained in Project 4 follow-up experiments) were also run inside a gradient-based optimizer. Their gradients and optima disagree with the finite-element reference in specific, reproducible ways (Section 10).
 
@@ -70,7 +70,7 @@ $$
 |---|---|---|---|
 | Reflected amplitude floor | $\lvert R\rvert\ge0.8$ | Project 3 screening criterion, kept so that a non-reflecting line cannot "win" | Illustrative team choice, **not** a confirmed lab tolerance |
 | Mean-square voltage | $E\le1.6$ | Synthetic exposure limit, fixed after a coarse pilot and before the final runs | Synthetic; not from a standard or data sheet. It is loose at the optimum; Section 7 tightens it post hoc |
-| Loading range | $0.5\le c_j\le2.5$ | Synthetic tunable-capacitance range | Synthetic; sets the bound-dominated optimum |
+| Loading range | $0.5\le c_j\le2.5$ | A 5:1 tuning range, comparable to commercial varactors: minimum $C(0\,\mathrm V)/C(30\,\mathrm V)=4.1$ for the Skyworks SMV1405 abrupt-junction varactor ([data sheet 200068X](https://www.skyworksinc.com/-/media/SkyWorks/Documents/Products/101-200/SMV1405_1430_Series_200068X_discontinued.pdf), Table 3) and 7.5:1–14:1 for MACOM SMV14xx hyperabrupt parts | Comparable, not derived: $c_j$ is a per-cell multiplier, not a fitted device model. Sets the bound-dominated optimum |
 
 $E$ is a spatial average of normalized $\lvert V\rvert^2$, not stored energy and not a local voltage ceiling. These limits need instructor acceptance as part of the custom Project 3 extension (Section 13).
 
@@ -159,7 +159,7 @@ Multiplied by $i\beta\chi$ and integrated against $N_iN_k$, these give the real 
 | $g_4$ OFF mean-square V | 1.68e-8 (8.90e-8) | 5.61e-9 (1.01e-7) | 1.09e-8 (1.82e-7) |
 
 
-**Taylor test** **[new 23 Nov run]**. Along a random unit direction, the central-difference error falls as $\varepsilon^2$ (observed order over the first decade ≥ 1.69). It reaches its minimum at $\varepsilon\approx3.16e-5$–$0.003$ and then rises again as round-off in the Newton solves grows like $1/\varepsilon$. That V shape is the expected signature of a correct gradient; a flat curve would indicate a wrong adjoint.
+**Taylor test** **[new 23 Nov run]**. Along a random unit direction, the central-difference error falls as $\varepsilon^2$ (observed order over the first decade ≥ 1.69). It reaches its minimum at $\varepsilon\approx3.16e-5$–$0.003$ and then rises again as round-off in the Newton solves grows like $1/\varepsilon$. That V shape is the expected signature of a correct gradient; a flat curve would indicate a wrong adjoint. The figure shows the random interior design. The initial and optimized designs behave the same way (orders 1.69–2.01 and 2.00–2.22; curves in `assets/rubric-studies.json`). V10 passes if every first-decade order exceeds 1.6.
 
 ![Central-difference error versus step size for all five metrics](assets/figures/step-sweep.svg)
 
@@ -184,7 +184,7 @@ At the project's 20 variables, the adjoint is about 38× faster; at 80 variables
 
 ## 7. Optimization
 
-**Setup** **[frozen 10 Nov run]**. SciPy SLSQP, analytic adjoint gradients, bounds $[0.5,2.5]$, `ftol` $10^{-11}$, at most 500 iterations. Variables are already $O(1)$ and centered on 1. The frozen run left the constraints in their natural units ($\lvert R\rvert^2$ and normalized $\lvert V\rvert^2$, both $O(0.1$–$1)$). To check that this choice does not matter, the problem was re-solved **[new 23 Nov run]** with constraints scaled as $g/g_{limit}-1$ ($\lvert R\rvert^2/0.64-1\ge0$, $1-E/1.6\ge0$). 4 of 5 starts converge to the same design (max difference 9.60e-13). The high-low start fails exactly as before. Both models used the same five starts: uniform, low-before/high-after, high-before/low-after and two seeded random designs. Every outcome is kept, including the two failures.
+**Setup** **[frozen 10 Nov run]**. SciPy SLSQP, analytic adjoint gradients, bounds $[0.5,2.5]$, `ftol` $10^{-11}$, at most 500 iterations. Variables are already $O(1)$ and centered on 1. The frozen run left the constraints in their natural units ($\lvert R\rvert^2$ and normalized $\lvert V\rvert^2$, both $O(0.1$–$1)$). To check that this choice does not matter, the problem was re-solved **[new 23 Nov run]** with constraints scaled as $g/g_{limit}-1$ ($\lvert R\rvert^2/0.64-1\ge0$, $1-E/1.6\ge0$). 4 of 5 starts (3 of 4 independent ones, excluding the low-high vertex start) converge to the same design (max difference 9.60e-13). The high-low start fails exactly as before. Both models used the same five starts: uniform, low-before/high-after, high-before/low-after and two seeded random designs. Every outcome is kept, including the two failures.
 
 
 | Model | Start | Iterations | Final objective | KKT stationarity | Converged & feasible | Optimizer message |
@@ -201,7 +201,7 @@ At the project's 20 variables, the adjoint is about 38× faster; at 80 variables
 | Nonlinear ($\chi=0.05$) | random 494 b | 18 | 0.661346 | 2.78e-17 | yes | Optimization terminated successfully |
 
 
-The linear model's uniform start "converged" to a poor stationary point ($f\approx3.86$), and its high-low start stopped with a line-search failure. The nonlinear high-low start failed inside Newton's method at its first design. A diagnosis **[new 23 Nov run]** shows why. That design (heavy loading before the switch) puts a strong standing wave in the OFF state: $\max\lvert V\rvert=2.88$ even in the linear model, where the cubic term would be 83% of the linear loading. Gradual continuation in $\chi$ from the linear state also fails, at $\chi=0.01$. That is consistent with a fold in the nonlinear solution branch, not a solver defect (the ON state converges; tangent verified by V8). It is not proven here. Three or four of the five starts reach the same best design in each model.
+The low-high start is the optimal bound pattern itself, so it converges in one iteration and is not independent evidence. The linear model's uniform start "converged" to a poor stationary point: SLSQP reports success, but $f$ ends at 3.86276, slightly worse than its start (3.83625 in the linear model). Its high-low start stopped with a line-search failure. The nonlinear high-low start failed inside Newton's method at its first design. A diagnosis **[new 23 Nov run]** shows why. That design (heavy loading before the switch) puts a strong standing wave in the OFF state: $\max\lvert V\rvert=2.88$ even in the linear model, where the cubic term would be 83% of the linear loading. Gradual continuation in $\chi$ from the linear state also fails, at $\chi=0.01$. The same start converges in the $\chi$ sweep at $\chi=0.1$ (to a poor $f=3.864$) and $\chi=0.3$, and fails again at $\chi=0.2$. So whether Newton finds a solution from the linear initial guess depends on $\chi$ in a non-monotone way. That is consistent with multiple nonlinear solution branches and a narrow basin around the linear state, not a solver defect (the ON state converges, and the tangent is verified by V8). We have not mapped the branches, so the mechanism is not proven. Excluding the low-high start, two of four (linear) and three of four (nonlinear) independent starts reach the best design.
 
 ![Convergence histories of every nonlinear-model start](assets/figures/optimization.svg)
 
@@ -234,7 +234,7 @@ The linear model's uniform start "converged" to a poor stationary point ($f\appr
 
 **Engineering reading.**
 
-- The most valuable extra range is just before the switch: cell 6, $\mu=0.308$. Lighter loading there would lower the objective (mostly through phase contrast) the most.
+- The most valuable extra range is just before the switch: cell 6, $\mu=0.308$. Lighter loading there would lower the objective the most.
 - On the short side, the largest upper-bound multipliers are cells 11, 12, 13, in the middle of the switch-to-short segment.
 - Cell 20, next to the short, is worth almost nothing ($\mu=0.0013$). The voltage vanishes at the short, so loading there barely changes the wave.
 - Widening every range by 0.02 is predicted to lower $f$ by 0.05255; the re-solve lowers it by 0.05166. The small difference is the second-order term.
@@ -266,7 +266,7 @@ Once the OFF-state voltage limit binds, its multiplier (about 1.34 in the nonlin
 
 **What is nonlinear.** The state equation itself is nonlinear: the cubic voltage-dependent loading $i\beta\chi\lvert V\rvert^2V$. It is solved by Newton's method and differentiated implicitly at the converged state (Sections 4 and 6). It is checked against a manufactured nonlinear solution (V4), quadratic Newton convergence (V8) and phase equivariance (V7). The nonlinearity is not small where the voltage is large. At the optimum, $\chi\lvert V\rvert^2/c$ reaches 0.45 in the OFF state (mean 0.10) and 0.051 in the ON state. Locally, the voltage-dependent part adds up to about 45% of the linear loading.
 
-**With and without, frozen problem** **[frozen 10 Nov run]**. Optimizing with $\chi=0$ and with $\chi=0.05$ gives the same design: max $\lvert\Delta c\rvert=9.60e-13$. The response does change: the linear model predicts $\Delta\phi=139.06°$ and $f=0.463035$, while the nonlinear model gives $130.53°$ and $f=0.661346$ at the same loading. The nonlinearity detunes the line and costs 8.5° of phase separation, but it does not move the optimum.
+**With and without, frozen problem** **[frozen 10 Nov run]**. Optimizing with $\chi=0$ and with $\chi=0.05$ gives the same design: max $\lvert\Delta c\rvert=9.60e-13$ between the two frozen selected designs. The $\chi$-sweep table below re-solves both models, so its differences, measured against the re-solved linear design, are of the same round-off size but not identical. The response does change: the linear model predicts $\Delta\phi=139.06°$ and $f=0.463035$, while the nonlinear model gives $130.53°$ and $f=0.661346$ at the same loading. The nonlinearity detunes the line and costs 8.5° of phase separation, but it does not move the optimum.
 
 **Why the design does not move.** The optimum is a vertex of the bound box. It stays optimal as long as every bound multiplier stays positive, i.e. as long as every cell still "wants" to move further in the same direction. The nonlinearity changes the multipliers but flips no sign. The smallest is 0.0012 (linear) versus 0.00128 (nonlinear), and the cell-1 lower-bound multiplier drops from 0.188 to 0.143. Raising $\chi$ shows when that stops being true *post hoc* **[new 23 Nov run]**:
 
@@ -304,7 +304,7 @@ With the voltage limit active, the linear model overpredicts the OFF-state volta
 
 The viewer at the top of this page loads `assets/results.json`. It shows the initial and optimized designs side by side with linked cameras, and the solved voltage magnitude drawn on the line with the elements' own linear shape functions. The port, switch and short are labeled. Three things are graphical encodings, not dimensions, and the viewer labels them: block heights show the loading $c_j$, ribbon height shows $\lvert V\rvert$, and the line is a 1D model extruded for display. The animation replays the recorded SLSQP iterates of the selected run, with the ON/OFF reflection phasors drawn for each iterate. Constraint failures are marked with "✗ FAIL" text and a hatched badge, not by color alone.
 
-## 10. Project 3 surrogates against the finite-element reference
+## 10. Neural surrogates of the Project 3 problem against the finite-element reference
 
 **What the surrogates are.** These are **not** the original Project 3 networks. Two frozen Project 4 follow-up experiments trained new PINNs, three seeds per arm. Each run had the same physics loss as Project 3, but half of the 256 training designs were inside Project 3's difficult interval $0.195\le d\le0.222$. Each experiment compared one monolithic network with two specialist networks of matched size and budget, one for that interval and one for the rest. Experiment A routed hard between them, which creates reflection jumps of about 1 at the interval edges ([two-pinn-findings.md](two-pinn-findings.md)). Experiment B blended them smoothly. All model only Project 3's restricted family: one design variable $d$ (switch-to-short length), uniform loading, linear physics. They are **not** a surrogate for the 20-variable nonlinear problem above.
 
@@ -379,7 +379,7 @@ The FE adjoint finds the interior resonant optimum $d=0.20843$ ($\Delta\phi=179.
 **Where they disagree, and why.**
 
 1. **Gradients.** Across the design range, the surrogate gradients differ from the FE adjoint by 0.87–1.47 in relative $L_2$ norm and have the wrong sign at 15–20% of 55 sampled designs. The networks were trained to match field values, not their derivatives with respect to the design. Small field errors that vary with $d$ produce large slope errors, and that is exactly what the optimizer follows.
-2. **Missed optimum.** None of the 12 surrogates reaches the interior resonant optimum (0 of 60 runs end within 0.005 of it). From $d_0=0.18$, where the FE adjoint climbs to $d=0.2084$, every surrogate heads the other way, toward the lower bound (endpoints $d\le0.041$). The reason is visible in a dense check inside the difficult interval, even though half the training designs lay there. There the true objective dips to 6.90e-5 at $d=0.2085$. The monolithic surrogates never predict a dip: their lowest value in the interval is 1.25–1.31, their mean objective error is 0.93–0.97 (on a 0–2 scale), and their gradient error is 0.95–0.95. The smooth-blend specialists do predict a shallow dip, but at $d=0.2038–0.2047$ with minimum 0.07–0.07, mean error 0.29–0.31 and gradient error 1.14–1.15. Outside the interval, mean objective errors are only 0.08–0.14. The surrogates smooth away the resonance, so an optimizer following them cannot reach it.
+2. **Missed optimum.** None of the 12 surrogates reaches the interior resonant optimum (0 of 60 runs end within 0.005 of it). From $d_0=0.18$, where the FE adjoint climbs to $d=0.2084$, every surrogate heads the other way, toward the lower bound (endpoints $d\le0.041$). The reason is visible in a dense check inside the difficult interval, even though half the training designs lay there. There the true objective dips to 6.90e-5 at $d=0.2085$. The monolithic surrogates never predict a dip: their lowest value in the interval is 1.25–1.31, their mean objective error is 0.93–0.97 (on a 0–2 scale), and their gradient error is 0.95. The smooth-blend specialists do predict a shallow dip, but at $d=0.2038–0.2047$ with minimum 0.07, mean error 0.29–0.31 and gradient error 1.14–1.15. Outside the interval, mean objective errors are only 0.08–0.14 below it and 0.03–0.05 above it. The surrogates smooth away the resonance, so an optimizer following them cannot reach it.
 3. **Spurious stationary points.** From $d_0=0.24$, 6 of 12 surrogates stop near $d\approx0.24$–$0.25$, where their gradient vanishes. The FE objective there is about 2, its worst possible value ($\Delta\phi\approx0°$). The FE adjoint from the same start does not stop there.
 4. **Wrong self-assessment.** At their chosen designs ($d=0.036$–$0.041$, at or next to the lower box bound), the surrogates predict $q=0.0085$–$0.042$ (phase error 7.5–16.6°). FE gives $q=4.31e-5$–$0.0022$ (phase error 0.53–3.8°). The chosen designs happen to be good. That is luck of the bound placement, not evidence that the surrogate understood the response. Its predicted objective was 17–972 times the FE value.
 
@@ -405,7 +405,7 @@ It reruns:
 - all tests;
 - the report and site generator (`code/build_report.py`).
 
-This page, `report.md`, the viewer's numbers and every figure are generated from the JSON files listed in Section 1. The only exceptions are the Project 3 figures in Section 2, quoted from the Project 3 report, and the declared constants of the formulation. Pinned versions are in `requirements.txt`. Timings differ between machines.
+This page, `report.md`, the viewer's numbers and every figure are generated from the JSON files listed in Section 1, plus `assets/two-pinn-results.json` and `assets/smooth-pinn-results.json` for the Section 10 network tables. The only exceptions are the Project 3 figures in Section 2, quoted from the Project 3 report, and the declared constants of the formulation. Pinned versions are in `requirements.txt`. Timings differ between machines.
 
 ## 12. Limitations
 
@@ -446,6 +446,7 @@ That covers the 10–16 November sessions and, on 23 November, a Hermes Agent se
 1. A run exposed a harness defect: a failed Newton solve at one start aborted saving the results. The harness now records that start as a failure.
 2. Browser QA found the viewer computing upper-bound slack as $2.5$ instead of $2.5-c_j$. A regression test now covers it.
 3. In this revision, re-evaluating the surrogates' chosen design with FE caught an overstated claim in the 16 November draft (Section 10).
+4. Two independent agent review passes of this revision found draft errors, which were fixed before this version: the surrogates had been called "the Project 3 networks" with a causal claim borrowed from Project 3's error figures; the Taylor-test text placed the round-off floor at the wrong step; a broken viewer test; and a start counted as independent although it began at the optimum. These are review catches, not ladder catches.
 
 No ladder rung has recorded catching a solver bug; we do not invent one.
 

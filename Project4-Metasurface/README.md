@@ -1,6 +1,6 @@
 # Project 4: designing a switched line for 180° reflection
 
-A 20-variable PDE-constrained design study that extends our Project 3 metasurface problem. It uses our own P1 finite-element solver with a nonlinear (N2) state equation, adjoint gradients, SLSQP with a KKT reading, and a live WebGL comparison of the initial and optimized designs. The Project 3 neural surrogates are also run inside an optimizer and compared with the finite-element reference.
+A 20-variable PDE-constrained design study that extends our Project 3 metasurface problem. It uses our own P1 finite-element solver with a nonlinear (N2) state equation, adjoint gradients, SLSQP with a KKT reading, and a live WebGL comparison of the initial and optimized designs. New PINN surrogates of Project 3's restricted problem are also run inside an optimizer and compared with the finite-element reference.
 
 Start with the rendered page (`index.md`, or `preview.html` locally) or [report.md](report.md). The [rubric crosswalk](RUBRIC-CROSSWALK.md) maps each rubric row to its evidence. This is a synthetic reduced model, not calibrated hardware. No coursework has been submitted.
 
