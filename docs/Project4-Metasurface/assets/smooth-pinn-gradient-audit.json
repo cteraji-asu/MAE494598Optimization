@@ -1,0 +1,133 @@
+{
+  "results_sha256": "62d9a5e65a623f44fd42193fd74df4611badc9744773026a4f7ee9c3a937224b",
+  "reference_fd_1e6_vs_1e7_relative_L2": 1.0105629706524317e-08,
+  "runs": [
+    {
+      "mode": "monolithic",
+      "seed": 0,
+      "checks": [
+        {
+          "h": 1e-06,
+          "autodiff_vs_fd_max": 2.490882167194286e-09,
+          "autodiff_vs_fd_relative_L2": 1.0775165887760345e-10
+        },
+        {
+          "h": 5e-07,
+          "autodiff_vs_fd_max": 2.2328734416987572e-09,
+          "autodiff_vs_fd_relative_L2": 6.378363216871795e-11
+        },
+        {
+          "h": 1e-07,
+          "autodiff_vs_fd_max": 6.19600371010165e-09,
+          "autodiff_vs_fd_relative_L2": 1.3308969780651e-10
+        }
+      ]
+    },
+    {
+      "mode": "smooth_specialists",
+      "seed": 0,
+      "checks": [
+        {
+          "h": 1e-06,
+          "autodiff_vs_fd_max": 2.9558053540768014e-05,
+          "autodiff_vs_fd_relative_L2": 5.252218963820587e-08
+        },
+        {
+          "h": 5e-07,
+          "autodiff_vs_fd_max": 7.399167714083887e-06,
+          "autodiff_vs_fd_relative_L2": 1.314716975346229e-08
+        },
+        {
+          "h": 1e-07,
+          "autodiff_vs_fd_max": 2.826653258125589e-07,
+          "autodiff_vs_fd_relative_L2": 5.037821677508262e-10
+        }
+      ]
+    },
+    {
+      "mode": "monolithic",
+      "seed": 1,
+      "checks": [
+        {
+          "h": 1e-06,
+          "autodiff_vs_fd_max": 2.673102628136803e-09,
+          "autodiff_vs_fd_relative_L2": 1.0814434729584835e-10
+        },
+        {
+          "h": 5e-07,
+          "autodiff_vs_fd_max": 2.0266526234991034e-09,
+          "autodiff_vs_fd_relative_L2": 6.048673508977313e-11
+        },
+        {
+          "h": 1e-07,
+          "autodiff_vs_fd_max": 4.826524957479705e-09,
+          "autodiff_vs_fd_relative_L2": 1.2543345256152244e-10
+        }
+      ]
+    },
+    {
+      "mode": "smooth_specialists",
+      "seed": 1,
+      "checks": [
+        {
+          "h": 1e-06,
+          "autodiff_vs_fd_max": 2.773821779555874e-05,
+          "autodiff_vs_fd_relative_L2": 4.790216543856942e-08
+        },
+        {
+          "h": 5e-07,
+          "autodiff_vs_fd_max": 6.944129154362599e-06,
+          "autodiff_vs_fd_relative_L2": 1.1989221618317584e-08
+        },
+        {
+          "h": 1e-07,
+          "autodiff_vs_fd_max": 2.6680379505705787e-07,
+          "autodiff_vs_fd_relative_L2": 4.620570899611662e-10
+        }
+      ]
+    },
+    {
+      "mode": "monolithic",
+      "seed": 2,
+      "checks": [
+        {
+          "h": 1e-06,
+          "autodiff_vs_fd_max": 3.2105056391174003e-09,
+          "autodiff_vs_fd_relative_L2": 1.3228087024784992e-10
+        },
+        {
+          "h": 5e-07,
+          "autodiff_vs_fd_max": 2.1595170096588845e-09,
+          "autodiff_vs_fd_relative_L2": 6.502997597643989e-11
+        },
+        {
+          "h": 1e-07,
+          "autodiff_vs_fd_max": 4.8180623934968025e-09,
+          "autodiff_vs_fd_relative_L2": 1.1705669681397686e-10
+        }
+      ]
+    },
+    {
+      "mode": "smooth_specialists",
+      "seed": 2,
+      "checks": [
+        {
+          "h": 1e-06,
+          "autodiff_vs_fd_max": 2.377863370384148e-05,
+          "autodiff_vs_fd_relative_L2": 4.546446466990218e-08
+        },
+        {
+          "h": 5e-07,
+          "autodiff_vs_fd_max": 5.954502626082103e-06,
+          "autodiff_vs_fd_relative_L2": 1.1380280055968443e-08
+        },
+        {
+          "h": 1e-07,
+          "autodiff_vs_fd_max": 2.2968157509239973e-07,
+          "autodiff_vs_fd_relative_L2": 4.417224318666248e-10
+        }
+      ]
+    }
+  ],
+  "note": "Post-fit verification of numerical derivatives, not a new training or model-selection decision. All original h=1e-6 results remain unchanged."
+}

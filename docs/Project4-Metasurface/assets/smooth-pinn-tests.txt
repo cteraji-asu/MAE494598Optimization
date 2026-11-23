@@ -1,0 +1,13 @@
+test_analytic_reference (test_smooth_pinn.SmoothPinnTests.test_analytic_reference) ... ok
+test_capacity (test_smooth_pinn.SmoothPinnTests.test_capacity) ... ok
+test_design_autodiff (test_smooth_pinn.SmoothPinnTests.test_design_autodiff) ... ok
+test_frozen_separation (test_smooth_pinn.SmoothPinnTests.test_frozen_separation) ... ok
+test_saved_results_independent_numpy (test_smooth_pinn.SmoothPinnTests.test_saved_results_independent_numpy) ... ok
+test_smooth_gate_derivative_and_continuity (test_smooth_pinn.SmoothPinnTests.test_smooth_gate_derivative_and_continuity) ... ok
+test_spatial_jets (test_smooth_pinn.SmoothPinnTests.test_spatial_jets) ... ok
+test_thresholds (test_smooth_pinn.SmoothPinnTests.test_thresholds) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.475s
+
+OK

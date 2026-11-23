@@ -1,0 +1,222 @@
+{
+  "scope": "Independent agent numerical audit, not student review",
+  "checks": [
+    {
+      "name": "Source hashes",
+      "passed": true
+    },
+    {
+      "name": "All recorded verification checks",
+      "passed": true
+    },
+    {
+      "name": "linear final values",
+      "passed": true
+    },
+    {
+      "name": "linear KKT acceptance",
+      "passed": true,
+      "stationarity": 1.3877787807814457e-17,
+      "primal": 0.0,
+      "complementarity": 4.680685931966794e-15,
+      "active": 20
+    },
+    {
+      "name": "linear best selected correctly",
+      "passed": true
+    },
+    {
+      "name": "linear run uniform",
+      "passed": true,
+      "success": true,
+      "feasible": true
+    },
+    {
+      "name": "linear run low_high",
+      "passed": true,
+      "success": true,
+      "feasible": true
+    },
+    {
+      "name": "linear run high_low",
+      "passed": true,
+      "success": false,
+      "feasible": false
+    },
+    {
+      "name": "linear run random_494_a",
+      "passed": true,
+      "success": true,
+      "feasible": true
+    },
+    {
+      "name": "linear run random_494_b",
+      "passed": true,
+      "success": true,
+      "feasible": true
+    },
+    {
+      "name": "linear mesh refinement",
+      "passed": true,
+      "max_recompute_error": 0.0,
+      "finest_objective_change": 2.1937588684739495e-05
+    },
+    {
+      "name": "nonlinear final values",
+      "passed": true
+    },
+    {
+      "name": "nonlinear KKT acceptance",
+      "passed": true,
+      "stationarity": 1.3877787807814457e-17,
+      "primal": 0.0,
+      "complementarity": 2.4697784146227053e-14,
+      "active": 20
+    },
+    {
+      "name": "nonlinear best selected correctly",
+      "passed": true
+    },
+    {
+      "name": "nonlinear run uniform",
+      "passed": true,
+      "success": true,
+      "feasible": true
+    },
+    {
+      "name": "nonlinear run low_high",
+      "passed": true,
+      "success": true,
+      "feasible": true
+    },
+    {
+      "name": "nonlinear run random_494_a",
+      "passed": true,
+      "success": true,
+      "feasible": true
+    },
+    {
+      "name": "nonlinear run random_494_b",
+      "passed": true,
+      "success": true,
+      "feasible": true
+    },
+    {
+      "name": "nonlinear mesh refinement",
+      "passed": true,
+      "max_recompute_error": 0.0,
+      "finest_objective_change": 2.250618693988571e-05
+    },
+    {
+      "name": "Both failed starts retained",
+      "passed": true
+    },
+    {
+      "name": "No nonlinear design change",
+      "passed": true
+    },
+    {
+      "name": "Stored reflection and nodal-voltage magnitudes",
+      "passed": true
+    }
+  ],
+  "passed": true,
+  "remaining": [
+    "Student independent expected-value derivation",
+    "Specific formulation approval and engineering-limit justification",
+    "Live website and WebGL browser QA",
+    "Coursework submission not authorized/performed"
+  ],
+  "results_sha256": "12585b2d49f43d40f85b9a4a83e0f9eb22f3bb0c8f3020cdea906594001c67b1",
+  "earlier_independent_checks": {
+    "nonuniform_ABCD": "Independent matrix-exponential cascade, second-order FE convergence",
+    "random_nonlinear_designs": 10,
+    "max_power_balance_defect": 6.960265697131263e-13,
+    "max_phase_covariance_field_error": 1.4285029003408617e-13,
+    "max_five_metric_directional_gradient_absolute_error": 2.0239342424233087e-09
+  },
+  "unit_tests": {
+    "test_wave_fem.py": {
+      "passed": 4,
+      "failed": 0
+    },
+    "test_smooth_pinn.py": {
+      "passed": 8,
+      "failed": 0
+    },
+    "test_two_pinn.py": {
+      "passed": 7,
+      "failed": 0
+    }
+  },
+  "packaging_rerun_check": {
+    "selected_objectives": [
+      0.46303491207783676,
+      0.6613456026531241
+    ],
+    "selected_design_matches_expected": true,
+    "source_hashes_match": true
+  },
+  "smooth_followon_review": {
+    "results_sha256": "62d9a5e65a623f44fd42193fd74df4611badc9744773026a4f7ee9c3a937224b",
+    "checks": [
+      {
+        "mode": "monolithic",
+        "seed": 0,
+        "saved_metrics_reproduced": true,
+        "gate_pass": false,
+        "fully_in_design_box_count": 299,
+        "model_fd_relative_error": 1.3301233565395963e-10,
+        "physical_gradient_relative_error": 0.9503103077170448
+      },
+      {
+        "mode": "smooth_specialists",
+        "seed": 0,
+        "saved_metrics_reproduced": true,
+        "gate_pass": false,
+        "fully_in_design_box_count": 299,
+        "model_fd_relative_error": 5.03781402607963e-10,
+        "physical_gradient_relative_error": 1.0929516659987555
+      },
+      {
+        "mode": "monolithic",
+        "seed": 1,
+        "saved_metrics_reproduced": true,
+        "gate_pass": false,
+        "fully_in_design_box_count": 299,
+        "model_fd_relative_error": 1.2517521680515166e-10,
+        "physical_gradient_relative_error": 0.9490045289097381
+      },
+      {
+        "mode": "smooth_specialists",
+        "seed": 1,
+        "saved_metrics_reproduced": true,
+        "gate_pass": false,
+        "fully_in_design_box_count": 299,
+        "model_fd_relative_error": 4.620565760833963e-10,
+        "physical_gradient_relative_error": 1.0776987827798812
+      },
+      {
+        "mode": "monolithic",
+        "seed": 2,
+        "saved_metrics_reproduced": true,
+        "gate_pass": false,
+        "fully_in_design_box_count": 299,
+        "model_fd_relative_error": 1.1692099544084015e-10,
+        "physical_gradient_relative_error": 0.9501112164342274
+      },
+      {
+        "mode": "smooth_specialists",
+        "seed": 2,
+        "saved_metrics_reproduced": true,
+        "gate_pass": false,
+        "fully_in_design_box_count": 299,
+        "model_fd_relative_error": 4.417197393845624e-10,
+        "physical_gradient_relative_error": 1.0590944858346165
+      }
+    ],
+    "scope": "Independent agent replay, not student review; six final metric sets, gradients and restricted grid audits reproduced; training not repeated by this reviewer.",
+    "scope_note": "The published 302-point derivative audit uses d<=0.306 and includes three d<0.036 outside the restricted optimization box. A separate 299-point in-box replay preserves the negative gradient conclusion. No frozen results changed.",
+    "comparison_and_leakage": "Code review and passing frozen-separation tests found training draws restricted to train rows, shared seeded minibatch streams, unchanged acceptance gates, prior d exclusion, and terminal checkpoint sealing before held-out reference evaluation. This is stratified interpolation, not blocked extrapolation or blinded access certification."
+  }
+}
