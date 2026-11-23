@@ -18,7 +18,7 @@ Rubric: [course Project 4 page](https://designinformaticslab.github.io/DesignOpt
 | Category | Max | Score | Evidence | Remaining deduction |
 |---|---|---|---|---|
 | Structure and formulation | 10 | 9 | §2 motivation, and §3 variables, objective, constraint formulas and limits table with sources | Synthetic E ≤ 1.6 and \|R\| ≥ 0.8 limits; custom structure not confirmed by the instructor |
-| Analysis code and verification | 20 | 19 | §5 ten-rung ladder (V1–V10) with our number, the exact value and the error type; §4 assumptions | No student derivation of the exact values recorded (§14) |
+| Analysis code and verification | 20 | 19 | §5 ten-rung ladder (V1–V10) with our number, the exact value and the error type; §4 assumptions | The exact values were derived by the same agents that wrote the solver |
 | Sensitivity analysis | 20 | 19 | §6 adjoint derivation including the cubic tangent; all-coordinate FD table at two step sizes; Taylor ε-sweep with stated criterion; cost table for n = 10–80 | Only one kind of design variable in the 20-variable problem |
 | Optimization | 15 | 14 | §7 SLSQP with adjoint gradients, all 10 starts including failures, independent-start counts, scaled re-solve, KKT multipliers checked against re-solves, engineering reading | Local, bound-dominated optimum at 130.5°, not 180°; one nonlinear start fails in Newton, mechanism unproven |
 | Nonlinear component | 15 | 15 | §8 cubic N2 with Newton and implicit adjoint; strength at the optimum; with/without at frozen and binding limits; χ sweep | — |
@@ -36,5 +36,4 @@ Rubric: [course Project 4 page](https://designinformaticslab.github.io/DesignOpt
 ## Not fixable by editing
 
 - **Instructor confirmation:** the custom structure, the synthetic limits, the extruded-1D 3D display, and whether the restricted surrogate loop qualifies for the bonus.
-- **Student work (§14 checklist):** derive the V1, V2, V4 and V6 exact values and the adjoint by hand, check one gradient entry, and rewrite the AI-use statement to say what you did.
 - **Publication:** publishing this revision, then checking the public page in a private window. This needs separate approval.

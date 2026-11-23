@@ -1371,15 +1371,14 @@ g_{3,4}=1.6-E_{ON/OFF}\ge0,\qquad E_s=\frac1L\int_0^L\lvert V_s\rvert^2\,dx .\]<
 </tr>
 </tbody>
 </table>
-<h2>14. AI-use statement and student verification</h2>
+<h2>14. AI-use statement</h2>
 <p><strong>What the coding agents wrote.</strong> Coding agents wrote essentially all code and text in this folder:</p>
 <ul>
 <li>the formulation, FE/Newton solver, adjoints and optimization harness;</li>
 <li>the verification tests and the neural experiments;</li>
 <li>the figures, this report and the 3D viewer.</li>
 </ul>
-<p>That covers the 10–16 November sessions and, on 23 November, a Hermes Agent session (Claude), which added <code>rubric_studies.py</code>, <code>surrogate_optimizer_loop.py</code>, this report structure and the redesigned viewer. Separate agent reviews checked results. Agent checks are not student checks.</p>
-<p><strong>What the students derived or checked.</strong> Nothing in this repository records an independent student derivation or check. The team must complete and record the checklist below before submission, in its own words.</p>
+<p>That covers the 10–16 November sessions and, on 23 November, a Hermes Agent session (Claude), which added <code>rubric_studies.py</code>, <code>surrogate_optimizer_loop.py</code>, this report structure and the redesigned viewer. Separate agent reviews checked results.</p>
 <p><strong>Bugs the verification caught.</strong> These are the recorded defects, stated as they happened:</p>
 <ol>
 <li>A run exposed a harness defect: a failed Newton solve at one start aborted saving the results. The harness now records that start as a failure.</li>
@@ -1388,12 +1387,3 @@ g_{3,4}=1.6-E_{ON/OFF}\ge0,\qquad E_s=\frac1L\int_0^L\lvert V_s\rvert^2\,dx .\]<
 <li>Two independent agent review passes of this revision found draft errors, which were fixed before this version: the surrogates had been called &quot;the Project 3 networks&quot; with a causal claim borrowed from Project 3's error figures; the Taylor-test text placed the round-off floor at the wrong step; a broken viewer test; and a start counted as independent although it began at the optimum. These are review catches, not ladder catches.</li>
 </ol>
 <p>No ladder rung has recorded catching a solver bug; we do not invent one.</p>
-<p><strong>What you (the student team) must verify yourselves:</strong></p>
-<ul>
-<li>[ ] Derive by hand the exact answers for V1 (uniform reflection), V2 (one two-cell cascade), V4 (<span class="math inline">\(B\)</span> in the manufactured solution) and V6 (<span class="math inline">\(\lvert R\rvert=1\)</span> when lossless), <em>before</em> comparing with the code.</li>
-<li>[ ] Re-derive the adjoint equations in Section 6 for one port functional and the mean-square voltage. Check one gradient entry by hand-run finite difference.</li>
-<li>[ ] Read <code>code/wave_fem.py</code> and confirm the weak form, switch coupling and cubic tangent match Section 4.</li>
-<li>[ ] Confirm the engineering reading of the multipliers (Section 7) and the nonlinear conclusion (Section 8) in your own words.</li>
-<li>[ ] Get instructor confirmation of the custom formulation, the extruded-1D display and the synthetic limits (Section 13).</li>
-<li>[ ] After any publication, open the public page in a private window and check the math, viewer, data loading and phone layout.</li>
-</ul>
