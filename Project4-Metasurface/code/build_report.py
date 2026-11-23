@@ -433,7 +433,7 @@ $$
 |---|---|---|---|
 | Reflected amplitude floor | $\lvert R\rvert\ge0.8$ | Project 3 screening criterion, kept so that a non-reflecting line cannot "win" | Illustrative team choice, **not** a confirmed lab tolerance |
 | Mean-square voltage | $E\le1.6$ | Synthetic exposure limit, fixed after a coarse pilot and before the final runs | Synthetic; not from a standard or data sheet. It is loose at the optimum; Section 7 tightens it post hoc |
-| Loading range | $0.5\le c_j\le2.5$ | A 5:1 tuning range, comparable to commercial varactors: minimum $C(0\,\mathrm V)/C(30\,\mathrm V)=4.1$ for the Skyworks SMV1405 abrupt-junction varactor ([data sheet 200068X](https://www.skyworksinc.com/-/media/SkyWorks/Documents/Products/101-200/SMV1405_1430_Series_200068X_discontinued.pdf), Table 3) and 7.5:1–14:1 for MACOM SMV14xx hyperabrupt parts | Comparable, not derived: $c_j$ is a per-cell multiplier, not a fitted device model. Sets the bound-dominated optimum |
+| Loading range | $0.5\le c_j\le2.5$ | A 5:1 tuning range, comparable to commercial varactors: minimum $C(0\,\mathrm V)/C(30\,\mathrm V)=4.1$ for the Skyworks SMV1405 abrupt-junction varactor ([data sheet 200068X](https://www.skyworksinc.com/-/media/SkyWorks/Documents/Products/101-200/SMV1405_1430_Series_200068X_discontinued.pdf), Table 3) | Comparable, not derived: $c_j$ is a per-cell multiplier, not a fitted device model. Sets the bound-dominated optimum |
 
 $E$ is a spatial average of normalized $\lvert V\rvert^2$, not stored energy and not a local voltage ceiling. These limits need instructor acceptance as part of the custom Project 3 extension (Section 13).
 

@@ -16,7 +16,7 @@ Then open `http://localhost:8000/Project4-Metasurface/preview.html`. `preview.ht
 
 ## Reproduce everything with one command
 
-Python 3.13 with the versions in `requirements.txt` (NumPy, SciPy, PyTorch, markdown-it-py). Node is optional and only used for the viewer test.
+The pinned NumPy, SciPy, PyTorch and markdown-it-py versions in `requirements.txt`. The frozen 10 November runs used Python 3.13.15; the 23 November runs and reproduction used Python 3.14 with the same pinned packages (versions are recorded in each JSON's provenance). Node is optional and only used for the viewer test.
 
 ```sh
 python Project4-Metasurface/reproduce.py
