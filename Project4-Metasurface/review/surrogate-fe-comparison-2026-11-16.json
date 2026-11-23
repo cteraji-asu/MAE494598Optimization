@@ -1,0 +1,75 @@
+{
+  "comparison_completed": true,
+  "fe_qualification_passed": true,
+  "runs": [
+    {
+      "mode": "monolithic",
+      "seed": 0,
+      "count": 299,
+      "fe_gradient_relative_L2": 0.9503123326207168,
+      "fe_gradient_rmse": 75.25684236771205,
+      "selected_d": 0.036
+    },
+    {
+      "mode": "smooth_specialists",
+      "seed": 0,
+      "count": 299,
+      "fe_gradient_relative_L2": 1.0928953481459258,
+      "fe_gradient_rmse": 86.54823274049836,
+      "selected_d": 0.036
+    },
+    {
+      "mode": "monolithic",
+      "seed": 1,
+      "count": 299,
+      "fe_gradient_relative_L2": 0.9490064222921613,
+      "fe_gradient_rmse": 75.15342511806796,
+      "selected_d": 0.036
+    },
+    {
+      "mode": "smooth_specialists",
+      "seed": 1,
+      "count": 299,
+      "fe_gradient_relative_L2": 1.0776480757729354,
+      "fe_gradient_rmse": 85.34077542975581,
+      "selected_d": 0.036
+    },
+    {
+      "mode": "monolithic",
+      "seed": 2,
+      "count": 299,
+      "fe_gradient_relative_L2": 0.9501135703870007,
+      "fe_gradient_rmse": 75.24110204994706,
+      "selected_d": 0.036
+    },
+    {
+      "mode": "smooth_specialists",
+      "seed": 2,
+      "count": 299,
+      "fe_gradient_relative_L2": 1.0590453838436968,
+      "fe_gradient_rmse": 83.86759676409224,
+      "selected_d": 0.036
+    }
+  ],
+  "fe_grid_choice": {
+    "index": 6386,
+    "d": 0.20842200000000002,
+    "metrics": [
+      6.639327897461911e-07,
+      0.31319585702640806,
+      0.0008376724921592693
+    ],
+    "exact_metrics": [
+      5.390117550074791e-07,
+      0.3131955208712016,
+      0.0008164921897397814
+    ],
+    "phase_degrees": 179.93397632213728
+  },
+  "hashes": {
+    "saved-surrogate-gradients-2026-11-16.json": "1b8130958c6e0f53db58d8444a7b170535568d3ea9b6780b781d2d8565de513f",
+    "restricted-fe-bridge-2026-11-16.json": "9211b549868b6ac292ce0d42195977c98e0a3754c92d2dd4a7bd5c9584ee3ea3",
+    "compare_saved_surrogate_fe.py": "39f88ecb525aadd63deed9c5c56d316baaf37e988e50eeed6e762a1928bf57f8"
+  },
+  "limits": "Post-fit restricted linear-family comparison; bad surrogate physical gradients remain failures. No training, continuous optimum,20-variable surrogate or bonus grade claimed."
+}

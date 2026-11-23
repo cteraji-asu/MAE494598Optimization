@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 460" role="img">
+<title>Absolute error (log scale) versus Elements (log scale)</title>
+<rect width="760" height="460" fill="#fafbf8"/>
+<g font-family="system-ui,sans-serif" font-size="12" fill="#263c43">
+<path d="M110.0 70V340 M110 340.0H700" stroke="#dfe6e4" fill="none"/>
+<text x="110.0" y="362" text-anchor="middle">20</text>
+<text x="98" y="344.0" text-anchor="end">1.2e-06</text>
+<path d="M228.0 70V340 M110 286.0H700" stroke="#dfe6e4" fill="none"/>
+<text x="228.0" y="362" text-anchor="middle">34.8</text>
+<text x="98" y="290.0" text-anchor="end">5.9e-06</text>
+<path d="M346.0 70V340 M110 232.0H700" stroke="#dfe6e4" fill="none"/>
+<text x="346.0" y="362" text-anchor="middle">60.6</text>
+<text x="98" y="236.0" text-anchor="end">2.8e-05</text>
+<path d="M464.0 70V340 M110 178.0H700" stroke="#dfe6e4" fill="none"/>
+<text x="464.0" y="362" text-anchor="middle">106</text>
+<text x="98" y="182.0" text-anchor="end">1.3e-04</text>
+<path d="M582.0 70V340 M110 124.0H700" stroke="#dfe6e4" fill="none"/>
+<text x="582.0" y="362" text-anchor="middle">184</text>
+<text x="98" y="128.0" text-anchor="end">6.1e-04</text>
+<path d="M700.0 70V340 M110 70.0H700" stroke="#dfe6e4" fill="none"/>
+<text x="700.0" y="362" text-anchor="middle">320</text>
+<text x="98" y="74.0" text-anchor="end">2.9e-03</text>
+<path d="M110 70V340H700" stroke="#263c43" fill="none"/>
+<text x="405" y="392" text-anchor="middle">Elements (log scale)</text>
+<text transform="translate(20 205) rotate(-90)" text-anchor="middle">Absolute error (log scale)</text>
+<polyline points="110.00,70.00 257.50,118.33 405.00,166.69 552.50,215.05 700.00,263.42" stroke="#096b72" fill="none" stroke-width="2.5"/>
+<circle cx="110.00" cy="70.00" r="2.3" fill="#096b72"/>
+<circle cx="257.50" cy="118.33" r="2.3" fill="#096b72"/>
+<circle cx="405.00" cy="166.69" r="2.3" fill="#096b72"/>
+<circle cx="552.50" cy="215.05" r="2.3" fill="#096b72"/>
+<circle cx="700.00" cy="263.42" r="2.3" fill="#096b72"/>
+<text x="80" y="421" fill="#096b72">Uniform ABCD reflection</text>
+<polyline points="110.00,194.89 257.50,243.27 405.00,291.63 552.50,340.00" stroke="#e07832" fill="none" stroke-width="2.5"/>
+<circle cx="110.00" cy="194.89" r="2.3" fill="#e07832"/>
+<circle cx="257.50" cy="243.27" r="2.3" fill="#e07832"/>
+<circle cx="405.00" cy="291.63" r="2.3" fill="#e07832"/>
+<circle cx="552.50" cy="340.00" r="2.3" fill="#e07832"/>
+<text x="305" y="421" fill="#e07832">Manufactured nonlinear L2</text>
+</g></svg>

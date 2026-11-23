@@ -1,0 +1,12 @@
+test_analytic_reference (test_two_pinn.TwoPinnTests.test_analytic_reference) ... ok
+test_capacity (test_two_pinn.TwoPinnTests.test_capacity) ... ok
+test_design_autodiff (test_two_pinn.TwoPinnTests.test_design_autodiff) ... ok
+test_frozen_separation (test_two_pinn.TwoPinnTests.test_frozen_separation) ... ok
+test_saved_results_independent_numpy (test_two_pinn.TwoPinnTests.test_saved_results_independent_numpy) ... ok
+test_spatial_jets (test_two_pinn.TwoPinnTests.test_spatial_jets) ... ok
+test_thresholds (test_two_pinn.TwoPinnTests.test_thresholds) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.457s
+
+OK

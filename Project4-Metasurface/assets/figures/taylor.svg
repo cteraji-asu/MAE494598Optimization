@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 460" role="img">
+<title>First-order Taylor remainder (log scale) versus Perturbation size h (log scale)</title>
+<rect width="760" height="460" fill="#fafbf8"/>
+<g font-family="system-ui,sans-serif" font-size="12" fill="#263c43">
+<path d="M110.0 70V340 M110 340.0H700" stroke="#dfe6e4" fill="none"/>
+<text x="110.0" y="362" text-anchor="middle">2.5e-03</text>
+<text x="98" y="344.0" text-anchor="end">2.1e-10</text>
+<path d="M228.0 70V340 M110 286.0H700" stroke="#dfe6e4" fill="none"/>
+<text x="228.0" y="362" text-anchor="middle">4.4e-03</text>
+<text x="98" y="290.0" text-anchor="end">1.6e-09</text>
+<path d="M346.0 70V340 M110 232.0H700" stroke="#dfe6e4" fill="none"/>
+<text x="346.0" y="362" text-anchor="middle">7.6e-03</text>
+<text x="98" y="236.0" text-anchor="end">1.3e-08</text>
+<path d="M464.0 70V340 M110 178.0H700" stroke="#dfe6e4" fill="none"/>
+<text x="464.0" y="362" text-anchor="middle">0.0132</text>
+<text x="98" y="182.0" text-anchor="end">1.0e-07</text>
+<path d="M582.0 70V340 M110 124.0H700" stroke="#dfe6e4" fill="none"/>
+<text x="582.0" y="362" text-anchor="middle">0.023</text>
+<text x="98" y="128.0" text-anchor="end">7.9e-07</text>
+<path d="M700.0 70V340 M110 70.0H700" stroke="#dfe6e4" fill="none"/>
+<text x="700.0" y="362" text-anchor="middle">0.04</text>
+<text x="98" y="74.0" text-anchor="end">6.2e-06</text>
+<path d="M110 70V340H700" stroke="#263c43" fill="none"/>
+<text x="405" y="392" text-anchor="middle">Perturbation size h (log scale)</text>
+<text transform="translate(20 205) rotate(-90)" text-anchor="middle">First-order Taylor remainder (log scale)</text>
+<polyline points="700.00,105.18 552.50,141.42 405.00,177.67 257.50,213.94 110.00,250.21" stroke="#096b72" fill="none" stroke-width="2.5"/>
+<circle cx="700.00" cy="105.18" r="2.3" fill="#096b72"/>
+<circle cx="552.50" cy="141.42" r="2.3" fill="#096b72"/>
+<circle cx="405.00" cy="177.67" r="2.3" fill="#096b72"/>
+<circle cx="257.50" cy="213.94" r="2.3" fill="#096b72"/>
+<circle cx="110.00" cy="250.21" r="2.3" fill="#096b72"/>
+<text x="80" y="421" fill="#096b72">Objective</text>
+<polyline points="700.00,157.44 552.50,193.73 405.00,230.02 257.50,266.30 110.00,302.58" stroke="#e07832" fill="none" stroke-width="2.5"/>
+<circle cx="700.00" cy="157.44" r="2.3" fill="#e07832"/>
+<circle cx="552.50" cy="193.73" r="2.3" fill="#e07832"/>
+<circle cx="405.00" cy="230.02" r="2.3" fill="#e07832"/>
+<circle cx="257.50" cy="266.30" r="2.3" fill="#e07832"/>
+<circle cx="110.00" cy="302.58" r="2.3" fill="#e07832"/>
+<text x="305" y="421" fill="#e07832">ON magnitude²</text>
+<polyline points="700.00,194.61 552.50,231.03 405.00,267.38 257.50,303.69 110.00,340.00" stroke="#66509c" fill="none" stroke-width="2.5"/>
+<circle cx="700.00" cy="194.61" r="2.3" fill="#66509c"/>
+<circle cx="552.50" cy="231.03" r="2.3" fill="#66509c"/>
+<circle cx="405.00" cy="267.38" r="2.3" fill="#66509c"/>
+<circle cx="257.50" cy="303.69" r="2.3" fill="#66509c"/>
+<circle cx="110.00" cy="340.00" r="2.3" fill="#66509c"/>
+<text x="530" y="421" fill="#66509c">OFF magnitude²</text>
+<polyline points="700.00,131.46 552.50,167.41 405.00,203.52 257.50,239.72 110.00,275.95" stroke="#527f31" fill="none" stroke-width="2.5"/>
+<circle cx="700.00" cy="131.46" r="2.3" fill="#527f31"/>
+<circle cx="552.50" cy="167.41" r="2.3" fill="#527f31"/>
+<circle cx="405.00" cy="203.52" r="2.3" fill="#527f31"/>
+<circle cx="257.50" cy="239.72" r="2.3" fill="#527f31"/>
+<circle cx="110.00" cy="275.95" r="2.3" fill="#527f31"/>
+<text x="80" y="442" fill="#527f31">ON mean-square V</text>
+<polyline points="700.00,70.00 552.50,106.35 405.00,142.66 257.50,178.95 110.00,215.23" stroke="#ae4e74" fill="none" stroke-width="2.5"/>
+<circle cx="700.00" cy="70.00" r="2.3" fill="#ae4e74"/>
+<circle cx="552.50" cy="106.35" r="2.3" fill="#ae4e74"/>
+<circle cx="405.00" cy="142.66" r="2.3" fill="#ae4e74"/>
+<circle cx="257.50" cy="178.95" r="2.3" fill="#ae4e74"/>
+<circle cx="110.00" cy="215.23" r="2.3" fill="#ae4e74"/>
+<text x="305" y="442" fill="#ae4e74">OFF mean-square V</text>
+</g></svg>

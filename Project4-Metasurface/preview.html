@@ -1,0 +1,744 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="A reproducible nonlinear switched transmission-line design study with a linked 3D finite-element comparison."><title>Designing a nonlinear switched line · MAE 494</title><link rel="stylesheet" href="site/styles.css"></head>
+<body><div class="shell"><header class="masthead"><span>MAE 494 · Design optimization · Project 4</span><a href="#report">Read the study ↘</a></header>
+<section class="hero"><div><div class="eyebrow">A Project 3 extension / computational study</div><h1>Designing a nonlinear<br>switched line.</h1><p class="lede">Twenty fixed loading cells. Two switch states. One design that balances reflection contrast against mean-square voltage limits.</p></div><aside class="technical-note"><strong>A reduced model, made inspectable.</strong><p>Compare finite-element fields and capacitance loading, then trace the design through the optimizer. All reported results come from the saved numerical experiment.</p><span>Normalized units · P1 elements · Real-valued adjoints</span></aside></section>
+<div id="load-message" role="status">Loading the saved experiment…</div>
+<section class="summary" aria-label="Results summary"><div class="stat"><span>Initial → nonlinear objective</span><strong id="summary-objective">—</strong><span>Lower is better</span></div><div class="stat"><span>Optimized phase separation</span><strong id="summary-phase">—</strong><span>Between ON and OFF reflections</span></div><div class="stat"><span>Final constraint checks</span><strong id="summary-feasible">—</strong><span id="summary-mesh">Saved finite-element solution</span></div></section>
+<p id="model-finding" class="finding"></p>
+<section aria-labelledby="comparison-title"><div class="section-top"><div><h2 id="comparison-title">Same line. Different loading.</h2><p>Drag either view to orbit both. Scroll to zoom. Arrow keys rotate the focused view.</p></div><span class="tag">LINKED CAMERAS / SHARED SCALE</span></div>
+<div class="toolbar"><label>Switch <select id="switch-state"><option value="0">ON</option><option value="1">OFF</option></select></label><label>Compare <select id="design-mode"><option value="nonlinear">Nonlinear optimized</option><option value="linear">Linear design in nonlinear model</option></select></label><span class="spacer"></span><button id="reset-view" type="button">Reset view</button><label>Inspect element <select id="element-select" aria-label="Finite element to inspect"></select></label></div>
+<div class="views"><article class="view"><div class="view-head"><strong>Initial · uniform loading</strong><span class="status" id="initial-status"></span></div><div class="canvas-wrap"><canvas id="initial-view" tabindex="0" aria-label="Initial design 3D field. Use arrow keys to rotate and plus or minus to zoom."></canvas><span class="canvas-label">incident port → x / split switch / short →</span></div><div class="view-foot" id="initial-metrics">—</div></article><article class="view"><div class="view-head"><strong id="final-label">Nonlinear optimized</strong><span class="status" id="final-status"></span></div><div class="canvas-wrap"><canvas id="final-view" tabindex="0" aria-label="Optimized design 3D field. Use arrow keys to rotate and plus or minus to zoom."></canvas><span class="canvas-label">cell height encodes c; not fabricated geometry</span></div><div class="view-foot" id="final-metrics">—</div></article></div>
+<div class="legend-row"><div class="legend"><strong>Voltage magnitude |V| / |Vincident|</strong><div class="scale"></div><div class="scale-labels"><span>0</span><span id="scale-max">—</span></div></div><div>The raised ribbon is |V|. Block heights encode capacitance multiplier c.<br>Separate traces preserve the voltage jump at the series switch. “!” flags a failed global constraint.</div></div>
+<div class="timeline"><button id="play-history" type="button" disabled>Play iterations</button><label><span class="sr-only">Optimization iteration</span><input id="iteration" type="range" min="0" max="0" value="0" disabled></label><output id="iteration-label">Final design</output><small>Recorded nonlinear optimizer iterates, not a time-domain wave animation. Initial design stays fixed.</small></div>
+<div id="inspection" class="inspection" aria-live="polite">Select or point to a finite element to inspect its loading and P1 field.</div>
+</section>
+<section class="results" aria-labelledby="metrics-heading"><h2 id="metrics-heading">Objective & constraint ledger</h2><p class="muted">The selected snapshot is evaluated in the nonlinear model. Every inequality uses g ≥ 0. The mean-square voltage limit is a spatial average, not a local voltage ceiling.</p><div class="table-wrap"><table><thead><tr><th scope="col">Quantity</th><th scope="col">Initial</th><th scope="col">Initial check</th><th scope="col">Selected</th><th scope="col">Selected check</th></tr></thead><tbody id="metrics-body"></tbody></table></div><details class="bound-details"><summary>Inspect all cell bounds</summary><div class="table-wrap"><table><thead><tr><th>Cell</th><th>Selected c</th><th>Lower slack</th><th>Upper slack</th><th>Check</th></tr></thead><tbody id="bounds-body"></tbody></table></div></details></section>
+<main class="report" id="report" markdown="1">
+<h2>1. What this study establishes</h2>
+<p>The finite-element design reduces the nonlinear-model objective from <strong>3.84135 to 0.661346</strong>, a <strong>82.78%</strong> reduction, while satisfying all four declared response constraints. The final reflected-wave phase separation is <strong>130.53°</strong>. It does <strong>not</strong> reach Project 3's illustrative 165° screening threshold. That threshold is a diagnostic comparison here, not an omitted constraint claimed to have passed.</p>
+<p>The best retained linear and nonlinear searches choose the same loading distribution to numerical precision: six low-capacitance cells before the switch and fourteen high-capacitance cells after it. Nonlinearity changes the predicted response rather than the selected design. Multiple starts expose inferior stationary points and failed solves; they are retained below.</p>
+<p>This is an agent-produced, reproducible computational portfolio draft. It extends the synthetic transmission-line mechanism in <a href="../Project3-Metasurface/report.md">Project 3</a>. It is not a calibrated metasurface, a full-wave Maxwell optimization, or an experimental result. The student team must independently check the benchmark derivations and confirm that the instructor accepts this particular custom formulation. No coursework has been submitted.</p>
+<table>
+<thead>
+<tr>
+<th>Design / evaluation model</th>
+<th>Objective</th>
+<th>Phase separation (°)</th>
+<th>ON |R|</th>
+<th>OFF |R|</th>
+<th>ON mean-square V</th>
+<th>OFF mean-square V</th>
+<th>Feasible</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Initial, nonlinear model</td>
+<td>3.84135</td>
+<td>7.0541</td>
+<td>0.978354</td>
+<td>0.985302</td>
+<td>2.19177</td>
+<td>1.66143</td>
+<td>FAIL</td>
+</tr>
+<tr>
+<td>Linear optimum, linear model</td>
+<td>0.463035</td>
+<td>139.064</td>
+<td>0.946317</td>
+<td>0.989274</td>
+<td>0.915747</td>
+<td>1.20447</td>
+<td>PASS</td>
+</tr>
+<tr>
+<td>Nonlinear optimum, nonlinear model</td>
+<td>0.661346</td>
+<td>130.534</td>
+<td>0.946908</td>
+<td>0.989726</td>
+<td>0.841777</td>
+<td>1.09592</td>
+<td>PASS</td>
+</tr>
+</tbody>
+</table>
+<h2>2. Engineering question and design formulation</h2>
+<p>The original interview concerned controlling reflected electromagnetic waves through metasurface design. Our reduced question is: how should a distributed capacitive loading be allocated along a switched line to make its two reflected phasors oppose one another, while preserving reflection magnitude and limiting voltage exposure? The <a href="../Project3-Metasurface/sources/interview/Post_Interview_Briefing.md">approved Project 3 briefing</a> supplies the research motivation, not validation of this new constitutive law or these requirements.</p>
+<p>There are <strong>20 independent dimensionless design variables</strong>, one capacitance multiplier cⱼ per fixed cell, with <strong>0.5 ≤ cⱼ ≤ 2.5</strong>. Each cell occupies L/20, where L = 0.36 reference wavelengths. The switch is at a = 0.108. The line geometry is fixed; cⱼ changes material/loading, not a calibrated manufactured width. The 3D display extrudes the one-dimensional model and explicitly labels graphical height encodings.</p>
+<p>Let Rₛ = Vₛ(0) − 1 for states s = ON, OFF. The scaled optimization problem is</p>
+<p class="equation">minimize f(c) = |R<sub>ON</sub> + R<sub>OFF</sub>|² + (0.002/20) Σ<sub>j=1</sub><sup>20</sup>(c<sub>j</sub> − 1)²</p>
+<p>subject to four PDE-response inequalities:</p>
+<ul>
+<li>g₁ = |R<sub>ON</sub>|² − 0.64 ≥ 0.</li>
+<li>g₂ = |R<sub>OFF</sub>|² − 0.64 ≥ 0.</li>
+<li>g₃ = 1.6 − E<sub>ON</sub> ≥ 0.</li>
+<li>g₄ = 1.6 − E<sub>OFF</sub> ≥ 0, where Eₛ = (1/L)∫₀ᴸ|Vₛ|² dx.</li>
+</ul>
+<p>E is <strong>normalized mean-square voltage</strong>, not physical stored energy. A local voltage exceeding √1.6 does not by itself violate this spatial-average requirement. The 0.8 amplitude floor is retained from Project 3's illustrative screening requirements. The loading bounds and 1.6 voltage-exposure limit define a synthetic design scenario, not a hardware rating or a standard. The voltage limit was fixed after a coarse pilot and before the final multistart runs. It is loose at the best design. The 0.002 baseline-deviation penalty favors less departure from c = 1; it is not a spatial smoothness penalty.</p>
+<p>The phasor-sum objective includes both phase opposition and magnitude matching. Reduced reflection can also reduce this objective, so magnitudes and circular phase separation are reported separately. The magnitude constraints prevent accepting a nearly nonreflecting solution merely because its phasor sum is small.</p>
+<h2>3. Analysis model and finite elements</h2>
+<p>With exp(+iωt) phasors, normalized incident voltage and reference impedance equal to one, define z = α + iβ, yⱼ = α + iβcⱼ, α = 0.03, β = 2π. On each side of the switch,</p>
+<p class="equation">−(V′/z)′ + yV + iβχ|V|²V = 0, &nbsp; I = −V′/z.</p>
+<p>The port condition is V(0) + I(0) = 2, the common short is V(L) = 0, and the switch imposes I(a⁻) = I(a⁺), V(a⁻) − V(a⁺) = ZₛI(a). The finite switch impedances are Z<sub>ON</sub> = 0.02 + 0.04i and Z<sub>OFF</sub> = 0.02 − 4i. They come from the synthetic Project 3 analogue.</p>
+<p>The nonlinear model uses χ = 0.05; the comparison uses χ = 0. A cubic charge law has a fundamental-harmonic contribution proportional to |V|²V, with the 3/4 projection factor absorbed into χ. Voltage-dependent capacitive loading is motivated by <a href="https://www.mdpi.com/2079-9292/10/18/2278">nonlinear transmission-line research</a> and <a href="https://tsapps.nist.gov/publication/get_pdf.cfm?pub_id=924675">NIST's nonlinear dielectric work</a>. These sources do not supply our chosen constants. This fundamental-only model omits generated higher harmonics and does not establish transient stability or a measured varactor characteristic.</p>
+<p>For a test function w that vanishes at the short, integration by parts gives</p>
+<p class="equation">∫[V′w′/z + yVw + iβχ|V|²Vw] dx + (V<sub>L</sub>−V<sub>R</sub>)(w<sub>L</sub>−w<sub>R</sub>)/Zₛ + V(0)w(0) = 2w(0).</p>
+<p>This is the implemented weak form, not a finite-difference scheme relabeled as FE. Each cell has eight two-node linear elements in the final optimization: <strong>160 elements, 161 complex free unknowns</strong>. The interface has two coincident nodes so the voltage jump is represented without smoothing. Four-point Gauss quadrature integrates the polynomial nonlinear element residual and tangent. The final node is eliminated for the short. The elementary derivative matrix is [[1,−1],[−1,1]]/h and the consistent mass matrix is h[[2,1],[1,2]]/6. The interface adds [[1,−1],[−1,1]]/Zₛ to its two independent nodes.</p>
+<p>The state vector stacks real and imaginary voltages. Newton's method uses the analytic real tangent, a residual-decreasing line search, and a 2×10⁻¹¹ infinity-norm residual tolerance. For V = a + ib, the derivatives of |V|²V with respect to a and b are (3a²+b²)+i2ab and 2ab+i(a²+3b²). They are integrated before multiplication by iβχ. Every solve starts from the linear state; the method can fail or select a local branch, so no global uniqueness claim is made.</p>
+<p>The passive balance check is</p>
+<p class="equation">1−|R|² = α∫(|V|²+|I|²) dx + Re(Zₛ)|I(a)|².</p>
+<p>The usual phasor power factor 1/2 cancels on both sides. The cubic shunt is purely reactive in this reduced model. Current within each P1 element is reconstructed as −V′/z; the switch current follows the voltage jump.</p>
+<h2>4. Verification ladder</h2>
+<p>All 9 retained automated checks pass. Errors with a zero expected value are absolute defects, because a relative error against zero is undefined. Observed convergence orders are compared with the theoretical second-order target, not treated as zero-error tests.</p>
+<table>
+<thead>
+<tr>
+<th>Check</th>
+<th>Exact target</th>
+<th>Computed statistic</th>
+<th>Statistic type</th>
+<th>Acceptance</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Uniform linear ABCD and mesh convergence</td>
+<td>0</td>
+<td>1.12233e-05</td>
+<td>absolute defect</td>
+<td>&lt; 2e-05</td>
+<td>PASS</td>
+</tr>
+<tr>
+<td>Manufactured cubic nonlinear solution</td>
+<td>0</td>
+<td>1.24954e-06</td>
+<td>absolute defect</td>
+<td>&lt; 0.0001</td>
+<td>PASS</td>
+</tr>
+<tr>
+<td>Global passive power balance</td>
+<td>0</td>
+<td>1.69455e-10</td>
+<td>absolute defect</td>
+<td>&lt; 1e-09</td>
+<td>PASS</td>
+</tr>
+<tr>
+<td>Newton residual</td>
+<td>0</td>
+<td>5.06311e-12</td>
+<td>absolute defect</td>
+<td>&lt; 2e-10</td>
+<td>PASS</td>
+</tr>
+<tr>
+<td>Real Newton Jacobian directional difference</td>
+<td>0</td>
+<td>7.88511e-10</td>
+<td>relative norm error</td>
+<td>&lt; 1e-07</td>
+<td>PASS</td>
+</tr>
+<tr>
+<td>Global source-phase equivariance</td>
+<td>0</td>
+<td>6.95985e-14</td>
+<td>absolute defect</td>
+<td>&lt; 1e-08</td>
+<td>PASS</td>
+</tr>
+<tr>
+<td>Quadratic Newton convergence</td>
+<td>2</td>
+<td>1.94731</td>
+<td>minimum observed order</td>
+<td>pre-roundoff residual orders &gt; 1.8</td>
+<td>PASS</td>
+</tr>
+<tr>
+<td>Linear limit Newton invariant</td>
+<td>0</td>
+<td>2.84217e-14</td>
+<td>absolute defect</td>
+<td>&lt; 1e-10</td>
+<td>PASS</td>
+</tr>
+<tr>
+<td>All five implicit-adjoint gradients</td>
+<td>0</td>
+<td>1.74896e-06</td>
+<td>relative norm error</td>
+<td>&lt; 2e-05</td>
+<td>PASS</td>
+</tr>
+<tr>
+<td>Taylor remainder second order</td>
+<td>2</td>
+<td>1.98205</td>
+<td>minimum observed order</td>
+<td>minimum rate &gt; 1.9</td>
+<td>PASS</td>
+</tr>
+</tbody>
+</table>
+<p>The uniform linear comparison uses Project 3's independent ABCD cascade. At 320 elements, the actual complex port reflections are:</p>
+<table>
+<thead>
+<tr>
+<th>State</th>
+<th>FE reflection</th>
+<th>Exact ABCD reflection</th>
+<th>Relative error</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ON</td>
+<td>0.183384370 -0.961277004i</td>
+<td>0.183373316 -0.961278944i</td>
+<td>1.14686e-05</td>
+</tr>
+<tr>
+<td>OFF</td>
+<td>0.184432945 -0.962511034i</td>
+<td>0.184422552 -0.962513215i</td>
+<td>1.08352e-05</td>
+</tr>
+</tbody>
+</table>
+<p>For the nonlinear manufactured benchmark, choose D = 2+i and V*(x) = B(L−x)+D(L−x)³, with an added constant jump Zₛ[B+3D(L−a)²]/z on the left segment. Select</p>
+<p class="equation">B = [2 − D(L³ + 3L²/z + 3Zₛ(L−a)²/z)] / [L + (1+Zₛ)/z].</p>
+<p>Then the port, short and interface conditions hold analytically. Insert this field into the PDE to define the source f* = −6D(L−x)/z + yV* + iβχ|V*|²V*. The generated source is integrated with independent eight-point quadrature. At 160 elements, the relative field L2 error is <strong>1.52285e-06</strong>. The benchmark is a mathematical verification, not independent experimental validation. Its expected solution was derived by the coding agent; the rubric's student-first derivation requirement remains a human review item.</p>
+<p><img src="assets/figures/convergence.svg" alt="Mesh convergence for the independent linear and nonlinear manufactured problems" /></p>
+<h2>5. Implicit adjoints and gradient checks</h2>
+<p>Write the assembled real residual as F(u,c) = 0. Differentiation gives J du/dc = −F<sub>c</sub>, with J = ∂F/∂u at the converged nonlinear state. For any scalar metric q,</p>
+<p class="equation">Jᵀλ = q<sub>u</sub>, &nbsp; dq/dc = q<sub>c</sub> − λᵀF<sub>c</sub>.</p>
+<p>This differentiates the converged state equation, not the finite sequence of Newton iterations. The material derivative in cell j is the real/imaginary packing of iβ∫<sub>cell j</sub>NᵢV dx. Let S = R<sub>ON</sub>+R<sub>OFF</sub>. Each state's objective derivative has port entries (2 Re S, 2 Im S). Each amplitude-constraint derivative has its state's port entries (2 Re Rₛ, 2 Im Rₛ). For mean-square voltage, q<sub>u</sub> = (2/L)[M Re V; M Im V], with a minus sign for g₃ and g₄. The objective's direct derivative is (2×0.002/20)(cⱼ−1). These cover every objective, constraint and the sole design-variable type.</p>
+<p>Central differences perturb each of the 20 coordinates by 10⁻⁵. The relative vector errors are:</p>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Relative adjoint / central-difference error</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Objective</td>
+<td>7.84843e-07</td>
+</tr>
+<tr>
+<td>ON magnitude²</td>
+<td>1.74896e-06</td>
+</tr>
+<tr>
+<td>OFF magnitude²</td>
+<td>1.51736e-06</td>
+</tr>
+<tr>
+<td>ON mean-square V</td>
+<td>5.90118e-08</td>
+</tr>
+<tr>
+<td>OFF mean-square V</td>
+<td>2.99589e-08</td>
+</tr>
+</tbody>
+</table>
+<p>A fixed random direction separately tests q(c+hv)−q(c)−h∇q·v. All five metrics approach O(h²), with minimum observed order <strong>1.98205</strong>.</p>
+<p><img src="assets/figures/taylor.svg" alt="Taylor remainders for the objective and four constraints" /></p>
+<p>The retained timing uses <strong>80 forward state solves</strong> for central differences versus <strong>2 forward states and 10 adjoint right-hand sides</strong>, batched by state. Finite differences take <strong>0.53582 s</strong>; the complete adjoint evaluation takes <strong>0.0139375 s</strong> on the recorded machine. This is a small-model, single-run implementation measurement, not a universal speedup or a comparison with HFSS. Runtime changes across machines and simultaneous workloads.</p>
+<h3>Supplemental multi-design central-difference sweep</h3>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Directions tested</th>
+<th>Second-order windows</th>
+<th>Accuracy checks passed</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>objective</td>
+<td>9</td>
+<td>9</td>
+<td>9</td>
+</tr>
+<tr>
+<td>amplitude_on</td>
+<td>9</td>
+<td>9</td>
+<td>9</td>
+</tr>
+<tr>
+<td>amplitude_off</td>
+<td>9</td>
+<td>9</td>
+<td>9</td>
+</tr>
+<tr>
+<td>energy_on</td>
+<td>9</td>
+<td>9</td>
+<td>9</td>
+</tr>
+<tr>
+<td>energy_off</td>
+<td>9</td>
+<td>9</td>
+<td>9</td>
+</tr>
+</tbody>
+</table>
+<p>Three seeded interior designs and three directions per design test the objective and four constraints. Every step and error is retained in <a href="review/gradient-sweep-final-2026-11-16.json">the supplemental evidence</a>. Larger steps were added after earlier windows reached the numerical floor; this diagnostic range was adapted, not preregistered. The solver, seeds, designs, directions and thresholds were unchanged. Small-step deterioration is retained, not hidden. This is an agent-run numerical check, not the student-independent derivation or physical validation.</p>
+<h2>6. Optimization, local minima and KKT interpretation</h2>
+<p>SLSQP uses the scaled objective, analytic implicit gradients, bounds [0.5,2.5], tolerance 10⁻¹¹ and at most 500 iterations. Both physics models use the same five declared starts: uniform, low-before/high-after, high-before/low-after and two seeded random vectors. All retained outcomes are shown; a failed or worse run is not silently discarded.</p>
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th>Start</th>
+<th>Optimizer success</th>
+<th>Objective</th>
+<th>KKT stationarity ∞-norm</th>
+<th>Termination</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>linear</td>
+<td>uniform</td>
+<td>PASS</td>
+<td>3.86276</td>
+<td>1.38563e-08</td>
+<td>Optimization terminated successfully</td>
+</tr>
+<tr>
+<td>linear</td>
+<td>low_high</td>
+<td>PASS</td>
+<td>0.463035</td>
+<td>1.38778e-17</td>
+<td>Optimization terminated successfully</td>
+</tr>
+<tr>
+<td>linear</td>
+<td>high_low</td>
+<td>FAIL</td>
+<td>2.86866</td>
+<td>7.54952e-15</td>
+<td>Positive directional derivative for linesearch</td>
+</tr>
+<tr>
+<td>linear</td>
+<td>random_494_a</td>
+<td>PASS</td>
+<td>0.463035</td>
+<td>1.38778e-17</td>
+<td>Optimization terminated successfully</td>
+</tr>
+<tr>
+<td>linear</td>
+<td>random_494_b</td>
+<td>PASS</td>
+<td>0.463035</td>
+<td>1.38778e-17</td>
+<td>Optimization terminated successfully</td>
+</tr>
+<tr>
+<td>nonlinear</td>
+<td>uniform</td>
+<td>PASS</td>
+<td>0.661346</td>
+<td>1.38778e-17</td>
+<td>Optimization terminated successfully</td>
+</tr>
+<tr>
+<td>nonlinear</td>
+<td>low_high</td>
+<td>PASS</td>
+<td>0.661346</td>
+<td>2.77556e-17</td>
+<td>Optimization terminated successfully</td>
+</tr>
+<tr>
+<td>nonlinear</td>
+<td>high_low</td>
+<td>FAIL</td>
+<td>not available</td>
+<td>not available</td>
+<td>Newton line search failed</td>
+</tr>
+<tr>
+<td>nonlinear</td>
+<td>random_494_a</td>
+<td>PASS</td>
+<td>0.661346</td>
+<td>2.77556e-17</td>
+<td>Optimization terminated successfully</td>
+</tr>
+<tr>
+<td>nonlinear</td>
+<td>random_494_b</td>
+<td>PASS</td>
+<td>0.661346</td>
+<td>2.77556e-17</td>
+<td>Optimization terminated successfully</td>
+</tr>
+</tbody>
+</table>
+<p><img src="assets/figures/optimization.svg" alt="Selected multistart optimization histories" /></p>
+<p>The KKT convention is ℒ = f − Σμᵢgᵢ, with gᵢ ≥ 0 and μᵢ ≥ 0. Active multipliers are reconstructed using nonnegative least squares from analytic gradients. The active-set tolerance is 2×10⁻⁵. This reconstruction checks stationarity and complementarity; it is not proof of global optimality. All 20 variable bounds are active at the selected solution, while the four physical-response constraints have slack. The multipliers therefore express the local value of relaxing loading bounds, not prices on the inactive voltage/magnitude limits.</p>
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th>Primal violation</th>
+<th>Stationarity ∞</th>
+<th>Complementarity ∞</th>
+<th>Active multipliers</th>
+<th>Min μ</th>
+<th>Max μ</th>
+<th>KKT gate</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>linear</td>
+<td>0</td>
+<td>1.38778e-17</td>
+<td>4.68069e-15</td>
+<td>20</td>
+<td>0.00120469</td>
+<td>0.294597</td>
+<td>PASS</td>
+</tr>
+<tr>
+<td>nonlinear</td>
+<td>0</td>
+<td>1.38778e-17</td>
+<td>2.46978e-14</td>
+<td>20</td>
+<td>0.00127507</td>
+<td>0.30837</td>
+<td>PASS</td>
+</tr>
+</tbody>
+</table>
+<p><img src="assets/figures/loading.svg" alt="Initial and optimized capacitance multipliers" /></p>
+<p>The engineering interpretation is specific: in this design box and at the retained local solution, lower loading before the switch and higher loading after it improve the reflected-phasor objective. No topology optimization or fabricated-dimension optimization was performed. Enlarging the design box or using a different physical family could change the result.</p>
+<h2>7. What the nonlinear component changes</h2>
+<p>The maximum difference between selected linear and nonlinear design coordinates is <strong>9.59677e-13</strong>. Thus the retained comparison does <strong>not</strong> show a nonlinear redesign. At essentially the same material pattern, the linear model predicts <strong>139.064°</strong> separation and the nonlinear model <strong>130.534°</strong>. Both satisfy the declared constraints. The assignment permits a finding of no design change when supported by evidence. The N2 component is the nonlinear state equation and its Newton/implicit-adjoint treatment, not merely a nonlinear objective.</p>
+<p>Reevaluating the selected designs on finer meshes keeps every constraint feasible:</p>
+<table>
+<thead>
+<tr>
+<th>χ</th>
+<th>Elements</th>
+<th>Objective</th>
+<th>Phase separation (°)</th>
+<th>Smallest constraint slack</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>80</td>
+<td>0.463386</td>
+<td>139.048</td>
+<td>0.255516</td>
+</tr>
+<tr>
+<td>0</td>
+<td>160</td>
+<td>0.463035</td>
+<td>139.064</td>
+<td>0.255515</td>
+</tr>
+<tr>
+<td>0</td>
+<td>320</td>
+<td>0.462947</td>
+<td>139.068</td>
+<td>0.255515</td>
+</tr>
+<tr>
+<td>0</td>
+<td>640</td>
+<td>0.462925</td>
+<td>139.069</td>
+<td>0.255515</td>
+</tr>
+<tr>
+<td>0.05</td>
+<td>80</td>
+<td>0.661706</td>
+<td>130.52</td>
+<td>0.256636</td>
+</tr>
+<tr>
+<td>0.05</td>
+<td>160</td>
+<td>0.661346</td>
+<td>130.534</td>
+<td>0.256636</td>
+</tr>
+<tr>
+<td>0.05</td>
+<td>320</td>
+<td>0.661256</td>
+<td>130.538</td>
+<td>0.256635</td>
+</tr>
+<tr>
+<td>0.05</td>
+<td>640</td>
+<td>0.661233</td>
+<td>130.539</td>
+<td>0.256635</td>
+</tr>
+</tbody>
+</table>
+<p>This evaluates the retained design on finer meshes rather than claiming a separately reoptimized fine-mesh optimum. Cross-evaluations of each design under both physics models are retained in results.json.</p>
+<h2>8. Two PINNs: a separate controlled investigation</h2>
+<p>Project 3 already handles the physical switch analytically and uses a normalized right-segment field. Splitting at that interface again would not automatically fix the observed design-parameter response difficulty. The supporting study instead tests a specialist for the previously identified difficult right-length interval and another for its complement, compared with a monolithic network under stated capacity and training budgets.</p>
+<p>The experiment, its frozen protocol, positive and negative outcomes, design-gradient checks and solver comparisons are in <a href="two-pinn-findings.md">two-pinn-findings.md</a> and <a href="assets/two-pinn-results.json">two-pinn-results.json</a>. The original Project 3 parameters form a restricted supporting problem. These networks are <strong>not</strong> substituted into the 20-variable FE optimizer above, and no full-design surrogate performance is claimed. The restricted bonus comparison below is evaluated separately.</p>
+<p>The first experiment's hard routing introduced artificial discontinuities. A second frozen experiment trained the physical residual of a differentiably blended field, using a logistic overlap width of 0.002 and new held-out designs. This removes hard routing's jump but does not make its design derivatives accurate. Each experiment compares three seeds and matched parameter counts/update/point budgets; FLOPs and runtime are not exactly equal. The new sampling sets are close-neighbor interpolation tests, not previously untouched physics or blocked extrapolation.</p>
+<h3>Experiment A: hard parameter routing</h3>
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th>Seed</th>
+<th>Reflection error p95</th>
+<th>Median field L2 error (%)</th>
+<th>Feasible retained</th>
+<th>False feasible</th>
+<th>Gradient error (%)</th>
+<th>Gate</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>monolithic</td>
+<td>0</td>
+<td>1.49082</td>
+<td>5.48472</td>
+<td>0/24</td>
+<td>0</td>
+<td>95.5437</td>
+<td>FAIL</td>
+</tr>
+<tr>
+<td>two_specialists</td>
+<td>0</td>
+<td>1.09076</td>
+<td>4.17138</td>
+<td>2/24</td>
+<td>0</td>
+<td>85.628</td>
+<td>FAIL</td>
+</tr>
+<tr>
+<td>monolithic</td>
+<td>1</td>
+<td>1.47565</td>
+<td>4.60527</td>
+<td>7/24</td>
+<td>0</td>
+<td>95.6212</td>
+<td>FAIL</td>
+</tr>
+<tr>
+<td>two_specialists</td>
+<td>1</td>
+<td>1.14034</td>
+<td>3.86779</td>
+<td>10/24</td>
+<td>0</td>
+<td>89.0482</td>
+<td>FAIL</td>
+</tr>
+<tr>
+<td>monolithic</td>
+<td>2</td>
+<td>1.41124</td>
+<td>4.53248</td>
+<td>0/24</td>
+<td>0</td>
+<td>95.1478</td>
+<td>FAIL</td>
+</tr>
+<tr>
+<td>two_specialists</td>
+<td>2</td>
+<td>1.17304</td>
+<td>4.45794</td>
+<td>0/24</td>
+<td>0</td>
+<td>90.7479</td>
+<td>FAIL</td>
+</tr>
+</tbody>
+</table>
+<h3>Experiment B: differentiable overlap</h3>
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th>Seed</th>
+<th>Reflection error p95</th>
+<th>Median field L2 error (%)</th>
+<th>Feasible retained</th>
+<th>False feasible</th>
+<th>Gradient error (%)</th>
+<th>Gate</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>monolithic</td>
+<td>0</td>
+<td>1.47221</td>
+<td>5.05793</td>
+<td>12/23</td>
+<td>0</td>
+<td>95.0311</td>
+<td>FAIL</td>
+</tr>
+<tr>
+<td>smooth_specialists</td>
+<td>0</td>
+<td>1.0913</td>
+<td>3.93036</td>
+<td>12/23</td>
+<td>0</td>
+<td>109.295</td>
+<td>FAIL</td>
+</tr>
+<tr>
+<td>monolithic</td>
+<td>1</td>
+<td>1.47354</td>
+<td>3.90167</td>
+<td>13/23</td>
+<td>0</td>
+<td>94.9005</td>
+<td>FAIL</td>
+</tr>
+<tr>
+<td>smooth_specialists</td>
+<td>1</td>
+<td>1.12644</td>
+<td>4.15216</td>
+<td>13/23</td>
+<td>0</td>
+<td>107.77</td>
+<td>FAIL</td>
+</tr>
+<tr>
+<td>monolithic</td>
+<td>2</td>
+<td>1.44183</td>
+<td>4.4931</td>
+<td>16/23</td>
+<td>3</td>
+<td>95.0111</td>
+<td>FAIL</td>
+</tr>
+<tr>
+<td>smooth_specialists</td>
+<td>2</td>
+<td>1.14553</td>
+<td>4.7922</td>
+<td>12/23</td>
+<td>0</td>
+<td>105.91</td>
+<td>FAIL</td>
+</tr>
+</tbody>
+</table>
+<p>All retained models fail the unchanged acceptance gate. The specialist variants reduce reflection tails relative to their matched monolithic arms, but large tails, missed feasible cases and inaccurate design gradients remain. Smooth blending does not justify replacing the conventional solver. The vectorized analytic reference is faster at every measured batch size. Keep the FE/adjoint solver for the design problem and treat these PINN results as a documented negative finding. Feasible-count denominators differ between the two independently frozen cohorts, so compare methods within each experiment. Full results, weights, boundary/gradient audits and restricted one-dimensional design searches are retained rather than summarized as a successful remedy.</p>
+<h3>Restricted surrogate-in-the-loop comparison</h3>
+<table>
+<thead>
+<tr>
+<th>Saved model</th>
+<th>Seed</th>
+<th>Design points</th>
+<th>Gradient relative L2 error vs own FE</th>
+<th>Surrogate selected d</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>monolithic</td>
+<td>0</td>
+<td>299</td>
+<td>0.950312</td>
+<td>0.036</td>
+</tr>
+<tr>
+<td>smooth_specialists</td>
+<td>0</td>
+<td>299</td>
+<td>1.0929</td>
+<td>0.036</td>
+</tr>
+<tr>
+<td>monolithic</td>
+<td>1</td>
+<td>299</td>
+<td>0.949006</td>
+<td>0.036</td>
+</tr>
+<tr>
+<td>smooth_specialists</td>
+<td>1</td>
+<td>299</td>
+<td>1.07765</td>
+<td>0.036</td>
+</tr>
+<tr>
+<td>monolithic</td>
+<td>2</td>
+<td>299</td>
+<td>0.950114</td>
+<td>0.036</td>
+</tr>
+<tr>
+<td>smooth_specialists</td>
+<td>2</td>
+<td>299</td>
+<td>1.05905</td>
+<td>0.036</td>
+</tr>
+</tbody>
+</table>
+<p>The trained surrogates were used inside an exhaustive constrained 10,001-point grid optimizer, not a gradient-based continuous optimizer. The matching own P1 FE optimizer selects d=0.208422; the saved models' selected designs are listed in the table. Poor gradients and a different design are the findings, not a reason to suppress the experiment. The FE bridge matches the linear, uniform-loading, moving-switch Project3 family; it is not the nonlinear 20-loading-variable core. Mesh refinement and shape-adjoint finite differences qualify this separate FE comparison. <a href="review/surrogate-fe-comparison-2026-11-16.json">Source-bound comparison</a>, <a href="review/restricted-fe-bridge-2026-11-16.json">FE qualification</a>, and <a href="review/surrogate-bonus-audit-2026-11-16.md">bonus interpretation</a> preserve the scope. The rubric does not require surrogate superiority or explicitly require all20 variables in this bonus study. This supplies relevant bonus evidence, not an assurance of awarded points.</p>
+<h2>9. Reproducibility and review</h2>
+<p>The numerical source of truth is <a href="assets/results.json">assets/results.json</a>. This Markdown report, its tables and SVG plots are generated by code/build_report.py from the FE results, retained PINN result files, and linked supplemental gradient evidence. The 3D viewer loads the same file and interpolates complex voltage with the FE shape functions before taking its magnitude. It does not interpolate across the duplicated switch interface. The history animation represents optimization iterates, not transient wave propagation.</p>
+<p>After installing the pinned dependencies in a scientific Python environment, run:</p>
+<pre><code class="language-sh">python Project4-Metasurface/reproduce.py
+</code></pre>
+<p>That command runs verification, final FE multistart design, the fixed two-PINN experiment, tests, and report generation. Tests and saved-result auditing are also available without retraining; see <a href="README.md">README.md</a>. The protocol records pilot choices, tolerances, seeds, failures, versions and source hashes. Full precision remains in JSON; displayed values are rounded by the generator. Historical Project 3 files and results are untouched.</p>
+<p><strong>AI-use statement.</strong> A coding agent wrote the proposed formulation, FE/Newton solver, adjoints, optimization harness, neural experiment, tests, figures, report and viewer. A separate agent independently checked nonuniform ABCD responses, random-design power balance, phase equivariance and directional derivatives. Those are agent checks, not student work. A run caught a real harness defect: a nonlinear initial-state evaluation occurred outside failure handling, so one failed start prevented the results file from being saved. The harness was corrected to retain that start as a failure and continue, and the complete final study was rerun. No undiscovered physics bug is invented for this statement. Students still need to independently derive/check the expected benchmark values and explain the formulation before submitting.</p>
+<h2>10. Limits and completion checklist</h2>
+<ul>
+<li>This is a synthetic reduced model. It omits periodic three-dimensional scattering, radiation, fabrication, realistic switch parasitics, bias circuitry and calibration against HFSS or measured devices.</li>
+<li>The positive cubic charge term and normalized voltage limits are scenario assumptions. Harmonic generation, dynamic stability and global nonlinear branch uniqueness are not established.</li>
+<li>The selected optimum is local, bound-dominated and does not meet the old 165° screening target. Neither the actual researcher's tolerances nor approval of this exact formulation have been verified.</li>
+<li>A fixed line extrusion displays the reduced model; capacitance-encoding heights are graphical. There is no claimed mapping from those heights to manufactured geometry.</li>
+<li>The two-network supporting study must stand on its measured findings. It does not justify a full-wave acceleration claim or replace the FE requirements.</li>
+<li>Repository publication, Pages activation, private-browser verification of the public site, team review, instructor/formulation confirmation and Canvas submission are distinct steps. No live-site or submission success is claimed by this file.</li>
+</ul>
+<p>The <a href="RUBRIC-CROSSWALK.md">rubric crosswalk</a> maps each category to evidence and remaining human/publication steps. Primary requirements: <a href="https://github.com/DesignInformaticsLab/DesignOptimization2025/blob/main/docs/project4.md">instructor's Project 4 source</a>, retrieved 10 November 2026, file SHA 4bffd93c866a1b02352cc969737467793037ca01.</p>
+
+</main>
+<aside class="project-notes"><strong>Project notes</strong><p>This is a synthetic transmission-line analogue, not calibrated hardware. Student-team benchmark checking and instructor approval of the custom formulation remain unverified. Publication and GitHub Pages availability must be confirmed separately.</p></aside><footer class="footer">MAE 494 · Project 4 · <a href="assets/results.json">Numerical data</a> · <a href="code/run_design.py">Reproduction script</a><br>No rendered height represents a proposed fabricated dimension.</footer></div><script src="site/viewer.js" data-results="assets/results.json" defer></script></body></html>

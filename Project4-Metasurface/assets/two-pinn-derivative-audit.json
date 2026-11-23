@@ -1,0 +1,284 @@
+{
+  "results_sha256": "12afe9a5c118734b399e5ec9ceddc05cb1dfc645a88743644c9f1894e3c2ad3e",
+  "reference_gradient_fd_halving_max_change": 1.966760095228892e-06,
+  "reference_gradient_fd_halving_relative_L2": 7.600787314558901e-09,
+  "runs": [
+    {
+      "mode": "monolithic",
+      "seed": 0,
+      "boundaries": [
+        {
+          "d": 0.195,
+          "left_derivative_real": [
+            -0.12618485512621014,
+            6.755269658692411
+          ],
+          "left_derivative_imag": [
+            -0.3745895909830934,
+            -10.436789032988909
+          ],
+          "right_derivative_real": [
+            -0.12618522826444867,
+            6.755271977850589
+          ],
+          "right_derivative_imag": [
+            -0.3745888059795175,
+            -10.4367881990356
+          ],
+          "max_state_derivative_jump": 2.4645431172167035e-06
+        },
+        {
+          "d": 0.222,
+          "left_derivative_real": [
+            -0.9122385660990258,
+            9.854466632644332
+          ],
+          "left_derivative_imag": [
+            0.3449202567378369,
+            -8.878717611268264
+          ],
+          "right_derivative_real": [
+            -0.9122391320638599,
+            9.85446890080135
+          ],
+          "right_derivative_imag": [
+            0.3449204350459498,
+            -8.878715770146123
+          ],
+          "max_state_derivative_jump": 2.9213467788793205e-06
+        }
+      ]
+    },
+    {
+      "mode": "two_specialists",
+      "seed": 0,
+      "boundaries": [
+        {
+          "d": 0.195,
+          "left_derivative_real": [
+            -0.30753316215855087,
+            8.002825817595014
+          ],
+          "left_derivative_imag": [
+            -0.8892106241177669,
+            -11.145892880235614
+          ],
+          "right_derivative_real": [
+            4.814417161379156,
+            -0.3095257853099982
+          ],
+          "right_derivative_imag": [
+            -6.645043505163049,
+            -7.389292154155896
+          ],
+          "max_state_derivative_jump": 9.121800161453889
+        },
+        {
+          "d": 0.222,
+          "left_derivative_real": [
+            7.7403395160717405,
+            6.430986277173996
+          ],
+          "left_derivative_imag": [
+            0.20790355343729194,
+            -18.65193209754508
+          ],
+          "right_derivative_real": [
+            0.12360355838133685,
+            11.392132618946096
+          ],
+          "right_derivative_imag": [
+            -0.058219724702436526,
+            -7.328725662279461
+          ],
+          "max_state_derivative_jump": 12.362361303574632
+        }
+      ]
+    },
+    {
+      "mode": "monolithic",
+      "seed": 1,
+      "boundaries": [
+        {
+          "d": 0.195,
+          "left_derivative_real": [
+            -0.22984733648937627,
+            6.275042110282509
+          ],
+          "left_derivative_imag": [
+            0.5288887047851953,
+            -10.529995620426872
+          ],
+          "right_derivative_real": [
+            -0.22984777350985475,
+            6.275044649345869
+          ],
+          "right_derivative_imag": [
+            0.5288891948195154,
+            -10.529994751794455
+          ],
+          "max_state_derivative_jump": 2.683535917534235e-06
+        },
+        {
+          "d": 0.222,
+          "left_derivative_real": [
+            -0.5085650267126738,
+            9.691569956005724
+          ],
+          "left_derivative_imag": [
+            0.7678041016735502,
+            -8.860827857050953
+          ],
+          "right_derivative_real": [
+            -0.508564987109871,
+            9.691572380515067
+          ],
+          "right_derivative_imag": [
+            0.7678040846663052,
+            -8.860826163089136
+          ],
+          "max_state_derivative_jump": 2.9576599186466416e-06
+        }
+      ]
+    },
+    {
+      "mode": "two_specialists",
+      "seed": 1,
+      "boundaries": [
+        {
+          "d": 0.195,
+          "left_derivative_real": [
+            0.15938144439783208,
+            8.243416092320755
+          ],
+          "left_derivative_imag": [
+            -0.5250257873599775,
+            -10.90987481925046
+          ],
+          "right_derivative_real": [
+            1.137705211650431,
+            0.4807120511084211
+          ],
+          "right_derivative_imag": [
+            -2.2441447462207362,
+            -8.081659647297906
+          ],
+          "max_state_derivative_jump": 8.261862688904781
+        },
+        {
+          "d": 0.222,
+          "left_derivative_real": [
+            8.079751515303485,
+            5.832028262306391
+          ],
+          "left_derivative_imag": [
+            3.492732103395461,
+            -15.766778355437733
+          ],
+          "right_derivative_real": [
+            0.029561570840002105,
+            11.318868310230437
+          ],
+          "right_derivative_imag": [
+            0.5087699617667034,
+            -7.362698794964225
+          ],
+          "max_state_derivative_jump": 10.036631256067533
+        }
+      ]
+    },
+    {
+      "mode": "monolithic",
+      "seed": 2,
+      "boundaries": [
+        {
+          "d": 0.195,
+          "left_derivative_real": [
+            -1.0793786267469248,
+            6.52594312451542
+          ],
+          "left_derivative_imag": [
+            -0.4121473619933922,
+            -9.707623030280375
+          ],
+          "right_derivative_real": [
+            -1.0793783887115307,
+            6.5259448373188675
+          ],
+          "right_derivative_imag": [
+            -0.4121466978723367,
+            -9.707623517559199
+          ],
+          "max_state_derivative_jump": 1.7807684581868892e-06
+        },
+        {
+          "d": 0.222,
+          "left_derivative_real": [
+            -0.9376534356996302,
+            9.608721180458927
+          ],
+          "left_derivative_imag": [
+            0.6509115831006376,
+            -9.516272970766131
+          ],
+          "right_derivative_real": [
+            -0.9376534924435838,
+            9.60872364340435
+          ],
+          "right_derivative_imag": [
+            0.650912163315595,
+            -9.516271447076017
+          ],
+          "max_state_derivative_jump": 2.8961580965826764e-06
+        }
+      ]
+    },
+    {
+      "mode": "two_specialists",
+      "seed": 2,
+      "boundaries": [
+        {
+          "d": 0.195,
+          "left_derivative_real": [
+            -0.6989476879423631,
+            8.114222767760864
+          ],
+          "left_derivative_imag": [
+            -0.08226987332847413,
+            -11.402059504901503
+          ],
+          "right_derivative_real": [
+            3.559503569465324,
+            -0.5582494403110312
+          ],
+          "right_derivative_imag": [
+            -7.815259902168689,
+            -4.2338599631277
+          ],
+          "max_state_derivative_jump": 11.251438080106274
+        },
+        {
+          "d": 0.222,
+          "left_derivative_real": [
+            5.762078902609425,
+            1.4268398304073175
+          ],
+          "left_derivative_imag": [
+            -1.5406442335075528,
+            -12.428362682062566
+          ],
+          "right_derivative_real": [
+            -0.4990869179736013,
+            11.589754887618152
+          ],
+          "right_derivative_imag": [
+            -0.08569677445908597,
+            -7.478390239934023
+          ],
+          "max_state_derivative_jump": 11.304294300747603
+        }
+      ]
+    }
+  ],
+  "note": "Derivative limits evaluated 1e-8 to either side. Hard routing has no classical derivative at a discontinuous interface. This audit does not repair the model."
+}

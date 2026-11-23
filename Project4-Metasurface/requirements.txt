@@ -1,0 +1,5 @@
+# Recorded versions. Python 3.13, CPU-only computation.
+numpy==2.5.4
+scipy==1.18.1
+torch==2.14.1
+markdown-it-py==4.2.0
