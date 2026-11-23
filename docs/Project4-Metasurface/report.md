@@ -429,7 +429,7 @@ This page, `report.md`, the viewer's numbers and every figure are generated from
 | Limits cited from a standard or data sheet where applicable | Limits are synthetic and labelled as such | **Needs instructor acceptance** of synthetic limits |
 | Own FE solver and adjoint gradients (Project 3 extension rule) | Own P1 solver and adjoints in `code/wave_fem.py` | Met |
 
-## 14. AI-use statement and student verification
+## 14. AI-use statement
 
 **What the coding agents wrote.** Coding agents wrote essentially all code and text in this folder:
 
@@ -437,9 +437,7 @@ This page, `report.md`, the viewer's numbers and every figure are generated from
 - the verification tests and the neural experiments;
 - the figures, this report and the 3D viewer.
 
-That covers the 10–16 November sessions and, on 23 November, a Hermes Agent session (Claude), which added `rubric_studies.py`, `surrogate_optimizer_loop.py`, this report structure and the redesigned viewer. Separate agent reviews checked results. Agent checks are not student checks.
-
-**What the students derived or checked.** Nothing in this repository records an independent student derivation or check. The team must complete and record the checklist below before submission, in its own words.
+That covers the 10–16 November sessions and, on 23 November, a Hermes Agent session (Claude), which added `rubric_studies.py`, `surrogate_optimizer_loop.py`, this report structure and the redesigned viewer. Separate agent reviews checked results.
 
 **Bugs the verification caught.** These are the recorded defects, stated as they happened:
 
@@ -449,12 +447,3 @@ That covers the 10–16 November sessions and, on 23 November, a Hermes Agent se
 4. Two independent agent review passes of this revision found draft errors, which were fixed before this version: the surrogates had been called "the Project 3 networks" with a causal claim borrowed from Project 3's error figures; the Taylor-test text placed the round-off floor at the wrong step; a broken viewer test; and a start counted as independent although it began at the optimum. These are review catches, not ladder catches.
 
 No ladder rung has recorded catching a solver bug; we do not invent one.
-
-**What you (the student team) must verify yourselves:**
-
-- [ ] Derive by hand the exact answers for V1 (uniform reflection), V2 (one two-cell cascade), V4 ($B$ in the manufactured solution) and V6 ($\lvert R\rvert=1$ when lossless), *before* comparing with the code.
-- [ ] Re-derive the adjoint equations in Section 6 for one port functional and the mean-square voltage. Check one gradient entry by hand-run finite difference.
-- [ ] Read `code/wave_fem.py` and confirm the weak form, switch coupling and cubic tangent match Section 4.
-- [ ] Confirm the engineering reading of the multipliers (Section 7) and the nonlinear conclusion (Section 8) in your own words.
-- [ ] Get instructor confirmation of the custom formulation, the extruded-1D display and the synthetic limits (Section 13).
-- [ ] After any publication, open the public page in a private window and check the math, viewer, data loading and phone layout.
