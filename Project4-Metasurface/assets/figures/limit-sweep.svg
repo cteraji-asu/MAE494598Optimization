@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 452" role="img" aria-label="Cost of tightening the voltage-exposure limit (post hoc)">
+<title>Cost of tightening the voltage-exposure limit (post hoc)</title>
+<rect width="760" height="470" fill="#fbfcfa"/>
+<g font-family="system-ui,Segoe UI,sans-serif" font-size="15" fill="#1d3640">
+<path d="M96.0 40V360" stroke="#e2e8e6"/>
+<text x="96.0" y="382" text-anchor="middle">0.9</text>
+<path d="M186.6 40V360" stroke="#e2e8e6"/>
+<text x="186.6" y="382" text-anchor="middle">1</text>
+<path d="M277.1 40V360" stroke="#e2e8e6"/>
+<text x="277.1" y="382" text-anchor="middle">1.1</text>
+<path d="M367.7 40V360" stroke="#e2e8e6"/>
+<text x="367.7" y="382" text-anchor="middle">1.2</text>
+<path d="M458.3 40V360" stroke="#e2e8e6"/>
+<text x="458.3" y="382" text-anchor="middle">1.3</text>
+<path d="M548.9 40V360" stroke="#e2e8e6"/>
+<text x="548.9" y="382" text-anchor="middle">1.4</text>
+<path d="M639.4 40V360" stroke="#e2e8e6"/>
+<text x="639.4" y="382" text-anchor="middle">1.5</text>
+<path d="M730.0 40V360" stroke="#e2e8e6"/>
+<text x="730.0" y="382" text-anchor="middle">1.6</text>
+<path d="M96 342.9H730" stroke="#e2e8e6"/>
+<text x="88" y="347.9" text-anchor="end">0.5</text>
+<path d="M96 296.6H730" stroke="#e2e8e6"/>
+<text x="88" y="301.6" text-anchor="end">0.6</text>
+<path d="M96 250.3H730" stroke="#e2e8e6"/>
+<text x="88" y="255.3" text-anchor="end">0.7</text>
+<path d="M96 204.0H730" stroke="#e2e8e6"/>
+<text x="88" y="209.0" text-anchor="end">0.8</text>
+<path d="M96 157.7H730" stroke="#e2e8e6"/>
+<text x="88" y="162.7" text-anchor="end">0.9</text>
+<path d="M96 111.4H730" stroke="#e2e8e6"/>
+<text x="88" y="116.4" text-anchor="end">1</text>
+<path d="M96 65.2H730" stroke="#e2e8e6"/>
+<text x="88" y="70.2" text-anchor="end">1.1</text>
+<path d="M96 40V360H730" stroke="#1d3640" fill="none"/>
+<text x="413.0" y="408" text-anchor="middle">Mean-square voltage limit E_max</text>
+<text transform="translate(22 200.0) rotate(-90)" text-anchor="middle">Optimal objective f*</text>
+<polyline points="730.0,360.0 231.9,244.6 186.6,205.2 141.3,127.8 96.0,40.0" stroke="#0b6e78" fill="none" stroke-width="2.6"/>
+<circle cx="730.0" cy="360.0" r="3" fill="#0b6e78"/>
+<circle cx="231.9" cy="244.6" r="3" fill="#0b6e78"/>
+<circle cx="186.6" cy="205.2" r="3" fill="#0b6e78"/>
+<circle cx="141.3" cy="127.8" r="3" fill="#0b6e78"/>
+<circle cx="96.0" cy="40.0" r="3" fill="#0b6e78"/>
+<polyline points="730.0,268.2 231.9,239.9 186.6,208.6 141.3,176.9 96.0,125.7" stroke="#c8641f" fill="none" stroke-width="2.6"/>
+<circle cx="730.0" cy="268.2" r="3" fill="#c8641f"/>
+<circle cx="231.9" cy="239.9" r="3" fill="#c8641f"/>
+<circle cx="186.6" cy="208.6" r="3" fill="#c8641f"/>
+<circle cx="141.3" cy="176.9" r="3" fill="#c8641f"/>
+<circle cx="96.0" cy="125.7" r="3" fill="#c8641f"/>
+<path d="M96 433h26" stroke="#0b6e78" stroke-width="3"/>
+<text x="128" y="438">Linear model χ=0</text>
+<path d="M311 433h26" stroke="#c8641f" stroke-width="3"/>
+<text x="343" y="438">Nonlinear model χ=0.05</text>
+</g></svg>

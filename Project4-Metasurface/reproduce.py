@@ -53,7 +53,16 @@ def main():
         [args.core_python,str(target/'code/restricted_fe_bridge.py'),'--output',str(target/'review/restricted-fe-bridge-2026-11-16.json')],
         [args.core_python,str(target/'code/compare_saved_surrogate_fe.py'),'--model',str(target/'review/saved-surrogate-gradients-2026-11-16.json'),'--fe',str(target/'review/restricted-fe-bridge-2026-11-16.json'),'--output',str(target/'review/surrogate-fe-comparison-2026-11-16.json')],
     ])
+    # 23 Nov supplemental runs: extra ladder rungs, gradient/cost/KKT checks and post hoc
+    # sensitivity studies on the unchanged solver; saved surrogates inside SLSQP.
+    commands.extend([
+        [args.core_python,str(target/'code/rubric_studies.py')],
+        [args.pinn_python,str(target/'code/surrogate_optimizer_loop.py')],
+        [args.core_python,'-m','unittest','discover','-s',str(target/'tests'),'-p','test_rubric_evidence.py','-v'],
+    ])
     commands.extend([[args.core_python,str(target/'code/build_report.py')],[args.core_python,str(target/'code/audit_artifacts.py')]])
+    node=shutil.which('node')
+    if node:commands.append([node,str(target/'tests/test_viewer_ledger.cjs')])
     plan={'destination':str(target),'commands':commands,'note':'Retained canonical outputs are untouched. Fixed protocol files are copied before training. Timing and timestamps will differ.'}
     (target/'REPRODUCTION-PLAN.json').write_text(json.dumps(plan,indent=2),encoding='utf-8')
     print(json.dumps(plan,indent=2),flush=True)
