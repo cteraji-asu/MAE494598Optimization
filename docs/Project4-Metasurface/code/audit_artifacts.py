@@ -39,9 +39,18 @@ def main():
         assert sha(ROOT/'code'/script)==plan['source_sha256']
         result=json.loads((ROOT/'assets'/f'{prefix}-results.json').read_text(encoding='utf-8'));finite(result)
         assert len(result['runs'])==6
+    # 23 Nov supplemental evidence: finite, bound to the unchanged solver source.
+    studies=json.loads((ROOT/'assets/rubric-studies.json').read_text(encoding='utf-8'));finite(studies)
+    for name in ['wave_fem.py','run_design.py']:assert sha(ROOT/'code'/name)==studies['provenance']['source_sha256'][name],'rubric-studies source '+name
+    loop=json.loads((ROOT/'assets/surrogate-optimizer-loop.json').read_text(encoding='utf-8'));finite(loop)
+    assert len(loop['models'])==12
     report=(ROOT/'report.md').read_text(encoding='utf-8')
     preview=(ROOT/'preview.html').read_text(encoding='utf-8')
+    body=(ROOT/'site/report-body.html').read_text(encoding='utf-8')
     assert '{%' not in preview and '{{ report_content' not in preview,'Unrendered Liquid in standalone preview'
+    assert '{{' not in body and '{%' not in body,'Liquid-sensitive text in included report body'
+    assert body in preview,'preview must embed the same report body as the Pages include'
+    assert 'mathjax@3.2.2' in preview,'MathJax version must be pinned'
     assert f"{data['nonlinear']['final']['objective']:.6g}" in report,'Stale objective'
     parser=Inspect();parser.feed(preview)
     missing=[]
